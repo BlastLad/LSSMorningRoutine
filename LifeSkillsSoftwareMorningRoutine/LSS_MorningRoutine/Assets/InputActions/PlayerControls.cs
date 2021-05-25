@@ -364,6 +364,299 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""DressMinigame"",
+            ""id"": ""c826b736-2295-48cf-b398-478c5d66b1ae"",
+            ""actions"": [
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""aaee5848-19a9-4462-94a4-11c492de13e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""Value"",
+                    ""id"": ""8400694b-dde3-40d4-b05c-07e5ff274d47"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3fe6350-e399-4978-bba8-df3d4cd1789e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""1708aebd-5931-4bee-a778-372b51983a36"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f41d8460-c569-4a50-b05c-c9962a552c4d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00864df1-a0e2-4a19-9d39-f0f5538d5488"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""400b7f93-ca2e-4892-972a-fb6289a408dc"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""860973f8-9b1b-40e9-bd61-778264bfe09e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8c824a8-9ac0-4a87-ad50-eab7a177f394"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f1edca0e-fad6-4efd-baf4-0d43403cf009"",
+                    ""path"": ""<XInputController>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""f5153a12-c4a9-4084-b33d-44f6b658ab9b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""7d1536a6-05c2-491c-bf5d-a8716745f190"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""31b89da3-137c-402b-b5cc-4cabda77bbb1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""08e5dbf4-52ca-4633-9cd4-6d1c05b76f60"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""f74d49b5-d6f9-48bf-af92-c728b557795c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fad2848a-f592-4b70-8aa3-aee7b87ab86d"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b1f280e-e83b-472a-aba5-0fb5a6ea0b67"",
+                    ""path"": ""<XInputController>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38abbaca-3c12-4035-9dd5-e807c692d0cc"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f8524b4-7c71-483d-9231-cd52dd5f5cce"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22d9e1ae-da3e-4aa3-8163-bd2d9761f12e"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""caaac041-7f83-4e10-9821-7f89cd2b4699"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32d26295-bb24-4004-a7bf-50740e91c12f"",
+                    ""path"": ""<XInputController>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb9a080e-8d2a-4039-b360-e2129dfbc926"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96c5705a-73b5-437a-bdc5-91582170bb57"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e7dfc7b-08d1-46bc-aa8b-dcff4ee0105e"",
+                    ""path"": ""<XInputController>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39516d03-ddcd-42ac-8ee3-e187000bd25a"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f468b2a-c6d2-4c30-9ed9-7b4233941d00"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -401,6 +694,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Base_Interact = m_Base.FindAction("Interact", throwIfNotFound: true);
         m_Base_Movement = m_Base.FindAction("Movement", throwIfNotFound: true);
         m_Base_CameraMovement = m_Base.FindAction("CameraMovement", throwIfNotFound: true);
+        // DressMinigame
+        m_DressMinigame = asset.FindActionMap("DressMinigame", throwIfNotFound: true);
+        m_DressMinigame_Select = m_DressMinigame.FindAction("Select", throwIfNotFound: true);
+        m_DressMinigame_Navigate = m_DressMinigame.FindAction("Navigate", throwIfNotFound: true);
+        m_DressMinigame_MoveLeft = m_DressMinigame.FindAction("MoveLeft", throwIfNotFound: true);
+        m_DressMinigame_MoveRight = m_DressMinigame.FindAction("MoveRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -495,6 +794,63 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public BaseActions @Base => new BaseActions(this);
+
+    // DressMinigame
+    private readonly InputActionMap m_DressMinigame;
+    private IDressMinigameActions m_DressMinigameActionsCallbackInterface;
+    private readonly InputAction m_DressMinigame_Select;
+    private readonly InputAction m_DressMinigame_Navigate;
+    private readonly InputAction m_DressMinigame_MoveLeft;
+    private readonly InputAction m_DressMinigame_MoveRight;
+    public struct DressMinigameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public DressMinigameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Select => m_Wrapper.m_DressMinigame_Select;
+        public InputAction @Navigate => m_Wrapper.m_DressMinigame_Navigate;
+        public InputAction @MoveLeft => m_Wrapper.m_DressMinigame_MoveLeft;
+        public InputAction @MoveRight => m_Wrapper.m_DressMinigame_MoveRight;
+        public InputActionMap Get() { return m_Wrapper.m_DressMinigame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DressMinigameActions set) { return set.Get(); }
+        public void SetCallbacks(IDressMinigameActions instance)
+        {
+            if (m_Wrapper.m_DressMinigameActionsCallbackInterface != null)
+            {
+                @Select.started -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnSelect;
+                @Navigate.started -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnNavigate;
+                @MoveLeft.started -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.performed -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.canceled -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnMoveLeft;
+                @MoveRight.started -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnMoveRight;
+                @MoveRight.performed -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnMoveRight;
+                @MoveRight.canceled -= m_Wrapper.m_DressMinigameActionsCallbackInterface.OnMoveRight;
+            }
+            m_Wrapper.m_DressMinigameActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
+                @MoveLeft.started += instance.OnMoveLeft;
+                @MoveLeft.performed += instance.OnMoveLeft;
+                @MoveLeft.canceled += instance.OnMoveLeft;
+                @MoveRight.started += instance.OnMoveRight;
+                @MoveRight.performed += instance.OnMoveRight;
+                @MoveRight.canceled += instance.OnMoveRight;
+            }
+        }
+    }
+    public DressMinigameActions @DressMinigame => new DressMinigameActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -518,5 +874,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnCameraMovement(InputAction.CallbackContext context);
+    }
+    public interface IDressMinigameActions
+    {
+        void OnSelect(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
+        void OnMoveLeft(InputAction.CallbackContext context);
+        void OnMoveRight(InputAction.CallbackContext context);
     }
 }
