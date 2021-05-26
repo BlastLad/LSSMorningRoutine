@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class ClothingCatalogData : MonoBehaviour
 {
-
+    [SerializeField]
+    string sectionName;
     [SerializeField]
     GameObject ProBuilderBlock;
 
     [SerializeField]
     Material[] itemsInCatalog;//FOR NOW WILL CHANGE ONCE THE MODELS ARE IN
     [SerializeField]
+    GameObject[] clothingItemsInCatalog;
+
+
+    [SerializeField]
     int currentIndex = 0;
+    [SerializeField]
+    int currentOutfitNum = 0;//0 beach, 1 work, 2 casual, 3 school
+
+    bool isMoving = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +37,53 @@ public class ClothingCatalogData : MonoBehaviour
     {
         if (currentIndex > 0)
         {
+            if (isMoving == true)
+            {
+                return;
+            }
             currentIndex--;
             ProBuilderBlock.GetComponent<MeshRenderer>().material = itemsInCatalog[currentIndex];
+            currentOutfitNum = clothingItemsInCatalog[currentIndex].GetComponent<ClothingItem>().outfitNumber;
+            //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
+            isMoving = true;
+            StartCoroutine(RotateMe(Vector3.up * -90, 0.8f));
+               
+            
         }
     }
 
     public void GoRight()
     {
-        if (currentIndex <= itemsInCatalog.Length)
+        if (currentIndex < itemsInCatalog.Length - 1)
         {
+            if (isMoving == true)
+            {
+                return;
+            }
             currentIndex++;
             ProBuilderBlock.GetComponent<MeshRenderer>().material = itemsInCatalog[currentIndex];
+            currentOutfitNum = clothingItemsInCatalog[currentIndex].GetComponent<ClothingItem>().outfitNumber;
+            //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
+            isMoving = true;
+            StartCoroutine(RotateMe(Vector3.up * 90, 0.8f));
         }
+    }
+
+
+    IEnumerator RotateMe(Vector3 byAngles, float inTime)
+    {
+        var fromAngle = transform.rotation;
+        var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
+        //StartCoroutine(nextMovement(inTime + 2f));
+        for (var t = 0f; t <= 1; t += Time.deltaTime / inTime)
+        {
+            transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
+            yield return null;
+
+        }
+        transform.rotation = toAngle;
+        isMoving = false;
+
     }
 
 
