@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Sound foot;
+
+    AudioSource audiosource;
+
     public float runSpeed = 0;
     [SerializeField]
     private float turnSpeed = 0;
@@ -56,9 +59,15 @@ public class PlayerMovement : MonoBehaviour
         if (foot != null){
             if (isMoving && foot.source.isPlaying == false)
             {
-                AudioManager.instance.PlaySoundIntervalToEnd(0.5f, "Footsteps");
+                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Footsteps");
+            }
+            else if (!isMoving && foot.source.isPlaying)
+            {
+                AudioManager.instance.StopSound("Footsteps");
             }
         }
+
+
 
         if (canMove == false)
         {

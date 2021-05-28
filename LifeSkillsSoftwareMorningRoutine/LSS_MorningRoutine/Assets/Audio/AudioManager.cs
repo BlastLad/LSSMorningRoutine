@@ -59,4 +59,10 @@ public void PlaySoundInterval(float from, float to, string name)
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         return s;
     }
+
+    public void StopSound(string name)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == name);
+        s.source.Stop();
+    }
 }

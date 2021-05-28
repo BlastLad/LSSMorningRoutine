@@ -66889,7 +66889,7 @@ MonoBehaviour:
   - name: Footsteps
     clip: {fileID: 8300000, guid: 9ff721814d3abfa44b9f5fef3e515c32, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1834483770
