@@ -66,6 +66,7 @@ public class ClothingCatalogData : MonoBehaviour
             //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
             isMoving = true;
             StartCoroutine(RotateMe(Vector3.up * 90, 0.8f));
+            
         }
     }
 
@@ -80,6 +81,7 @@ public class ClothingCatalogData : MonoBehaviour
             transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
             yield return null;
 
+            
         }
         transform.rotation = toAngle;
         isMoving = false;

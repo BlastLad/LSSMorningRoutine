@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Sound foot;
     public float runSpeed = 0;
     [SerializeField]
     private float turnSpeed = 0;
@@ -43,9 +44,21 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Start()
+    {
+
+        foot = AudioManager.instance.GetSound("Footsteps");
+    }
+
     private void Update()
     {
         currentPosition = transform.position;
+        if (foot != null){
+            if (isMoving && foot.source.isPlaying == false)
+            {
+                AudioManager.instance.PlaySoundIntervalToEnd(0.5f, "Footsteps");
+            }
+        }
 
         if (canMove == false)
         {
@@ -54,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateMouseLook();
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -66,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
             if (inputVector != new Vector3(0, 0, 0))
             {
                 isMoving = true;
+             
             }
             else
             {
@@ -80,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
+   
     }
 
     public Vector2 GetMouseDelta()

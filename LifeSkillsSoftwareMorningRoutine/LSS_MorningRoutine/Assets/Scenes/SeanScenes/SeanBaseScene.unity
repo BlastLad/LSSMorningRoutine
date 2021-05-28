@@ -995,7 +995,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16928
+  m_Name: pb_Mesh16934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1457,7 +1457,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16948
+  m_Name: pb_Mesh16954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -66675,6 +66675,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feeebe02e91deb241ad4df5b84c91070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foot:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
   runSpeed: 6
   turnSpeed: 20
   mouseSensitivity: 3.5
@@ -66879,10 +66886,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sounds:
-  - name: Test
-    clip: {fileID: 0}
-    volume: 0
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: 9ff721814d3abfa44b9f5fef3e515c32, type: 3}
+    volume: 1
     pitch: 0
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1834483770
 Transform:
@@ -109526,7 +109534,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2420
+  m_Name: pb_Mesh16966
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
