@@ -71,6 +71,7 @@ public class ClothingCatalogData : MonoBehaviour
             currentOutfitNum = clothingItemsInCatalog[currentIndex].GetComponent<ClothingItem>().outfitNumber;
             //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
             isMoving = true;
+            AudioManager.instance.Play("Hanger");
             StartCoroutine(RotateMe(Vector3.up * -90, 0.8f));
 
         }
@@ -101,7 +102,7 @@ public class ClothingCatalogData : MonoBehaviour
             currentOutfitNum = clothingItemsInCatalog[currentIndex].GetComponent<ClothingItem>().outfitNumber;
             //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
             isMoving = true;
-
+            AudioManager.instance.PlaySoundIntervalToEnd(0, "Hanger");
 
             StartCoroutine(RotateMe(Vector3.up * 90, 0.8f));
 
@@ -131,7 +132,16 @@ public class ClothingCatalogData : MonoBehaviour
         }
 
 
+
         isMoving = false;
+        if (currentIndex == 0)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Beach");
+        if (currentIndex == 1)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Work");
+        if (currentIndex == 2)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Casual");
+        if (currentIndex == 3)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "School");
 
     }
 
@@ -151,6 +161,14 @@ public class ClothingCatalogData : MonoBehaviour
             }
 
             isMoving = false;
+            if (currentIndex == 0)
+                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Beach");
+            if (currentIndex == 1)
+                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Work");
+            if (currentIndex == 2)
+                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Casual");
+            if (currentIndex == 3)
+                AudioManager.instance.PlaySoundIntervalToEnd(0f, "School");
         }
     }
 
