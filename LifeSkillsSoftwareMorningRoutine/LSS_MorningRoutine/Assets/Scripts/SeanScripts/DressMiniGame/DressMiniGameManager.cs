@@ -10,9 +10,9 @@ public class DressMiniGameManager : MonoBehaviour
     [SerializeField]
     GameObject firstButton;
     [SerializeField]
-    GameObject[] DressSections;
+    ClothingCatalogData[] DressSections;
     [SerializeField]
-    public int desiredOutfitNum = 1;
+    public int desiredOutfitNum = 1;//0 Beach, 1 Work, 2 Casual, 3 School
 
 
     [SerializeField]
@@ -78,10 +78,108 @@ public class DressMiniGameManager : MonoBehaviour
             arrow.GetComponent<Button>().enabled = true;
         }
 
+    }
 
+    public void CompleteOutfit()
+    {
 
+        int[] outfitData = new int[3];
+        bool successfulOutfit = true;
 
+        foreach (ClothingCatalogData section in DressSections)
+        {
+            outfitData[section.GetCurrentSecionNum()] = section.GetCurrentOutfitNum();
+            Debug.Log(section.GetCurrentOutfitNum() + " " + section.name + outfitData[section.GetCurrentSecionNum()]);
+        }
 
+        Debug.Log(desiredOutfitNum);
 
+        if (desiredOutfitNum == 1)//work
+        {
+            for (int i = 0; i < outfitData.Length; i++)
+            {
+                Debug.Log(outfitData[i] + "hallo");
+                if (outfitData[i] != desiredOutfitNum)
+                {
+                    successfulOutfit = false;
+                }
+            }
+        }
+        else if (desiredOutfitNum == 0)//beach
+        {
+            for (int i = 0; i < outfitData.Length; i++)
+            {
+                if (i == 1)
+                {
+                    if (outfitData[i] == 1)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+                else if (i == 2)
+                {
+                    if (outfitData[i] == 1 || outfitData[i] == 2 || outfitData[i] == 3)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+            }
+        }
+        else if (desiredOutfitNum == 2)//casual
+        {
+            for (int i = 0; i < outfitData.Length; i++)
+            {
+                if (i == 1)//torso
+                {
+                    if (outfitData[1] == 1 || outfitData[1] == 0)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+                else if (i == 2)
+                {
+                    if (outfitData[2] == 1 || outfitData[2] == 0)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+            }
+        }
+        else if (desiredOutfitNum == 3)//school
+        {
+            for (int i = 0; i < outfitData.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (outfitData[0] == 0)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+                else if (i == 1)//torso
+                {
+                    if (outfitData[1] == 1 || outfitData[1] == 0)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+                else if (i == 2)
+                {
+                    if (outfitData[2] == 1 || outfitData[2] == 0)
+                    {
+                        successfulOutfit = false;
+                    }
+                }
+            }
+        }
+
+        if (successfulOutfit)
+        {
+            Debug.Log("YOU DRESSED CORRECTLY");
+        }
+        else
+        {
+            Debug.Log("YOU DID NOT DRESS CORRECTLY");
+        }
     }
 }
