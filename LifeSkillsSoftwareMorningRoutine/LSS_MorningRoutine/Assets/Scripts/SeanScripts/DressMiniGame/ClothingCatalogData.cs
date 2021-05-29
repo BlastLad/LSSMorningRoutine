@@ -21,10 +21,11 @@ public class ClothingCatalogData : MonoBehaviour
     int currentOutfitNum = 0;//0 beach, 1 work, 2 casual, 3 school
 
     bool isMoving = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -41,14 +42,13 @@ public class ClothingCatalogData : MonoBehaviour
             {
                 return;
             }
+            AudioManager.instance.Play("Hanger");
             currentIndex--;
             ProBuilderBlock.GetComponent<MeshRenderer>().material = itemsInCatalog[currentIndex];
             currentOutfitNum = clothingItemsInCatalog[currentIndex].GetComponent<ClothingItem>().outfitNumber;
             //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
             isMoving = true;
             StartCoroutine(RotateMe(Vector3.up * -90, 0.8f));
-               
-            
         }
     }
 
@@ -60,13 +60,16 @@ public class ClothingCatalogData : MonoBehaviour
             {
                 return;
             }
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Hanger");
             currentIndex++;
             ProBuilderBlock.GetComponent<MeshRenderer>().material = itemsInCatalog[currentIndex];
             currentOutfitNum = clothingItemsInCatalog[currentIndex].GetComponent<ClothingItem>().outfitNumber;
             //A way to ensure that the active outfit model appears on the player model correctly (example disable to 'carasol model' enable the current outfit on player
             isMoving = true;
             StartCoroutine(RotateMe(Vector3.up * 90, 0.8f));
-            
+
+
+
         }
     }
 
@@ -79,12 +82,19 @@ public class ClothingCatalogData : MonoBehaviour
         for (var t = 0f; t <= 1; t += Time.deltaTime / inTime)
         {
             transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
-            yield return null;
-
-            
+            yield return null;  
         }
+
         transform.rotation = toAngle;
         isMoving = false;
+        if (currentIndex == 0)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Beach");
+        if (currentIndex == 1)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Work");
+        if (currentIndex == 2)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Casual");
+        if (currentIndex == 3)
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "School");
 
     }
 

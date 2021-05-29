@@ -8,6 +8,12 @@ public class DressPlayerController : MonoBehaviour
 
     public PlayerControls dressCharacterControls;
 
+    public Sound Hanger;
+    public Sound Beach;
+    public Sound Casual;
+    public Sound School;
+    public Sound Work;
+    AudioSource audiosource;
 
     private void Awake()
     {
@@ -24,6 +30,7 @@ public class DressPlayerController : MonoBehaviour
     public void GoLeft()
     {
         DressMiniGameManager.instance.GoLeft();
+        
     }
 
     public void GoRight()
@@ -40,7 +47,7 @@ public class DressPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
