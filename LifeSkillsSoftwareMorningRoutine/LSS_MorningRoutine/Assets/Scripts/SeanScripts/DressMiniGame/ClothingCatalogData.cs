@@ -134,13 +134,13 @@ public class ClothingCatalogData : MonoBehaviour
 
 
         isMoving = false;
-        if (currentIndex == 0)
+        if (currentOutfitNum == 0)
             AudioManager.instance.PlaySoundIntervalToEnd(0f, "Beach");
-        if (currentIndex == 1)
+        if (currentOutfitNum == 1)
             AudioManager.instance.PlaySoundIntervalToEnd(0f, "Work");
-        if (currentIndex == 2)
+        if (currentOutfitNum == 2)
             AudioManager.instance.PlaySoundIntervalToEnd(0f, "Casual");
-        if (currentIndex == 3)
+        if (currentOutfitNum == 3)
             AudioManager.instance.PlaySoundIntervalToEnd(0f, "School");
 
     }
@@ -161,14 +161,7 @@ public class ClothingCatalogData : MonoBehaviour
             }
 
             isMoving = false;
-            if (currentIndex == 0)
-                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Beach");
-            if (currentIndex == 1)
-                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Work");
-            if (currentIndex == 2)
-                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Casual");
-            if (currentIndex == 3)
-                AudioManager.instance.PlaySoundIntervalToEnd(0f, "School");
+            
         }
     }
 
