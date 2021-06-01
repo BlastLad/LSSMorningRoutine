@@ -14,6 +14,14 @@ public class DressMiniGameManager : MonoBehaviour
     [SerializeField]
     public int desiredOutfitNum = 1;//0 Beach, 1 Work, 2 Casual, 3 School
 
+    bool isBoy;
+    [SerializeField]
+    GameObject boyObject;
+    [SerializeField]
+    GameObject girlObject;
+    [SerializeField]
+    GameObject[] buttons;
+
 
     [SerializeField]
     GameObject currentSection;
@@ -22,6 +30,43 @@ public class DressMiniGameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        isBoy = PlayerStats.isBoy;
+        if (isBoy)
+        {
+            SetBoy();
+        }
+        else
+        {
+            SetGirl();
+        }
+    }
+
+    public void SetBoy()
+    {
+      
+        PlayerBodyData boyData = boyObject.GetComponent<PlayerBodyData>();
+        boyData.coreBodyModel.SetActive(true);
+        for (int i = 0; i < DressSections.Length; i++)
+        {
+            DressSections[i] = boyData.clothingSections[i].GetComponent<ClothingCatalogData>();
+            buttons[i].GetComponent<DressSectionData>().SetAttachedObject(boyData.clothingSections[i]);
+        }
+
+
+      
+    }
+
+    public void SetGirl()
+    {
+        PlayerBodyData girlData = girlObject.GetComponent<PlayerBodyData>();
+        girlData.coreBodyModel.SetActive(true);
+
+        for (int i = 0; i < DressSections.Length; i++)
+        {
+            DressSections[i] = girlData.clothingSections[i].GetComponent<ClothingCatalogData>();
+            buttons[i].GetComponent<DressSectionData>().SetAttachedObject(girlData.clothingSections[i]);
+
+        }
     }
     // Start is called before the first frame update
     void Start()

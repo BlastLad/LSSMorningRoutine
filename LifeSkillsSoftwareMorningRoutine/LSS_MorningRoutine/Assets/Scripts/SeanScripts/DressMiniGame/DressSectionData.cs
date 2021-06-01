@@ -27,6 +27,11 @@ public class DressSectionData : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     
 
+    public void SetAttachedObject(GameObject val)
+    {
+        attachedObjects = val;
+    }
+
     public void SelectSection()
     {
         //Make sure one section is correct
