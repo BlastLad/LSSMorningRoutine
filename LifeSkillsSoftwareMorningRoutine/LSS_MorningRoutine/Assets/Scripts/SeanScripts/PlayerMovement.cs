@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
     [SerializeField]
     private bool canMove = true;
+
+
+    InteractableObject currentInteractable;
     // Start is called before the first frame update
     void Awake()
     {
@@ -110,8 +113,20 @@ public class PlayerMovement : MonoBehaviour
         return characterControls.Base.CameraMovement.ReadValue<Vector2>();
     }
 
+
+    public void SetCurrentInteractable(InteractableObject value)
+    {
+        currentInteractable = value;
+    }
+
     public void InteractFunction()
     {
+
+        if (currentInteractable != null)
+        {
+            currentInteractable.moveScene();
+        }
+
         Debug.Log("Interact Function Called");
     }
 
