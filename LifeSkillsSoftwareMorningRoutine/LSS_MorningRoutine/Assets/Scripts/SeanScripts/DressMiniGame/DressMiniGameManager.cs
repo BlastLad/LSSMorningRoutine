@@ -27,6 +27,9 @@ public class DressMiniGameManager : MonoBehaviour
     GameObject currentSection;
     [SerializeField]
     GameObject[] currentArrows;
+
+    [SerializeField]
+    Text outFitText;
     private void Awake()
     {
         instance = this;
@@ -39,6 +42,33 @@ public class DressMiniGameManager : MonoBehaviour
         {
             SetGirl();
         }
+
+
+        outFitText.text = DetermineOutFit();
+    }
+
+    public string DetermineOutFit()
+    {
+        string outFitname = "null";
+
+        if (desiredOutfitNum == 0)
+        {
+            outFitname = "Beach";
+        }
+        else if (desiredOutfitNum == 1)
+        {
+            outFitname = "Work";
+        }
+        else if (desiredOutfitNum == 2)
+        {
+            outFitname = "Casual";
+        }
+        else if (desiredOutfitNum == 3)
+        {
+            outFitname = "School";
+        }
+
+        return outFitname;
     }
 
     public void SetBoy()
