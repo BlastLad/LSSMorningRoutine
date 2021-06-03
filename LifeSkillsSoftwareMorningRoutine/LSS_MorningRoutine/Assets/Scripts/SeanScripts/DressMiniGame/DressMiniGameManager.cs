@@ -30,6 +30,7 @@ public class DressMiniGameManager : MonoBehaviour
 
     [SerializeField]
     Text outFitText;
+    public Sound Fail;
     private void Awake()
     {
         instance = this;
@@ -143,6 +144,7 @@ public class DressMiniGameManager : MonoBehaviour
         currentArrows = arrows;
 
         currentSection.SetActive(true);
+        AudioManager.instance.Play("UI Click 1");
 
 
 
@@ -177,6 +179,7 @@ public class DressMiniGameManager : MonoBehaviour
                 if (outfitData[i] != desiredOutfitNum)
                 {
                     successfulOutfit = false;
+                    AudioManager.instance.Play("Fail");
                 }
             }
         }
@@ -186,16 +189,18 @@ public class DressMiniGameManager : MonoBehaviour
             {
                 if (i == 1)
                 {
-                    if (outfitData[i] == 1)
+                    if (outfitData[i] != 0)
                     {
                         successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
                     }
                 }
                 else if (i == 2)
                 {
-                    if (outfitData[i] == 1 || outfitData[i] == 2 || outfitData[i] == 3)
+                    if (outfitData[i] != 0)
                     {
                         successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
                     }
                 }
             }
@@ -204,16 +209,25 @@ public class DressMiniGameManager : MonoBehaviour
         {
             for (int i = 0; i < outfitData.Length; i++)
             {
-                if (i == 1)//torso
+                if (i==0)//head
                 {
-                    if (outfitData[1] == 1 || outfitData[1] == 0)
+                    if(outfitData[0] != 2)
                     {
                         successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
+                    }
+                }
+                else if (i == 1)//torso
+                {
+                    if (outfitData[1] != 2)
+                    {
+                        successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
                     }
                 }
                 else if (i == 2)
                 {
-                    if (outfitData[2] == 1 || outfitData[2] == 0)
+                    if (outfitData[2] != 2)
                     {
                         successfulOutfit = false;
                     }
@@ -226,23 +240,26 @@ public class DressMiniGameManager : MonoBehaviour
             {
                 if (i == 0)
                 {
-                    if (outfitData[0] == 0)
+                    if (outfitData[0] != 3)
                     {
                         successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
                     }
                 }
                 else if (i == 1)//torso
                 {
-                    if (outfitData[1] == 1 || outfitData[1] == 0)
+                    if (outfitData[1] != 3)
                     {
                         successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
                     }
                 }
                 else if (i == 2)
                 {
-                    if (outfitData[2] == 1 || outfitData[2] == 0)
+                    if (outfitData[2] !=3)
                     {
                         successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
                     }
                 }
             }
@@ -251,6 +268,17 @@ public class DressMiniGameManager : MonoBehaviour
         if (successfulOutfit)
         {
             Debug.Log("YOU DRESSED CORRECTLY");
+
+            if(desiredOutfitNum == 0)
+                AudioManager.instance.Play("BeachWin");
+
+            else if (desiredOutfitNum == 1)
+                AudioManager.instance.Play("WorkWin");
+
+            else if (desiredOutfitNum == 2)
+                AudioManager.instance.Play("RainWin");
+
+            else AudioManager.instance.Play("SchoolWin");
         }
         else
         {
