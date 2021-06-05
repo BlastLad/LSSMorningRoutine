@@ -712,6 +712,162 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CuttingMicroGame"",
+            ""id"": ""28193d8b-967d-4b11-a786-74dc11a5c23b"",
+            ""actions"": [
+                {
+                    ""name"": ""CutForward"",
+                    ""type"": ""Button"",
+                    ""id"": ""85b920fa-9856-4ba0-8d89-6d446b531b83"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CutBackward"",
+                    ""type"": ""Button"",
+                    ""id"": ""11b6fdff-6f4e-48cd-90ed-27667d6c6a6c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fdfed386-4940-491f-b1f9-c91303cd59c8"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""735c77cc-3dca-4e4c-a01e-1d33058c5c68"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbddfbce-d320-43d5-b5ed-665facaa8aa7"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99241a6b-7164-4094-a3fb-4fa6e663f7ef"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63c56bf9-f0d8-481d-adb0-323800c2c3f3"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a9e59fc-df58-475a-8b6c-15cfb3cc58bf"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9eccc4b7-3422-4e26-88e0-45b0320f5df2"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa5900bf-4a67-429f-b1c3-64eb098576bb"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""79dd4e83-a0b1-4f65-af5c-c9dfeeee2c51"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c55806b9-3cee-4003-b606-e5babb1311b9"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da1ae197-00c3-4868-b06b-522b88f330e2"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea655e5c-fa54-4f76-918f-bceaa35a71ca"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""CutBackward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -755,6 +911,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_DressMinigame_Navigate = m_DressMinigame.FindAction("Navigate", throwIfNotFound: true);
         m_DressMinigame_MoveLeft = m_DressMinigame.FindAction("MoveLeft", throwIfNotFound: true);
         m_DressMinigame_MoveRight = m_DressMinigame.FindAction("MoveRight", throwIfNotFound: true);
+        // CuttingMicroGame
+        m_CuttingMicroGame = asset.FindActionMap("CuttingMicroGame", throwIfNotFound: true);
+        m_CuttingMicroGame_CutForward = m_CuttingMicroGame.FindAction("CutForward", throwIfNotFound: true);
+        m_CuttingMicroGame_CutBackward = m_CuttingMicroGame.FindAction("CutBackward", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -906,6 +1066,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public DressMinigameActions @DressMinigame => new DressMinigameActions(this);
+
+    // CuttingMicroGame
+    private readonly InputActionMap m_CuttingMicroGame;
+    private ICuttingMicroGameActions m_CuttingMicroGameActionsCallbackInterface;
+    private readonly InputAction m_CuttingMicroGame_CutForward;
+    private readonly InputAction m_CuttingMicroGame_CutBackward;
+    public struct CuttingMicroGameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CuttingMicroGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CutForward => m_Wrapper.m_CuttingMicroGame_CutForward;
+        public InputAction @CutBackward => m_Wrapper.m_CuttingMicroGame_CutBackward;
+        public InputActionMap Get() { return m_Wrapper.m_CuttingMicroGame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CuttingMicroGameActions set) { return set.Get(); }
+        public void SetCallbacks(ICuttingMicroGameActions instance)
+        {
+            if (m_Wrapper.m_CuttingMicroGameActionsCallbackInterface != null)
+            {
+                @CutForward.started -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutForward;
+                @CutForward.performed -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutForward;
+                @CutForward.canceled -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutForward;
+                @CutBackward.started -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutBackward;
+                @CutBackward.performed -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutBackward;
+                @CutBackward.canceled -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutBackward;
+            }
+            m_Wrapper.m_CuttingMicroGameActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @CutForward.started += instance.OnCutForward;
+                @CutForward.performed += instance.OnCutForward;
+                @CutForward.canceled += instance.OnCutForward;
+                @CutBackward.started += instance.OnCutBackward;
+                @CutBackward.performed += instance.OnCutBackward;
+                @CutBackward.canceled += instance.OnCutBackward;
+            }
+        }
+    }
+    public CuttingMicroGameActions @CuttingMicroGame => new CuttingMicroGameActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -936,5 +1137,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigate(InputAction.CallbackContext context);
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnMoveRight(InputAction.CallbackContext context);
+    }
+    public interface ICuttingMicroGameActions
+    {
+        void OnCutForward(InputAction.CallbackContext context);
+        void OnCutBackward(InputAction.CallbackContext context);
     }
 }
