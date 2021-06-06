@@ -15,6 +15,9 @@ public class KnifeSkills : MonoBehaviour
     Transform nextPoint;
 
     [SerializeField]
+    bool frontCam = true;
+
+    [SerializeField]
     Transform nextCutPosition;//TEMPORARY WILL BE ACTUALLY BE DATA READ IN FROM OBJECT
 
 
@@ -30,6 +33,11 @@ public class KnifeSkills : MonoBehaviour
 
     PlayerControls knifeControls;
 
+
+    public void SetFrontCam(bool val)
+    {
+        frontCam = val;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -80,19 +88,23 @@ public class KnifeSkills : MonoBehaviour
         knifeControls = new PlayerControls();//might change 
 
 
-        knifeControls.CuttingMicroGame.CutForward.started += ctx => EnableCuttingForward();
-        knifeControls.CuttingMicroGame.CutForward.canceled += ctx => DisableCuttingForward();
-        knifeControls.CuttingMicroGame.CutBackward.started += ctx => EnableCuttingBackward();
-        knifeControls.CuttingMicroGame.CutBackward.canceled += ctx => DisableCuttingBackward();
+        knifeControls.CuttingMicroGame.CutForward.started += ctx => EnableCuttingForward(true);
+        knifeControls.CuttingMicroGame.CutLeft.started += ctx => EnableCuttingForward(false);
+        knifeControls.CuttingMicroGame.CutLeft.canceled += ctx => DisableCuttingForward(false);
+        knifeControls.CuttingMicroGame.CutForward.canceled += ctx => DisableCuttingForward(true);
+        knifeControls.CuttingMicroGame.CutBackward.started += ctx => EnableCuttingBackward(true);
+        knifeControls.CuttingMicroGame.CutRight.started += ctx => EnableCuttingBackward(false);
+        knifeControls.CuttingMicroGame.CutBackward.canceled += ctx => DisableCuttingBackward(true);
+        knifeControls.CuttingMicroGame.CutRight.canceled += ctx => DisableCuttingBackward(false);
 
         nextPoint = Point1;//One Closest to player view
 
     }
 
-    void EnableCuttingForward()
+    void EnableCuttingForward(bool isFront)
     {
 
-        if (nextPoint == Point2)
+        if (nextPoint == Point2 && isFront == frontCam)
         {
             isMoving = true;
             signSentinel = 1;
@@ -102,17 +114,19 @@ public class KnifeSkills : MonoBehaviour
   
     }
 
-    void DisableCuttingForward()
+    void DisableCuttingForward(bool isFront)
     {
-        isMoving = false;
-        Debug.Log("YOU HAVE STOPPED CUTTING forward");
-
+        if (nextPoint == Point2 && isFront == frontCam)
+        {
+            isMoving = false;
+            Debug.Log("YOU HAVE STOPPED CUTTING forward");
+        }
     }
 
 
-    void EnableCuttingBackward()
+    void EnableCuttingBackward(bool isFront)
     {
-        if (nextPoint == Point1)
+        if (nextPoint == Point1 && isFront == frontCam)
         {
             isMoving = true;
             signSentinel = -1;
@@ -121,14 +135,17 @@ public class KnifeSkills : MonoBehaviour
 
     }
 
-    void DisableCuttingBackward()
+    void DisableCuttingBackward(bool isFront)
     {
-        isMoving = false;
-        Debug.Log("YOU HAVE STOPPED CUTTING BACK");
+        if (nextPoint == Point1 && isFront == frontCam)
+        {
+            isMoving = false;
+            Debug.Log("YOU HAVE STOPPED CUTTING BACK");
+        }
     }
 
 
-    public Transform ChangePoint()
+    public Transform ChangePoint(GameObject foodObject)
     {
 
         if (isOnGround)
@@ -137,9 +154,21 @@ public class KnifeSkills : MonoBehaviour
             isOnGround = false;
             isMoving = false;
             transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.position = nextCutPosition.position;
-            nextPoint = Point1;
-            return nextPoint; 
+            Transform nextP = foodObject.GetComponent<FoodObjectData>().NextCut();
+
+            if (nextP == null)
+            {
+                Debug.Log("MICROGAME FINISHED");
+                //finishMinigame
+            }
+            else
+            {
+                transform.position = nextP.position;
+                nextPoint = Point1;
+                return nextPoint;
+            }
+
+       
         }
 
 
@@ -155,6 +184,11 @@ public class KnifeSkills : MonoBehaviour
 
         
 
+        return nextPoint;
+    }
+
+    public Transform getCurrentPoint()
+    {
         return nextPoint;
     }
 

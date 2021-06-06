@@ -732,6 +732,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""CutLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""6f5b2e29-2055-47dc-8bdd-f82025c4737f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CutRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""f22ca751-c720-4fdb-b318-79beba63601c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -866,6 +882,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""CutBackward"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e3a6c00-38c4-4471-b9c8-9ac4274aeaa2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f1bf000-5821-4a62-90f1-1934ab5c91ef"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89567ed5-8313-412c-8738-40016a756b19"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""292a85fa-d62f-4ff1-82e6-2d6ef0a9ff38"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CutRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -915,6 +975,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_CuttingMicroGame = asset.FindActionMap("CuttingMicroGame", throwIfNotFound: true);
         m_CuttingMicroGame_CutForward = m_CuttingMicroGame.FindAction("CutForward", throwIfNotFound: true);
         m_CuttingMicroGame_CutBackward = m_CuttingMicroGame.FindAction("CutBackward", throwIfNotFound: true);
+        m_CuttingMicroGame_CutLeft = m_CuttingMicroGame.FindAction("CutLeft", throwIfNotFound: true);
+        m_CuttingMicroGame_CutRight = m_CuttingMicroGame.FindAction("CutRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1072,12 +1134,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private ICuttingMicroGameActions m_CuttingMicroGameActionsCallbackInterface;
     private readonly InputAction m_CuttingMicroGame_CutForward;
     private readonly InputAction m_CuttingMicroGame_CutBackward;
+    private readonly InputAction m_CuttingMicroGame_CutLeft;
+    private readonly InputAction m_CuttingMicroGame_CutRight;
     public struct CuttingMicroGameActions
     {
         private @PlayerControls m_Wrapper;
         public CuttingMicroGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @CutForward => m_Wrapper.m_CuttingMicroGame_CutForward;
         public InputAction @CutBackward => m_Wrapper.m_CuttingMicroGame_CutBackward;
+        public InputAction @CutLeft => m_Wrapper.m_CuttingMicroGame_CutLeft;
+        public InputAction @CutRight => m_Wrapper.m_CuttingMicroGame_CutRight;
         public InputActionMap Get() { return m_Wrapper.m_CuttingMicroGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1093,6 +1159,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @CutBackward.started -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutBackward;
                 @CutBackward.performed -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutBackward;
                 @CutBackward.canceled -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutBackward;
+                @CutLeft.started -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutLeft;
+                @CutLeft.performed -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutLeft;
+                @CutLeft.canceled -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutLeft;
+                @CutRight.started -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutRight;
+                @CutRight.performed -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutRight;
+                @CutRight.canceled -= m_Wrapper.m_CuttingMicroGameActionsCallbackInterface.OnCutRight;
             }
             m_Wrapper.m_CuttingMicroGameActionsCallbackInterface = instance;
             if (instance != null)
@@ -1103,6 +1175,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @CutBackward.started += instance.OnCutBackward;
                 @CutBackward.performed += instance.OnCutBackward;
                 @CutBackward.canceled += instance.OnCutBackward;
+                @CutLeft.started += instance.OnCutLeft;
+                @CutLeft.performed += instance.OnCutLeft;
+                @CutLeft.canceled += instance.OnCutLeft;
+                @CutRight.started += instance.OnCutRight;
+                @CutRight.performed += instance.OnCutRight;
+                @CutRight.canceled += instance.OnCutRight;
             }
         }
     }
@@ -1142,5 +1220,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnCutForward(InputAction.CallbackContext context);
         void OnCutBackward(InputAction.CallbackContext context);
+        void OnCutLeft(InputAction.CallbackContext context);
+        void OnCutRight(InputAction.CallbackContext context);
     }
 }
