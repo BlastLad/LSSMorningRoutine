@@ -1003,6 +1003,55 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "HeatMicroGame",
+            "id": "91c9c0a9-86cc-43d4-afbf-e494cd8d4557",
+            "actions": [
+                {
+                    "name": "HeatUp",
+                    "type": "Button",
+                    "id": "71dec3f6-5635-4cf3-879a-2468908d63a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "09643507-b34e-49bd-ad7c-2f875ed04868",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "HeatUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41c5b7ff-774b-425e-a1a9-1d3671c66302",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "HeatUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98cf0014-5eec-488c-a948-0d5f2ac87452",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "HeatUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

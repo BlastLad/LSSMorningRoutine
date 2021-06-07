@@ -1016,6 +1016,55 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""HeatMicroGame"",
+            ""id"": ""91c9c0a9-86cc-43d4-afbf-e494cd8d4557"",
+            ""actions"": [
+                {
+                    ""name"": ""HeatUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""71dec3f6-5635-4cf3-879a-2468908d63a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""09643507-b34e-49bd-ad7c-2f875ed04868"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""HeatUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41c5b7ff-774b-425e-a1a9-1d3671c66302"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""HeatUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98cf0014-5eec-488c-a948-0d5f2ac87452"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""HeatUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1065,6 +1114,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_CuttingMicroGame_CutBackward = m_CuttingMicroGame.FindAction("CutBackward", throwIfNotFound: true);
         m_CuttingMicroGame_CutLeft = m_CuttingMicroGame.FindAction("CutLeft", throwIfNotFound: true);
         m_CuttingMicroGame_CutRight = m_CuttingMicroGame.FindAction("CutRight", throwIfNotFound: true);
+        // HeatMicroGame
+        m_HeatMicroGame = asset.FindActionMap("HeatMicroGame", throwIfNotFound: true);
+        m_HeatMicroGame_HeatUp = m_HeatMicroGame.FindAction("HeatUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1273,6 +1325,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public CuttingMicroGameActions @CuttingMicroGame => new CuttingMicroGameActions(this);
+
+    // HeatMicroGame
+    private readonly InputActionMap m_HeatMicroGame;
+    private IHeatMicroGameActions m_HeatMicroGameActionsCallbackInterface;
+    private readonly InputAction m_HeatMicroGame_HeatUp;
+    public struct HeatMicroGameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public HeatMicroGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @HeatUp => m_Wrapper.m_HeatMicroGame_HeatUp;
+        public InputActionMap Get() { return m_Wrapper.m_HeatMicroGame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(HeatMicroGameActions set) { return set.Get(); }
+        public void SetCallbacks(IHeatMicroGameActions instance)
+        {
+            if (m_Wrapper.m_HeatMicroGameActionsCallbackInterface != null)
+            {
+                @HeatUp.started -= m_Wrapper.m_HeatMicroGameActionsCallbackInterface.OnHeatUp;
+                @HeatUp.performed -= m_Wrapper.m_HeatMicroGameActionsCallbackInterface.OnHeatUp;
+                @HeatUp.canceled -= m_Wrapper.m_HeatMicroGameActionsCallbackInterface.OnHeatUp;
+            }
+            m_Wrapper.m_HeatMicroGameActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @HeatUp.started += instance.OnHeatUp;
+                @HeatUp.performed += instance.OnHeatUp;
+                @HeatUp.canceled += instance.OnHeatUp;
+            }
+        }
+    }
+    public HeatMicroGameActions @HeatMicroGame => new HeatMicroGameActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -1310,5 +1395,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnCutBackward(InputAction.CallbackContext context);
         void OnCutLeft(InputAction.CallbackContext context);
         void OnCutRight(InputAction.CallbackContext context);
+    }
+    public interface IHeatMicroGameActions
+    {
+        void OnHeatUp(InputAction.CallbackContext context);
     }
 }
