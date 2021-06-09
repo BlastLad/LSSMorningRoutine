@@ -37,6 +37,7 @@ public class NextPointController : MonoBehaviour
         if (other.gameObject.CompareTag(knifeString))
         {
             nextPoint(other.gameObject);
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
         }
     }
 
@@ -56,11 +57,13 @@ public class NextPointController : MonoBehaviour
         {
             frontArrow.SetActive(true);
             sideArrow.SetActive(false);
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
         }
         else
         {
             frontArrow.SetActive(false);
             sideArrow.SetActive(true);
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
         }
     }
 }

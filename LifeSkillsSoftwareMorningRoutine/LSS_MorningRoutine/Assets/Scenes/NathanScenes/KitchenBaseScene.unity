@@ -616,7 +616,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57532
+  m_Name: pb_Mesh22502
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1737,7 +1737,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429050781}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -4339,7 +4339,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645714131}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -4594,7 +4594,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh57566
+  m_Name: pb_Mesh22544
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8148,6 +8148,14 @@ MonoBehaviour:
   frontCam: 1
   nextCutPosition: {fileID: 1959862962}
   cutSpeed: 2
+  Cutting:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
 --- !u!65 &1398069399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30284,7 +30292,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739445332}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 254e96e917250ff48a3c58af2993dafa, type: 3}
@@ -30557,12 +30565,21 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    TimesPlayed: 0
     source: {fileID: 0}
   - name: Cutting
     clip: {fileID: 8300000, guid: 16dad35d7efc4fc438e2b0162af6ceb3, type: 3}
+    volume: 0.328
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Cut
+    clip: {fileID: 8300000, guid: 61f2cf1ddf885164fa759123ba4bfdbc, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    TimesPlayed: 0
     source: {fileID: 0}
 --- !u!4 &1834483770
 Transform:

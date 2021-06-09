@@ -14,7 +14,7 @@ public class Sound {
     [Range(0f, 12f)]
     public float pitch;
     public bool loop;
-
+    public int TimesPlayed = 0;
     
     public AudioSource source;
 }

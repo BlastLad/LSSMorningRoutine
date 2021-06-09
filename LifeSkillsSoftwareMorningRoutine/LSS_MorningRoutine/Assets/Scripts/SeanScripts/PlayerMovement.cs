@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public Sound foot;
 
-    AudioSource audiosource;
-
     public float runSpeed = 0;
     [SerializeField]
     private float turnSpeed = 0;

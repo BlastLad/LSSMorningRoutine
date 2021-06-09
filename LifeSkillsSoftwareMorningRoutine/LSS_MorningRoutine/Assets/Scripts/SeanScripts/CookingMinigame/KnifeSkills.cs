@@ -32,7 +32,7 @@ public class KnifeSkills : MonoBehaviour
     float rotationSpeed = 32f;// The knife's little cutting speed
 
     PlayerControls knifeControls;
-
+    public Sound Cutting;
 
     public void SetFrontCam(bool val)//Sets wether or not the camera is facing the front or side of the cuttable object
     {
@@ -41,8 +41,24 @@ public class KnifeSkills : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Cutting = AudioManager.instance.GetSound("Cutting");
+
         if (isMoving)//if the knife is cutting or not
         {
+            if(Cutting != null)
+            {
+                if (Cutting.source.isPlaying == false)
+                    if (AudioManager.instance.GetTimesPlayed("Cutting") >= 1)
+                    {
+                        AudioManager.instance.PlaySoundInterval(1.1f, 2f, "Cutting");
+                    }
+
+               else if(AudioManager.instance.GetTimesPlayed("Cutting") == 0)
+                {
+                    AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cutting");
+                }
+            }
+
             Vector3 position = transform.position;
 
             if (position.y <= bottomPoint.position.y)
@@ -80,6 +96,11 @@ public class KnifeSkills : MonoBehaviour
             transform.position = position;//The code that actually moves the knife
 
 
+        }
+        if (Cutting.source.isPlaying && !isMoving)
+        {
+            AudioManager.instance.StopSound("Cutting");
+            AudioManager.instance.setTimesPlayed(0, "Cutting");
         }
     }
 
@@ -155,7 +176,7 @@ public class KnifeSkills : MonoBehaviour
             isMoving = false;
             transform.rotation = new Quaternion(0, 0, 0, 0);
             Transform nextP = foodObject.GetComponent<FoodObjectData>().NextCut();
-
+            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
             if (nextP == null)
             {
                 Debug.Log("MICROGAME FINISHED");
@@ -166,10 +187,9 @@ public class KnifeSkills : MonoBehaviour
             {
                 transform.position = nextP.position;
                 nextPoint = Point1;
+                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
                 return nextPoint;
             }
-
-       
         }
 
 

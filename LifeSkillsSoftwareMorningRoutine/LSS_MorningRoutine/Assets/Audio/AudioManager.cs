@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour {
         else Debug.Log("Warning: Multible Instances!!!");
         foreach (Sound s in Sounds)
         {
-
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
@@ -29,29 +28,32 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public void Play (string name)
+    public void Play(string name)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         s.source.Play();
 
 
     }
-public void PlaySoundInterval(float from, float to, string name)
-{
+    public void PlaySoundInterval(float from, float to, string name)
+    {
         Debug.Log("Fired lol");
         Sound s = Array.Find(Sounds, sound => sound.name == name);
-    s.source.time = from;
-    s.source.Play();
-    s.source.SetScheduledEndTime(AudioSettings.dspTime + (to - from));
+        s.source.time = from;
+        s.source.Play();
+        s.source.SetScheduledEndTime(AudioSettings.dspTime + (to - from));
+        s.TimesPlayed++;
 
-}
+    }
     public void PlaySoundIntervalToEnd(float from, string name)
-    { 
+    {
+
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         s.source.time = from;
         s.source.Play();
         s.source.SetScheduledEndTime(AudioSettings.dspTime + (s.clip.length - from));
         Debug.Log("Fired lol" + s.source.isPlaying + " " + s.source.time);
+        s.TimesPlayed++;
     }
 
     public Sound GetSound(string name)
@@ -64,5 +66,27 @@ public void PlaySoundInterval(float from, float to, string name)
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         s.source.Stop();
+    }
+
+    public int GetTimesPlayed(string name)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == name);
+        return s.TimesPlayed;
+    }
+    
+    public void setTimesPlayed(int t, string name)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == name);
+
+        if (s.TimesPlayed == t)
+            return;
+        else if(s.TimesPlayed > t)
+        {
+            while (s.TimesPlayed > t) s.TimesPlayed--;
+        }
+        else if (s.TimesPlayed < t)
+        {
+            while (s.TimesPlayed < t) s.TimesPlayed++;
+        }    
     }
 }
