@@ -52,10 +52,11 @@ public class HeatBar : MonoBehaviour
     {
         if (hits >= misses)
         {
-            Debug.Log("CONGRATS YOU WIN");
+            CookingMinigameManager.instance.GetNextMicrogame();//probs gonna need to pass in data to the recipe or game manager
         }
         else
         {
+            CookingMinigameManager.instance.GetNextMicrogame();//same as above
             Debug.Log("WHOOPS YOU FAILED");
 
         }

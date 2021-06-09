@@ -11,7 +11,8 @@ public class DressSectionData : MonoBehaviour, ISelectHandler, IDeselectHandler
     GameObject attachedObjects;
     [SerializeField]
     GameObject[] AttachedArrows;
-    
+    [SerializeField]
+    Image[] BracketImages;
     
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,13 @@ public class DressSectionData : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void SelectSection()
     {
+        foreach (Image spriteThing in BracketImages)
+        {
+            spriteThing.enabled = true;
+        }
         //Make sure one section is correct
         DressMiniGameManager.instance.EnableASection(attachedObjects, AttachedArrows);
+    
         
     }
 
@@ -46,6 +52,11 @@ public class DressSectionData : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnDeselect(BaseEventData eventData)
     {
+        foreach (Image spriteThing in BracketImages)
+        {
+            spriteThing.enabled = false;
+        }
+
         attachedObjects.GetComponent<ClothingCatalogData>().EndEarly();
     }
 }

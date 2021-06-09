@@ -20,7 +20,7 @@ public class ClothingCatalogData : MonoBehaviour
     [SerializeField]
     int currentIndex = 0;
     [SerializeField]
-    int currentOutfitNum = 0;//0 beach, 1 work, 2 casual, 3 school
+    int currentOutfitNum = 0;//0 beach, 1 work, 2 Rain, 3 school
 
     bool isMoving = false;
 

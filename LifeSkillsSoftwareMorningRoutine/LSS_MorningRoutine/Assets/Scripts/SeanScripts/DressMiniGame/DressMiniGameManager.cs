@@ -62,7 +62,7 @@ public class DressMiniGameManager : MonoBehaviour
         }
         else if (desiredOutfitNum == 2)
         {
-            outFitname = "Casual";
+            outFitname = "Storm";
         }
         else if (desiredOutfitNum == 3)
         {
@@ -176,7 +176,7 @@ public class DressMiniGameManager : MonoBehaviour
             for (int i = 0; i < outfitData.Length; i++)
             {
                 Debug.Log(outfitData[i] + "hallo");
-                if (outfitData[i] != desiredOutfitNum)
+                if (outfitData[i] != desiredOutfitNum)//can only be work for all objects
                 {
                     successfulOutfit = false;
                     AudioManager.instance.Play("Fail");
@@ -187,15 +187,23 @@ public class DressMiniGameManager : MonoBehaviour
         {
             for (int i = 0; i < outfitData.Length; i++)
             {
-                if (i == 1)
+                if (i == 0)//head 
                 {
-                    if (outfitData[i] != 0)
+                    if (outfitData[i] == 2)//glasses, nothing, hat, and bow are all ok in addition to the normal beach attire
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");
                     }
                 }
-                else if (i == 2)
+                else if (i == 1)//body
+                {
+                    if (outfitData[i] != 0)//can only be beach body
+                    {
+                        successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
+                    }
+                }
+                else if (i == 2)//can only be beach bottoms
                 {
                     if (outfitData[i] != 0)
                     {
@@ -205,13 +213,13 @@ public class DressMiniGameManager : MonoBehaviour
                 }
             }
         }
-        else if (desiredOutfitNum == 2)//casual
+        else if (desiredOutfitNum == 2)//rain
         {
             for (int i = 0; i < outfitData.Length; i++)
             {
                 if (i==0)//head
                 {
-                    if(outfitData[0] != 2)
+                    if(outfitData[0] != 2)//can only be umbrella
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");
@@ -219,7 +227,7 @@ public class DressMiniGameManager : MonoBehaviour
                 }
                 else if (i == 1)//torso
                 {
-                    if (outfitData[1] != 2)
+                    if (outfitData[1] != 2)//can only be rain jacket
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");
@@ -227,7 +235,7 @@ public class DressMiniGameManager : MonoBehaviour
                 }
                 else if (i == 2)
                 {
-                    if (outfitData[2] != 2)
+                    if (outfitData[2] != 2 || outfitData[2] != 3)// can be rain bottoms or school bottoms
                     {
                         successfulOutfit = false;
                     }
@@ -240,7 +248,7 @@ public class DressMiniGameManager : MonoBehaviour
             {
                 if (i == 0)
                 {
-                    if (outfitData[0] != 3)
+                    if (outfitData[0] != 3 || outfitData[0] != 1)//can only be normal school or nothing/ glasses
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");
@@ -248,7 +256,7 @@ public class DressMiniGameManager : MonoBehaviour
                 }
                 else if (i == 1)//torso
                 {
-                    if (outfitData[1] != 3)
+                    if (outfitData[1] != 3)// can only be normal school (POSSIBLY RAIN IDK THO NEED FEED BACK!!!!)
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");
@@ -256,7 +264,7 @@ public class DressMiniGameManager : MonoBehaviour
                 }
                 else if (i == 2)
                 {
-                    if (outfitData[2] !=3)
+                    if (outfitData[2] !=3)// can only be normal school
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");

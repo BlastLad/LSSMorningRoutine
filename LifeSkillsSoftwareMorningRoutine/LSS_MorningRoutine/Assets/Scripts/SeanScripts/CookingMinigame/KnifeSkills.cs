@@ -159,6 +159,7 @@ public class KnifeSkills : MonoBehaviour
             if (nextP == null)
             {
                 Debug.Log("MICROGAME FINISHED");
+                CookingMinigameManager.instance.GetNextMicrogame();
                 //finishMinigame
             }
             else

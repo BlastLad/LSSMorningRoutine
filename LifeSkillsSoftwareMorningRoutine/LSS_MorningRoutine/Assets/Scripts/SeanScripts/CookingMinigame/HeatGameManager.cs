@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class HeatGameManager : MonoBehaviour
+using Cinemachine;
+public class HeatGameManager : MonoBehaviour, MicroGameInterface
 {
+    [SerializeField]
+    CinemachineVirtualCamera heatCam;
 
 
     PlayerControls heatControls;
@@ -15,6 +17,8 @@ public class HeatGameManager : MonoBehaviour
     float fillSpeed = 10;
     float drainSpeed = 10;
 
+    [SerializeField]
+    GameObject[] requiredGameObjects;
 
     private void Awake()
     {
@@ -28,7 +32,8 @@ public class HeatGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        heatCam.Priority = 11;
+        CookingMinigameManager.instance.SetCurrentCam(heatCam);
     }
 
     public HeatBar getHeatBar()
@@ -85,5 +90,21 @@ public class HeatGameManager : MonoBehaviour
     private void OnDisable()
     {
         heatControls.Disable();
+    }
+
+    public void ActivateGame()
+    {
+        foreach (GameObject preReq in requiredGameObjects)
+        {
+            preReq.SetActive(true);
+        }
+    }
+
+    public void DeactivateGame()
+    {
+        foreach (GameObject preReq in requiredGameObjects)
+        {
+            preReq.SetActive(false);
+        }
     }
 }

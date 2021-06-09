@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SeanScenes/SeanBaseScene.unity
     guid: a74b1fe556dd86745b7b073d39407dcf
   - enabled: 1
-    path: Assets/Scenes/SeanScenes/DressUpSceneBase3.unity
-    guid: 5507ff4acf0f6d5449018439427cad57
+    path: Assets/Scenes/SeanScenes/DressUpScene4.unity
+    guid: bd76785387c2e5e4e80bec4870502594
+  - enabled: 1
+    path: Assets/Scenes/SeanScenes/KitchenBaseScene.unity
+    guid: c1677b0ebf6b5814cb77c30ce7f7142c
   m_configObjects: {}
