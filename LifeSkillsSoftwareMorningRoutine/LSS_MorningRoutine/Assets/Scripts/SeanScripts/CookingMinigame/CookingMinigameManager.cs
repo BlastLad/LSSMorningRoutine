@@ -19,7 +19,6 @@ public class CookingMinigameManager : MonoBehaviour
     {
        
             instance = this;
-        Debug.Log("HI" + gameObject.name);
 
         GetNextMicrogame();//for now will be after the recipe is picked in the future
     }
@@ -28,7 +27,7 @@ public class CookingMinigameManager : MonoBehaviour
     {
         return currentRecipe;
     }
-    public void GetNextMicrogame()
+    public void GetNextMicrogame()//what loads the net game based on recipe or ends the game if no more microgames
     {
         currentCam.Priority = 5;
         currentRecipe.LoadNextMicrogame();
@@ -36,7 +35,7 @@ public class CookingMinigameManager : MonoBehaviour
     }
 
 
-    public void SetCurrentCam(CinemachineVirtualCamera newCam)
+    public void SetCurrentCam(CinemachineVirtualCamera newCam)//setting thr current camera
     {
         currentCam = newCam;
     }

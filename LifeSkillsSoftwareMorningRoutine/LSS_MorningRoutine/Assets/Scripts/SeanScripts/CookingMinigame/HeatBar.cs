@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class HeatBar : MonoBehaviour
 {
     [SerializeField]
-    Slider attachedSlider;
+    Slider attachedSlider;//The attached sldier graphic
     [SerializeField]
     float minVal = 0;
     float maxVal = 100;
 
     [SerializeField]
-    float minSweetSpot;
+    float minSweetSpot;// start of the sweet spot
     [SerializeField]
-    float maxSweetSpot;
+    float maxSweetSpot;// end of the sweet spot
 
 
-    public float hits = 0;
-    int hitGain = 9;
-    public float misses = 0;
-    int missGain = 5;
+    public float hits = 0;//How many successful 'points' the player has
+    int hitGain = 9; //The rate at which the player gains successful 'points'
+    public float misses = 0;//How many unsuccessful 'points' the player has
+    int missGain = 5;//The rate at which the player gains unsuccessful 'points'
     
 
     // Start is called before the first frame update
@@ -38,23 +38,23 @@ public class HeatBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (attachedSlider.value >= minSweetSpot && attachedSlider.value <= maxSweetSpot)
+      if (attachedSlider.value >= minSweetSpot && attachedSlider.value <= maxSweetSpot)//if the player is in the sweetspot
         {
             hits += hitGain * Time.deltaTime;
         } 
-      else
+      else// if the player is not in the sweet spot
         {
             misses += missGain * Time.deltaTime;
         }
     }
 
-    public void ComparehitAndMiss()
+    public void ComparehitAndMiss()//The end of the micro game
     {
-        if (hits >= misses)
+        if (hits >= misses)//if the player was successful in the game
         {
             CookingMinigameManager.instance.GetNextMicrogame();//probs gonna need to pass in data to the recipe or game manager
         }
-        else
+        else//if the player was not successful
         {
             CookingMinigameManager.instance.GetNextMicrogame();//same as above
             Debug.Log("WHOOPS YOU FAILED");

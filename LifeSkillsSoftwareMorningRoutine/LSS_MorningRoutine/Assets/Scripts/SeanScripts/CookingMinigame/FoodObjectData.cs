@@ -7,7 +7,7 @@ public class FoodObjectData : MonoBehaviour
     [SerializeField]
     string foodName;
     [SerializeField]
-    Transform[] CutPoints;
+    Transform[] CutPoints;//how many points the object has that needs to be cut
     int currentCutPointNum = 0;
     //Thing for recipe attached?
 
@@ -28,7 +28,7 @@ public class FoodObjectData : MonoBehaviour
         }
     }
 
-    public Transform NextCut()
+    public Transform NextCut()//what moves from one cut point to the other and determies the approtiate camera
     {
         currentCutPointNum++;
 

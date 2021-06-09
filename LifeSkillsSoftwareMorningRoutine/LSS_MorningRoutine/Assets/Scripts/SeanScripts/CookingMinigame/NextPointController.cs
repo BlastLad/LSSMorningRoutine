@@ -32,7 +32,7 @@ public class NextPointController : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//trigger collider for when the knife completes a cut
     {
         if (other.gameObject.CompareTag(knifeString))
         {
@@ -41,7 +41,7 @@ public class NextPointController : MonoBehaviour
     }
 
 
-    void nextPoint(GameObject other)
+    void nextPoint(GameObject other)// more logic for the changing of cuts
     {
         //comparer logic to see if on ground?
         float zVal = other.GetComponent<KnifeSkills>().ChangePoint(foodObject).position.z;
@@ -50,7 +50,7 @@ public class NextPointController : MonoBehaviour
         
     }
 
-    public void ChangeArrow(bool isFront)
+    public void ChangeArrow(bool isFront)//what chanegs the arrow from 1 to the next
     {
         if (isFront)
         {

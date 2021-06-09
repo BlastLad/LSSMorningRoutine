@@ -8,9 +8,9 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     public static CuttingMicroGameManager instance { get; private set;}
 
     [SerializeField]
-    CinemachineVirtualCamera frontCam;
+    CinemachineVirtualCamera frontCam;//front camera
     [SerializeField]
-    CinemachineVirtualCamera sideCam;
+    CinemachineVirtualCamera sideCam;// the side view of the camera
 
     [SerializeField]
     KnifeSkills playerKnife;
@@ -18,7 +18,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     NextPointController nextPointController;
 
     [SerializeField]
-    GameObject[] requiredGameObjects;
+    GameObject[] requiredGameObjects;//things necessary for the cutting micro game
 
 
     private void Awake()
@@ -30,7 +30,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     }
 
 
-    public void ChangeCamera(bool toFront)
+    public void ChangeCamera(bool toFront)//changes camera between the side and front view
     {
         if (toFront)
         {
@@ -63,7 +63,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
         
     }
 
-    public void ActivateGame()
+    public void ActivateGame()//What starts the micro game
     {
         foreach (GameObject preReq in requiredGameObjects)
         {
@@ -71,7 +71,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
         }
     }
 
-    public void DeactivateGame()
+    public void DeactivateGame()//what ends the microgame
     {
         foreach (GameObject preReq in requiredGameObjects)
         {

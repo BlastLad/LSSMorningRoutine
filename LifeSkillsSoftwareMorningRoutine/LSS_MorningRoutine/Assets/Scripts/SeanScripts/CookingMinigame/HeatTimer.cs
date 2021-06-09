@@ -20,13 +20,13 @@ public class HeatTimer : MonoBehaviour
 
         countDowntext.text = "" + baseTime;
 
-        BeginCountDown();
+        BeginCountDown();//What starts the timer's count down
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isCounting)
+        if (isCounting)//the count down for the timer logic
         {
             baseTime -= 1 * Time.deltaTime;
 
@@ -41,7 +41,7 @@ public class HeatTimer : MonoBehaviour
         }
     }
 
-    void EndMicroGame()
+    void EndMicroGame()//What ends the micro game
     {
         manager.getHeatBar().ComparehitAndMiss();
     }

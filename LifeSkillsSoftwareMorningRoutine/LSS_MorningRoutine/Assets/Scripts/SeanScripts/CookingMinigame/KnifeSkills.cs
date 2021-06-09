@@ -6,42 +6,42 @@ public class KnifeSkills : MonoBehaviour
 {
 
     [SerializeField]
-    Transform Point1;
+    Transform Point1;//Point where knife drection changes
     [SerializeField]
-    Transform Point2;
+    Transform Point2;//Point where knife direction changes
     [SerializeField]
-    Transform bottomPoint;
+    Transform bottomPoint;//When the Knife Touches the ground or cutting board
     [SerializeField]
-    Transform nextPoint;
+    Transform nextPoint;// The next cutting point Either Point1 or 2
 
     [SerializeField]
-    bool frontCam = true;
+    bool frontCam = true;//If the camera is in the front or side
 
     [SerializeField]
     Transform nextCutPosition;//TEMPORARY WILL BE ACTUALLY BE DATA READ IN FROM OBJECT
 
 
-    bool isMoving = false;
-    bool isOnGround = false;
+    bool isMoving = false;//Wether or not the knife is cutting
+    bool isOnGround = false;//Wether or not the knife is on the ground
     int signSentinel = 1;//for positive or negative movement on an axis 1 and -1 only
     [SerializeField]
-    float cutSpeed = 2f;
+    float cutSpeed = 2f;//The speed of the knife
 
-    float cutYMod = 0.1f;
+    float cutYMod = 0.1f;// The speed that the knife moves down
 
-    float rotationSpeed = 32f;
+    float rotationSpeed = 32f;// The knife's little cutting speed
 
     PlayerControls knifeControls;
 
 
-    public void SetFrontCam(bool val)
+    public void SetFrontCam(bool val)//Sets wether or not the camera is facing the front or side of the cuttable object
     {
         frontCam = val;
     }
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
+        if (isMoving)//if the knife is cutting or not
         {
             Vector3 position = transform.position;
 
@@ -53,13 +53,13 @@ public class KnifeSkills : MonoBehaviour
 
             position += new Vector3(0, -1 * (cutSpeed * cutYMod), signSentinel * cutSpeed) * Time.deltaTime;
 
-            if (position.z < Point1.position.z || position.z > Point2.position.z)
+            if (position.z < Point1.position.z || position.z > Point2.position.z)//code that keeps the knife in bounds
             {
                 return;
             }
 
 
-            if (nextPoint == Point2)
+            if (nextPoint == Point2)//code that rotates the knife
             {
                 var fromAngle = transform.rotation;
                 var toAngle = Quaternion.Euler(transform.eulerAngles + new Vector3(1, 0, 0) * rotationSpeed * Time.deltaTime);
@@ -68,7 +68,7 @@ public class KnifeSkills : MonoBehaviour
                 
 
             }
-            else if (nextPoint == Point1)
+            else if (nextPoint == Point1)//code that rotates the knife
             {
                 var fromAngle = transform.rotation;
                 var toAngle = Quaternion.Euler(transform.eulerAngles + new Vector3(-1, 0, 0) * rotationSpeed * Time.deltaTime);
@@ -77,9 +77,9 @@ public class KnifeSkills : MonoBehaviour
                 
             }
 
-            transform.position = position;
+            transform.position = position;//The code that actually moves the knife
 
-           
+
         }
     }
 
@@ -101,7 +101,7 @@ public class KnifeSkills : MonoBehaviour
 
     }
 
-    void EnableCuttingForward(bool isFront)
+    void EnableCuttingForward(bool isFront)//Code for the buttons
     {
 
         if (nextPoint == Point2 && isFront == frontCam)
@@ -114,7 +114,7 @@ public class KnifeSkills : MonoBehaviour
   
     }
 
-    void DisableCuttingForward(bool isFront)
+    void DisableCuttingForward(bool isFront)//Code for the buttons
     {
         if (nextPoint == Point2 && isFront == frontCam)
         {
@@ -124,7 +124,7 @@ public class KnifeSkills : MonoBehaviour
     }
 
 
-    void EnableCuttingBackward(bool isFront)
+    void EnableCuttingBackward(bool isFront)//Code for the buttons
     {
         if (nextPoint == Point1 && isFront == frontCam)
         {
@@ -135,7 +135,7 @@ public class KnifeSkills : MonoBehaviour
 
     }
 
-    void DisableCuttingBackward(bool isFront)
+    void DisableCuttingBackward(bool isFront)//Code for the buttons
     {
         if (nextPoint == Point1 && isFront == frontCam)
         {
@@ -145,10 +145,10 @@ public class KnifeSkills : MonoBehaviour
     }
 
 
-    public Transform ChangePoint(GameObject foodObject)
+    public Transform ChangePoint(GameObject foodObject)//Code that changes the next next cutting point for both the foward and backward motion AND the next cutting point
     {
 
-        if (isOnGround)
+        if (isOnGround)//if you have reached the bottom of the cutting board (This will also be where the object is cut off from the rest of the model
         {
             cutYMod = 0.1f;
             isOnGround = false;
@@ -159,7 +159,7 @@ public class KnifeSkills : MonoBehaviour
             if (nextP == null)
             {
                 Debug.Log("MICROGAME FINISHED");
-                CookingMinigameManager.instance.GetNextMicrogame();
+                CookingMinigameManager.instance.GetNextMicrogame();//IF THERE IS NO NEXT POINT THE MICRO GAME IS COMPLETE
                 //finishMinigame
             }
             else
@@ -173,7 +173,7 @@ public class KnifeSkills : MonoBehaviour
         }
 
 
-        if (nextPoint == Point2)
+        if (nextPoint == Point2)//changes between back and forth motion if not on the ground
         {
             nextPoint = Point1;
         }

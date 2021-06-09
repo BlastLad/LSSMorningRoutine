@@ -18,7 +18,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
     float drainSpeed = 10;
 
     [SerializeField]
-    GameObject[] requiredGameObjects;
+    GameObject[] requiredGameObjects;//Things needed for the micro game
 
     private void Awake()
     {
@@ -44,18 +44,18 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isAdding)
+        if (isAdding)//if the player has the button pressed
         {
             heatBar.ChangeValue(fillSpeed * Time.deltaTime);
         }
-        else
+        else// if the player does not have the button pressed
         {
             heatBar.ChangeValue(-drainSpeed * Time.deltaTime);
         }
     }
 
 
-    public void StartHeatUp()
+    public void StartHeatUp()//The button press
     {
 
         float waitVal = Random.Range(0, 0.7f);
@@ -65,7 +65,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
     }
 
 
-    private IEnumerator RandomDelay(float timeToWait)
+    private IEnumerator RandomDelay(float timeToWait)//Random delay for the button press
     {
         yield return new WaitForSeconds(timeToWait);
         Debug.Log("REACHED");
@@ -73,7 +73,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
 
     }
 
-    public void EndHeatUp()
+    public void EndHeatUp()//What ends the button press
     {
         StopAllCoroutines();
         isAdding = false;
@@ -92,7 +92,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
         heatControls.Disable();
     }
 
-    public void ActivateGame()
+    public void ActivateGame()//What starts the heat microgame
     {
         foreach (GameObject preReq in requiredGameObjects)
         {
@@ -100,7 +100,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
         }
     }
 
-    public void DeactivateGame()
+    public void DeactivateGame()//What ends the microgame
     {
         foreach (GameObject preReq in requiredGameObjects)
         {
