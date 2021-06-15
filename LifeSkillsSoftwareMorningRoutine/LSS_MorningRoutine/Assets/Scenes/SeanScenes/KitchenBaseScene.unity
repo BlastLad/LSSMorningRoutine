@@ -8148,6 +8148,14 @@ MonoBehaviour:
   frontCam: 1
   nextCutPosition: {fileID: 1959862962}
   cutSpeed: 2
+  Cutting:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
 --- !u!65 &1398069399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30557,12 +30565,21 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    TimesPlayed: 0
     source: {fileID: 0}
   - name: Cutting
     clip: {fileID: 8300000, guid: 16dad35d7efc4fc438e2b0162af6ceb3, type: 3}
-    volume: 1
+    volume: 0.348
     pitch: 1
     loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Cut
+    clip: {fileID: 8300000, guid: 61f2cf1ddf885164fa759123ba4bfdbc, type: 3}
+    volume: 0.508
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
     source: {fileID: 0}
 --- !u!4 &1834483770
 Transform:
