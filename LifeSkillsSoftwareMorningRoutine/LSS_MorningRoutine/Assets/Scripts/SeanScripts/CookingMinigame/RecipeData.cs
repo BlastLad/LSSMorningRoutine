@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class RecipeData : MonoBehaviour
+public class RecipeData : MonoBehaviour, MicroGameInterface
 {
     public string recipeName;
     [SerializeField]
@@ -42,5 +43,15 @@ public class RecipeData : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ActivateGame()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void DeactivateGame()
+    {
+        throw new System.NotImplementedException();
     }
 }
