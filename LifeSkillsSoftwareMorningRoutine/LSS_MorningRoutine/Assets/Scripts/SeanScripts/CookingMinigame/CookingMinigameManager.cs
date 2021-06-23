@@ -17,7 +17,6 @@ public class CookingMinigameManager : MonoBehaviour
 
     private void Awake()
     {
-       
             instance = this;
 
         GetNextMicrogame();//for now will be after the recipe is picked in the future
@@ -48,7 +47,9 @@ public class CookingMinigameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (AudioManager.instance.GetTimesPlayed("Music") == 0 ) AudioManager.instance.PlaySoundIntervalToEnd(0f, "Music");
+        if (AudioManager.instance.GetTimesPlayed("Music") > 0 && !AudioManager.instance.isPlaying("Music"))
+            AudioManager.instance.PlaySoundIntervalToEnd(5.968333f, "Music");
     }
 
  

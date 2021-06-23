@@ -21,7 +21,6 @@ public class HeatBar : MonoBehaviour
     int hitGain = 9; //The rate at which the player gains successful 'points'
     public float misses = 0;//How many unsuccessful 'points' the player has
     int missGain = 5;//The rate at which the player gains unsuccessful 'points'
-    
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +44,8 @@ public class HeatBar : MonoBehaviour
       else// if the player is not in the sweet spot
         {
             misses += missGain * Time.deltaTime;
+            if (attachedSlider.value < minSweetSpot) AudioManager.instance.LowerPitch("Music", .5f);
+            if (attachedSlider.value > maxSweetSpot) AudioManager.instance.RaisePitch("Music", .5f);
         }
     }
 

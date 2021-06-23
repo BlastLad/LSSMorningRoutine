@@ -89,4 +89,22 @@ public class AudioManager : MonoBehaviour {
             while (s.TimesPlayed < t) s.TimesPlayed++;
         }    
     }
+
+    public Boolean isPlaying(string name)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == name);
+        return s.source.isPlaying;
+    }
+
+    public void RaisePitch(string name, float amt)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == name);
+        s.pitch = s.pitch + amt;
+    }
+
+    public void LowerPitch(string name, float amt)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.name == name);
+        s.pitch = s.pitch - amt;
+    }
 }

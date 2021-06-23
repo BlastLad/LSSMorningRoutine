@@ -11,7 +11,7 @@ public class Sound {
 
     [Range(0f, 1f)]
     public float volume;
-    [Range(0f, 12f)]
+    [Range(-12f, 12f)]
     public float pitch;
     public bool loop;
     public int TimesPlayed = 0;
