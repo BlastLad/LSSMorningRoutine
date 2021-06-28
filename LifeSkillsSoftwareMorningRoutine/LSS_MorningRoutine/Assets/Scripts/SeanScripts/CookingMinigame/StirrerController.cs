@@ -56,6 +56,25 @@ public class StirrerController : MonoBehaviour
         if (isMixing)
         {
             mixPoints += 1 * Time.deltaTime;
+
+
+            if (AudioManager.instance.isPlaying("Mixing") == false)
+            {
+                if (AudioManager.instance.GetTimesPlayed("Mixing") == 0)
+                {
+                    AudioManager.instance.Play("Mixing");
+                }
+                else if (AudioManager.instance.GetTimesPlayed("Mixing") > 0)
+                {
+                    AudioManager.instance.PlaySoundIntervalToEnd(1.1f, "Mixing");
+                }
+            }
+        }
+
+        if (!isMixing)
+        {
+            AudioManager.instance.setTimesPlayed(0, "Mixing");
+            AudioManager.instance.StopSound("Mixing");
         }
 
         if (mixPoints >= requiredMixPoints)

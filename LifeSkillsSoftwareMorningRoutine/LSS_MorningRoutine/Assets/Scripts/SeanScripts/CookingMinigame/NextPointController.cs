@@ -14,6 +14,7 @@ public class NextPointController : MonoBehaviour
     [SerializeField]
     GameObject frontArrow;
 
+    int cuts = 0;
 
     public void setFoodObject(GameObject val)
     {
@@ -37,7 +38,9 @@ public class NextPointController : MonoBehaviour
         if (other.gameObject.CompareTag(knifeString))
         {
             nextPoint(other.gameObject);
-            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
+            if (cuts > 5) cuts = 0;
+            cuts++;
+            AudioManager.instance.Play("Portion " + cuts);
         }
     }
 
@@ -53,17 +56,17 @@ public class NextPointController : MonoBehaviour
 
     public void ChangeArrow(bool isFront)//what chanegs the arrow from 1 to the next
     {
+        int cuts = 0;
+
         if (isFront)
         {
             frontArrow.SetActive(true);
             sideArrow.SetActive(false);
-            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
         }
         else
         {
             frontArrow.SetActive(false);
             sideArrow.SetActive(true);
-            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
         }
     }
 }

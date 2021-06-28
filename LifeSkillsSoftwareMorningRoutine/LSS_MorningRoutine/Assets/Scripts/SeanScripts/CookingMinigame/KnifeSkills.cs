@@ -168,6 +168,7 @@ public class KnifeSkills : MonoBehaviour
 
     public Transform ChangePoint(GameObject foodObject)//Code that changes the next next cutting point for both the foward and backward motion AND the next cutting point
     {
+        int cuts = 0;
 
         if (isOnGround)//if you have reached the bottom of the cutting board (This will also be where the object is cut off from the rest of the model
         {
@@ -176,8 +177,9 @@ public class KnifeSkills : MonoBehaviour
             isMoving = false;
             transform.rotation = new Quaternion(0, 0, 0, 0);
             Transform nextP = foodObject.GetComponent<FoodObjectData>().NextCut();
- 
-            AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
+
+            
+
             if (nextP == null)
             {
                 Debug.Log("MICROGAME FINISHED");
@@ -193,7 +195,6 @@ public class KnifeSkills : MonoBehaviour
                 }
                 transform.position = nextP.position;
                 nextPoint = Point1;
-                AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
                 return nextPoint;
             }
         }

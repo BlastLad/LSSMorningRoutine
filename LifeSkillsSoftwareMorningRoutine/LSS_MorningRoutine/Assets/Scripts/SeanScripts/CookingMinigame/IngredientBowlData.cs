@@ -71,7 +71,7 @@ public class IngredientBowlData : MonoBehaviour
         if (completeCheckBox != null)
         {
             completeCheckBox.SetActive(true);
-            //crossoutSFX
+            if (AudioManager.instance.GetSound("Scratch") != null) AudioManager.instance.Play("Scratch");
         }
 
     }
@@ -79,6 +79,8 @@ public class IngredientBowlData : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = startingPos;
+       
+        if(AudioManager.instance.GetSound("Splish") != null) AudioManager.instance.Play("Splish");
     }
 
 }
