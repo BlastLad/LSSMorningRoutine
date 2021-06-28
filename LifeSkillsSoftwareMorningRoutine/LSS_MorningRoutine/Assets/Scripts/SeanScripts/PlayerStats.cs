@@ -19,4 +19,35 @@ public static class PlayerStats
             IsBoy = value;
         }
     }
+
+
+    public static bool IsDressed;
+
+    public static bool isDressed
+    {
+        get
+        {
+            return IsDressed;
+        }
+
+        set
+        {
+            IsDressed = value;
+        }
+    }
+
+    public static bool MadeBreakfast;
+
+    public static bool madeBreakfast
+    {
+        get
+        {
+            return MadeBreakfast;
+        }
+
+        set
+        {
+            MadeBreakfast = value;
+        }
+    }
 }

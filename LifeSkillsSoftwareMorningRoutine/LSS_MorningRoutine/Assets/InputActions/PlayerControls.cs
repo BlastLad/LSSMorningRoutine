@@ -1085,6 +1085,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Crack"",
+                    ""type"": ""Button"",
+                    ""id"": ""c4584cfa-6e27-4b13-a578-0b52c1ffa9f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -1450,6 +1458,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Spin"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c398508-d10d-4b7e-a2c7-1bde981f249f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Crack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""041a03cf-3474-48b9-96a8-a3f05b27f1fb"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Crack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8783c63-3dd4-427b-b45e-46c498c0be2a"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Crack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1508,6 +1549,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_MixingMicroGame = asset.FindActionMap("MixingMicroGame", throwIfNotFound: true);
         m_MixingMicroGame_Grab = m_MixingMicroGame.FindAction("Grab", throwIfNotFound: true);
         m_MixingMicroGame_Spin = m_MixingMicroGame.FindAction("Spin", throwIfNotFound: true);
+        m_MixingMicroGame_Crack = m_MixingMicroGame.FindAction("Crack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1755,12 +1797,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IMixingMicroGameActions m_MixingMicroGameActionsCallbackInterface;
     private readonly InputAction m_MixingMicroGame_Grab;
     private readonly InputAction m_MixingMicroGame_Spin;
+    private readonly InputAction m_MixingMicroGame_Crack;
     public struct MixingMicroGameActions
     {
         private @PlayerControls m_Wrapper;
         public MixingMicroGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Grab => m_Wrapper.m_MixingMicroGame_Grab;
         public InputAction @Spin => m_Wrapper.m_MixingMicroGame_Spin;
+        public InputAction @Crack => m_Wrapper.m_MixingMicroGame_Crack;
         public InputActionMap Get() { return m_Wrapper.m_MixingMicroGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1776,6 +1820,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Spin.started -= m_Wrapper.m_MixingMicroGameActionsCallbackInterface.OnSpin;
                 @Spin.performed -= m_Wrapper.m_MixingMicroGameActionsCallbackInterface.OnSpin;
                 @Spin.canceled -= m_Wrapper.m_MixingMicroGameActionsCallbackInterface.OnSpin;
+                @Crack.started -= m_Wrapper.m_MixingMicroGameActionsCallbackInterface.OnCrack;
+                @Crack.performed -= m_Wrapper.m_MixingMicroGameActionsCallbackInterface.OnCrack;
+                @Crack.canceled -= m_Wrapper.m_MixingMicroGameActionsCallbackInterface.OnCrack;
             }
             m_Wrapper.m_MixingMicroGameActionsCallbackInterface = instance;
             if (instance != null)
@@ -1786,6 +1833,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Spin.started += instance.OnSpin;
                 @Spin.performed += instance.OnSpin;
                 @Spin.canceled += instance.OnSpin;
+                @Crack.started += instance.OnCrack;
+                @Crack.performed += instance.OnCrack;
+                @Crack.canceled += instance.OnCrack;
             }
         }
     }
@@ -1836,5 +1886,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnGrab(InputAction.CallbackContext context);
         void OnSpin(InputAction.CallbackContext context);
+        void OnCrack(InputAction.CallbackContext context);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class DressMiniGameManager : MonoBehaviour
 {
     public static DressMiniGameManager instance { get; private set;}
@@ -287,10 +288,25 @@ public class DressMiniGameManager : MonoBehaviour
                 AudioManager.instance.Play("RainWin");
 
             else AudioManager.instance.Play("SchoolWin");
+            PlayerStats.isDressed = true;
+
         }
         else
         {
             Debug.Log("YOU DID NOT DRESS CORRECTLY");
+            PlayerStats.isDressed = false;
+
         }
+
+        StartCoroutine(ReturnToMain());
+
+    }
+
+
+    private IEnumerator ReturnToMain()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(0);
+
     }
 }

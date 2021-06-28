@@ -10,6 +10,8 @@ public class PlayerCore : MonoBehaviour
     [SerializeField]
     bool isBoy;
 
+    bool madeBreakfast;
+    bool isDressed;
 
 
     private void Awake()

@@ -176,6 +176,7 @@ public class KnifeSkills : MonoBehaviour
             isMoving = false;
             transform.rotation = new Quaternion(0, 0, 0, 0);
             Transform nextP = foodObject.GetComponent<FoodObjectData>().NextCut();
+ 
             AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");
             if (nextP == null)
             {
@@ -185,6 +186,11 @@ public class KnifeSkills : MonoBehaviour
             }
             else
             {
+                if (nextP.name == "Bread")
+                {
+                    foodObject.GetComponent<FoodObjectData>().orangeObject.SetActive(false);
+                    foodObject.GetComponent<FoodObjectData>().breadObject.SetActive(true);
+                }
                 transform.position = nextP.position;
                 nextPoint = Point1;
                 AudioManager.instance.PlaySoundIntervalToEnd(0f, "Cut");

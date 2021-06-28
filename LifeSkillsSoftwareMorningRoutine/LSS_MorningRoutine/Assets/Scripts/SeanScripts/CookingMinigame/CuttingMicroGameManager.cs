@@ -20,7 +20,8 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     [SerializeField]
     GameObject[] requiredGameObjects;//things necessary for the cutting micro game
 
-
+    GameObject[] objectsToCut;
+    public int currentCutIndex = 0;
     private void Awake()
     {
         if (instance == null)
@@ -63,12 +64,25 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
         
     }
 
+    public void ChangeToBread()
+    {
+        nextPointController.setFoodObject(objectsToCut[1]);
+        currentCutIndex = 1;
+    }
+
     public void ActivateGame()//What starts the micro game
     {
         foreach (GameObject preReq in requiredGameObjects)
         {
             preReq.SetActive(true);
         }
+
+
+        objectsToCut = CookingMinigameManager.instance.GetCurrentRecipe().GetCuttingMicroGameObjects();
+
+        objectsToCut[0].SetActive(true);
+
+        nextPointController.setFoodObject(objectsToCut[0]);
     }
 
     public void DeactivateGame()//what ends the microgame
@@ -76,6 +90,11 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
         foreach (GameObject preReq in requiredGameObjects)
         {
             preReq.SetActive(false);
+        }
+
+        foreach (GameObject item in objectsToCut)
+        {
+            item.SetActive(false);
         }
     }
 }

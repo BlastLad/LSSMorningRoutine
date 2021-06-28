@@ -293,6 +293,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
         {
             preReq.SetActive(false);
         }
+        mixText.SetActive(false);
     }
 
 

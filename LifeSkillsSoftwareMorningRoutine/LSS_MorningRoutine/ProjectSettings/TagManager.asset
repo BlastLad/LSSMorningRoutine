@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Knife
+  - Food
+  - Bowl
+  - Carton
+  - BowlBottom
+  - Egg
+  - Yolk
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Knife
-  - 
+  - Interactive
   - 
   - 
   - 

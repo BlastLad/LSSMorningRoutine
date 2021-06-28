@@ -9,8 +9,13 @@ public class FoodObjectData : MonoBehaviour
     [SerializeField]
     Transform[] CutPoints;//how many points the object has that needs to be cut
     int currentCutPointNum = 0;
+    [SerializeField]
+    Rigidbody[] pieces;
     //Thing for recipe attached?
-
+    [SerializeField]
+    public GameObject orangeObject;
+    [SerializeField]
+    public GameObject breadObject;
     public Transform[] GetCutPoints()
     {
         return CutPoints;
@@ -30,6 +35,10 @@ public class FoodObjectData : MonoBehaviour
 
     public Transform NextCut()//what moves from one cut point to the other and determies the approtiate camera
     {
+        pieces[currentCutPointNum].AddForce(new Vector3(-15,0,0));
+        pieces[currentCutPointNum].useGravity = true;
+        pieces[currentCutPointNum].gameObject.GetComponent<Collider>().enabled = true;
+
         currentCutPointNum++;
 
         if (currentCutPointNum < CutPoints.Length)
@@ -44,6 +53,8 @@ public class FoodObjectData : MonoBehaviour
                 CuttingMicroGameManager.instance.ChangeCamera(false);
 
             }
+
+
             return CutPoints[currentCutPointNum];
         }
         else

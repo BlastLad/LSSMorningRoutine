@@ -30,7 +30,7 @@ public class HeatBar : MonoBehaviour
         attachedSlider.value = minVal;
 
         minSweetSpot = maxVal * 0.6f;
-        maxSweetSpot = maxVal * 0.84f;
+        maxSweetSpot = maxVal * 0.86f;
 
     }
 
@@ -44,8 +44,8 @@ public class HeatBar : MonoBehaviour
       else// if the player is not in the sweet spot
         {
             misses += missGain * Time.deltaTime;
-            if (attachedSlider.value < minSweetSpot) AudioManager.instance.LowerPitch("Music", .5f);
-            if (attachedSlider.value > maxSweetSpot) AudioManager.instance.RaisePitch("Music", .5f);
+          //  if (attachedSlider.value < minSweetSpot) AudioManager.instance.LowerPitch("Music", .5f);
+            //if (attachedSlider.value > maxSweetSpot) AudioManager.instance.RaisePitch("Music", .5f);
         }
     }
 

@@ -98,10 +98,14 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
         {
             preReq.SetActive(true);
         }
+
+        CookingMinigameManager.instance.GetCurrentRecipe().GetHeatMicroGameObject().SetActive(true);
     }
 
     public void DeactivateGame()//What ends the microgame
     {
+        CookingMinigameManager.instance.GetCurrentRecipe().GetHeatMicroGameObject().SetActive(false);
+
         foreach (GameObject preReq in requiredGameObjects)
         {
             preReq.SetActive(false);

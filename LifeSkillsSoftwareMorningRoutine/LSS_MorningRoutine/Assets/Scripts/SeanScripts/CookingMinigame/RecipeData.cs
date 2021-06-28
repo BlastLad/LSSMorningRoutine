@@ -8,10 +8,24 @@ public class RecipeData : MonoBehaviour, MicroGameInterface
     public string recipeName;
     [SerializeField]
     GameObject[] AttachedMicroGameObjects;
-    public int currentIndex = -1; 
+    public int currentIndex = -1;
 
+    [SerializeField]
+    GameObject heatMicroGameObject;
+    [SerializeField]
+    GameObject[] cuttingMicroGameObjects;
     //other variables for things like models to use for certain minigames and that junk
 
+
+    public GameObject GetHeatMicroGameObject()
+    {
+        return heatMicroGameObject;
+    }
+
+    public GameObject[] GetCuttingMicroGameObjects()
+    {
+        return cuttingMicroGameObjects;
+    }
 
     public void LoadNextMicrogame()
     {
@@ -30,6 +44,8 @@ public class RecipeData : MonoBehaviour, MicroGameInterface
         else
         {
             Debug.Log("MINI GAME COMPLETE");//then call the manager
+
+            CookingMinigameManager.instance.ReturnToMain();
         }
     }
 
