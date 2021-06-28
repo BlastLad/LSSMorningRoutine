@@ -20,6 +20,18 @@ public class CookingMinigameManager : MonoBehaviour
     GameObject selectionText;
 
 
+    [SerializeField]
+    GameObject reportNoteBook;
+
+    [SerializeField]
+    Text[] gameText;
+    [SerializeField]
+    Text[] reportText;
+    [SerializeField]
+    public Text[] fillableField;
+
+    public int index = -1;
+
     private void Awake()
     {
             instance = this;
@@ -46,6 +58,7 @@ public class CookingMinigameManager : MonoBehaviour
     public void GetNextMicrogame()//what loads the net game based on recipe or ends the game if no more microgames
     {
         currentCam.Priority = 5;
+        index++;
         currentRecipe.LoadNextMicrogame();
         
     }
@@ -58,6 +71,16 @@ public class CookingMinigameManager : MonoBehaviour
         currentCam.Priority = 11;
     }
 
+
+    public void Report()
+    {
+        reportNoteBook.SetActive(true);
+        for (int i = 0; i < gameText.Length; i++)
+        {
+            gameText[i].text = currentRecipe.gamesName[i];
+            reportText[i].text = currentRecipe.reportText[i];
+        }
+    }
 
     public void ReturnToMain()
     {

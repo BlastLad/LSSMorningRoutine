@@ -183,6 +183,8 @@ public class KnifeSkills : MonoBehaviour
             if (nextP == null)
             {
                 Debug.Log("MICROGAME FINISHED");
+                CuttingMicroGameManager.instance.isCounting = false;
+                CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + CuttingMicroGameManager.instance.GetTimeSpentCutting().ToString("F2");
                 CookingMinigameManager.instance.GetNextMicrogame();//IF THERE IS NO NEXT POINT THE MICRO GAME IS COMPLETE
                 //finishMinigame
             }

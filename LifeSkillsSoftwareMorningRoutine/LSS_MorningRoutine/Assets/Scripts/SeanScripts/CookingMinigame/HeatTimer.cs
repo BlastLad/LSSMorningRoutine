@@ -30,7 +30,14 @@ public class HeatTimer : MonoBehaviour
         {
             baseTime -= 1 * Time.deltaTime;
 
-            countDowntext.text = "" + (int)baseTime;
+            if (baseTime < 10)
+            {
+                countDowntext.text = "0" + (int)baseTime;
+            }
+            else
+            {
+                countDowntext.text = "" + (int)baseTime;
+            }
 
             if (baseTime <= 0)
             {

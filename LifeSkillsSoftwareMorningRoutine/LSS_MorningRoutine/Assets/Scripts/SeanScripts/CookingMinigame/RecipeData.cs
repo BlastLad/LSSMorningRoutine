@@ -14,6 +14,13 @@ public class RecipeData : MonoBehaviour, MicroGameInterface
     GameObject heatMicroGameObject;
     [SerializeField]
     GameObject[] cuttingMicroGameObjects;
+
+    [SerializeField]
+    public string[] gamesName;
+    [SerializeField]
+    public string[] reportText;
+
+    public int recipeNum = 0;
     //other variables for things like models to use for certain minigames and that junk
 
 
@@ -45,7 +52,7 @@ public class RecipeData : MonoBehaviour, MicroGameInterface
         {
             Debug.Log("MINI GAME COMPLETE");//then call the manager
 
-            CookingMinigameManager.instance.ReturnToMain();
+            CookingMinigameManager.instance.Report();
         }
     }
 

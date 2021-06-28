@@ -22,6 +22,9 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
 
     GameObject[] objectsToCut;
     public int currentCutIndex = 0;
+
+    public bool isCounting = false;
+    float timeSpentCutting = 0;
     private void Awake()
     {
         if (instance == null)
@@ -61,7 +64,10 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     // Update is called once per frame
     void Update()
     {
-        
+        if (isCounting)//the count down for the timer logic
+        {
+            timeSpentCutting += 1 * Time.deltaTime;
+        }
     }
 
     public void ChangeToBread()
@@ -72,6 +78,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
 
     public void ActivateGame()//What starts the micro game
     {
+        isCounting = true;
         foreach (GameObject preReq in requiredGameObjects)
         {
             preReq.SetActive(true);
@@ -86,7 +93,8 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     }
 
     public void DeactivateGame()//what ends the microgame
-    {
+    {        
+
         foreach (GameObject preReq in requiredGameObjects)
         {
             preReq.SetActive(false);
@@ -96,5 +104,10 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
         {
             item.SetActive(false);
         }
+    }
+
+    public float GetTimeSpentCutting()
+    {
+        return timeSpentCutting;
     }
 }

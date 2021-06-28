@@ -63,6 +63,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
     {
         if (instance == null)
         {
+            targetedRecipe = CookingMinigameManager.instance.GetCurrentRecipe().recipeNum;
             instance = this;
 
             if (targetedRecipe == 0)
@@ -247,6 +248,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
         }
         else
         {
+            CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + (ingredientsAdded - correctIngredients);
             CookingMinigameManager.instance.GetNextMicrogame();//need victory screen
         }
     }
@@ -304,5 +306,15 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
             stirCam.Priority = 10;
             CookingMinigameManager.instance.SetCurrentCam(stirCam);    
 
+    }
+
+    public int GetIngredientsAdded()
+    {
+        return ingredientsAdded;
+    }
+
+    public int GetCorrectIngredients()
+    {
+        return correctIngredients;
     }
 }

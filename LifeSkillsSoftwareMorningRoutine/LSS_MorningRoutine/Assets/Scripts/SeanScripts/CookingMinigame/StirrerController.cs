@@ -86,6 +86,7 @@ public class StirrerController : MonoBehaviour
 
     public void CompleteMixingGame()
     {
+        CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + (MixingMicroGameController.instance.GetIngredientsAdded() - MixingMicroGameController.instance.GetCorrectIngredients());
         CookingMinigameManager.instance.GetNextMicrogame();//need victory screen
     }
 

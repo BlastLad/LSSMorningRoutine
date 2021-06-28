@@ -15,6 +15,8 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
     Text eggText;
     public int currentEggs;
 
+    int eggsSpawned;
+
     [SerializeField]
     Transform eggSpawnLocation;
     [SerializeField]
@@ -99,6 +101,15 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         if (currentEggs >= requiredEggs)
         {
             Debug.Log("Congratulationus");
+            if (eggsSpawned - requiredEggs < 0)
+            {
+                CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "0";
+
+            }
+            else
+            {
+                CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + (eggsSpawned - requiredEggs - 1);
+            }
             CookingMinigameManager.instance.GetNextMicrogame();
         }
     }
@@ -117,6 +128,7 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
 
     public void SpawnNewEgg()
     {
+        eggsSpawned++;
         GameObject newEgg = Instantiate(eggPreFab, eggSpawnLocation.position, Quaternion.identity, transform);
         currentEgg = newEgg.GetComponent<DragRigidbody>();
         crackImage.SetActive(false);

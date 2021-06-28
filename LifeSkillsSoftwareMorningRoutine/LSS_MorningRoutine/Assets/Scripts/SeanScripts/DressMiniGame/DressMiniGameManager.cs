@@ -45,6 +45,7 @@ public class DressMiniGameManager : MonoBehaviour
             SetGirl();
         }
 
+        desiredOutfitNum = Random.Range(0, 4);
 
         outFitText.text = DetermineOutFit();
     }
@@ -305,7 +306,7 @@ public class DressMiniGameManager : MonoBehaviour
 
     private IEnumerator ReturnToMain()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.6f);
         SceneManager.LoadScene(0);
 
     }

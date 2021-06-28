@@ -51,6 +51,8 @@ public class HeatBar : MonoBehaviour
 
     public void ComparehitAndMiss()//The end of the micro game
     {
+        float percent = (hits / (hits + misses)) * 100;
+        CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + percent.ToString("F2") + "%";
         if (hits >= misses)//if the player was successful in the game
         {
             CookingMinigameManager.instance.GetNextMicrogame();//probs gonna need to pass in data to the recipe or game manager
