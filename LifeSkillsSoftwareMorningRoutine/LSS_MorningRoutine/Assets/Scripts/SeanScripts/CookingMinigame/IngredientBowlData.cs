@@ -82,5 +82,4 @@ public class IngredientBowlData : MonoBehaviour
        
         if(AudioManager.instance.GetSound("Splish") != null) AudioManager.instance.Play("Splish");
     }
-
 }

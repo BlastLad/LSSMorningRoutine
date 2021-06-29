@@ -14,20 +14,30 @@ public class HeatTimer : MonoBehaviour
     [SerializeField]
     HeatGameManager manager;
 
+    public Sound Siz; 
     // Start is called before the first frame update
     void Start()
     {
 
         countDowntext.text = "" + baseTime;
-
+        Siz = AudioManager.instance.GetSound("Sizzle");
         BeginCountDown();//What starts the timer's count down
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isCounting)//the count down for the timer logic
+        if (isCounting) //the count down for the timer logic
         {
+
+            if (Siz != null)
+            {
+                if (Siz.source.isPlaying == false)
+                {
+                    AudioManager.instance.Play("Sizzle");
+                }
+            }
+           
             baseTime -= 1 * Time.deltaTime;
 
             if (baseTime < 10)
@@ -44,6 +54,7 @@ public class HeatTimer : MonoBehaviour
 
                 isCounting = false;
                 EndMicroGame();
+                AudioManager.instance.StopSound("Sizzle");
             }
         }
     }

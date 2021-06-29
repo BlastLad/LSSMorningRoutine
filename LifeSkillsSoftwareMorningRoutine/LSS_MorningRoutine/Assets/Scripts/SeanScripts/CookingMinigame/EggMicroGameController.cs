@@ -70,6 +70,7 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
     void CrackEgg()
     {
         currentEgg.CrackEgg();
+        AudioManager.instance.Play("Crack");
         
     }
 

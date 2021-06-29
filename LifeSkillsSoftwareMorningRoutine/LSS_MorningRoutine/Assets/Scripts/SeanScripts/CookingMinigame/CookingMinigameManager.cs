@@ -31,7 +31,6 @@ public class CookingMinigameManager : MonoBehaviour
     public Text[] fillableField;
 
     public int index = -1;
-
     private void Awake()
     {
             instance = this;
@@ -60,6 +59,7 @@ public class CookingMinigameManager : MonoBehaviour
         currentCam.Priority = 5;
         index++;
         currentRecipe.LoadNextMicrogame();
+        if(index > 0) AudioManager.instance.Play("Yay");
         
     }
 

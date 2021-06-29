@@ -43,6 +43,7 @@ public class PlayerMixingController : MonoBehaviour
                 mZCoord = Camera.main.WorldToScreenPoint(selectedObject.transform.position).z;
                 mOffset = selectedObject.transform.position - GetMouseWorldPos();
                 //Put things that happen when your grab an object here
+                AudioManager.instance.Play("Bowl");
             }
         }
     }
