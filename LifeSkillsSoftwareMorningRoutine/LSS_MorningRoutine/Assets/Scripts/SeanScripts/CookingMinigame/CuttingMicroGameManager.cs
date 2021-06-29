@@ -25,6 +25,9 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
 
     public bool isCounting = false;
     float timeSpentCutting = 0;
+
+    [SerializeField]
+    GameObject cuttingTutorial;
     private void Awake()
     {
         if (instance == null)
@@ -78,12 +81,21 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
 
     public void ActivateGame()//What starts the micro game
     {
-        isCounting = true;
+
+        cuttingTutorial.SetActive(true);
+
         foreach (GameObject preReq in requiredGameObjects)
         {
             preReq.SetActive(true);
         }
 
+
+        
+    }
+
+    public void ActivateFromButton()
+    {
+        isCounting = true;
 
         objectsToCut = CookingMinigameManager.instance.GetCurrentRecipe().GetCuttingMicroGameObjects();
 

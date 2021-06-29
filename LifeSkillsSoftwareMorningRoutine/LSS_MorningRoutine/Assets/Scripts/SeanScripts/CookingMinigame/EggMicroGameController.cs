@@ -34,6 +34,9 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
     [SerializeField]
     CinemachineVirtualCamera eggCam;
 
+    [SerializeField]
+    GameObject eggTutorial;
+
     private void Awake()
     {
         if (instance == null)
@@ -59,12 +62,18 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
 
     void HandleInputBegin()
     {
-        currentEgg.HandleInputBegin();
+        if (currentEgg != null)
+        {
+            currentEgg.HandleInputBegin();
+        }
     }
 
     void HandleInputEnd()
     {
-        currentEgg.HandleInputEnd();
+        if (currentEgg != null)
+        {
+            currentEgg.HandleInputEnd();
+        }
     }
 
     void CrackEgg()
@@ -81,6 +90,13 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         {
             preReq.SetActive(true);
         }
+
+        eggTutorial.SetActive(true);
+
+    }
+
+    public void StartFromButton()
+    {
         SpawnNewEgg();
     }
 

@@ -20,6 +20,9 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
     [SerializeField]
     GameObject[] requiredGameObjects;//Things needed for the micro game
 
+    [SerializeField]
+    GameObject heatTutorial;
+
     private void Awake()
     {
 
@@ -98,6 +101,14 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
         {
             preReq.SetActive(true);
         }
+
+        heatTutorial.SetActive(true);
+
+
+    }
+
+    public void StartGameFromButton()
+    {
 
         CookingMinigameManager.instance.GetCurrentRecipe().GetHeatMicroGameObject().SetActive(true);
     }

@@ -106,7 +106,15 @@ public class KnifeSkills : MonoBehaviour
 
     private void Awake()
     {
+
         knifeControls = new PlayerControls();//might change 
+
+
+    }
+
+    public void EnableFromButton()
+    {
+       
 
 
         knifeControls.CuttingMicroGame.CutForward.started += ctx => EnableCuttingForward(true);
@@ -119,7 +127,6 @@ public class KnifeSkills : MonoBehaviour
         knifeControls.CuttingMicroGame.CutRight.canceled += ctx => DisableCuttingBackward(false);
 
         nextPoint = Point1;//One Closest to player view
-
     }
 
     void EnableCuttingForward(bool isFront)//Code for the buttons

@@ -20,8 +20,6 @@ public class HeatTimer : MonoBehaviour
     {
 
         countDowntext.text = "" + baseTime;
-        Siz = AudioManager.instance.GetSound("Sizzle");
-        BeginCountDown();//What starts the timer's count down
     }
 
     // Update is called once per frame
@@ -63,8 +61,10 @@ public class HeatTimer : MonoBehaviour
     {
         manager.getHeatBar().ComparehitAndMiss();
     }
-    void BeginCountDown()
+    public void BeginCountDown()
     {
+        manager.getHeatBar().ResetBar();
+        Siz = AudioManager.instance.GetSound("Sizzle");       //What starts the timer's count down
         isCounting = true;
     }
 

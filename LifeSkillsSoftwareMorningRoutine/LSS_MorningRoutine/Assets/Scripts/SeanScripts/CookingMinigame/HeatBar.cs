@@ -70,4 +70,9 @@ public class HeatBar : MonoBehaviour
     {
         attachedSlider.value += val;
     }
+
+    public void ResetBar()
+    {
+        attachedSlider.value = 0;
+    }
 }

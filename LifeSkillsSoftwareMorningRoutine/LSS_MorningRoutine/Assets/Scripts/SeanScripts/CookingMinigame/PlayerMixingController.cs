@@ -23,11 +23,14 @@ public class PlayerMixingController : MonoBehaviour
         mixingControls = new PlayerControls();
 
 
+     
+    }
+
+    public void StartFromButton()
+    {
         mixingControls.MixingMicroGame.Grab.started += ctx => GrabObject();
         mixingControls.MixingMicroGame.Grab.canceled += ctx => DropObject();
     }
-
-
     public void GrabObject()
     {
 

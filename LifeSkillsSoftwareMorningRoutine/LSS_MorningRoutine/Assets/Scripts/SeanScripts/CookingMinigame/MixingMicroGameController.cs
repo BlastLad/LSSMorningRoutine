@@ -58,6 +58,8 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
     public CinemachineVirtualCamera placeCam;//front camera
     public CinemachineVirtualCamera stirCam;//front camera
 
+    [SerializeField]
+    GameObject mixTutorial;
 
     private void Awake()
     {
@@ -282,6 +284,8 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
 
     public void ActivateGame()
     {
+        mixTutorial.SetActive(true);
+
         CookingMinigameManager.instance.SetCurrentCam(placeCam);
         foreach (GameObject preReq in requiredGameObjects)
         {
