@@ -1480,6 +1480,63 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "BrushingTeethGame",
+            "id": "7759a182-ac8c-48ac-9f5e-814ae391851b",
+            "actions": [
+                {
+                    "name": "LeftMouse",
+                    "type": "Button",
+                    "id": "436ad169-96e4-43df-a36e-41d60ccb2410",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightMouse",
+                    "type": "Button",
+                    "id": "2fe7d937-7349-4100-88d2-23a7630f2208",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "223847ef-7059-4376-8327-3baab447a5cd",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "LeftMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f4b005e-08ab-4f85-b1f7-ae1342356e7e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "LeftMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "178c9e1f-fd5e-439a-901a-fe63d8d31bab",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "RightMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -1493,6 +1493,63 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BrushingTeethGame"",
+            ""id"": ""7759a182-ac8c-48ac-9f5e-814ae391851b"",
+            ""actions"": [
+                {
+                    ""name"": ""LeftMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""436ad169-96e4-43df-a36e-41d60ccb2410"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RightMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""2fe7d937-7349-4100-88d2-23a7630f2208"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""223847ef-7059-4376-8327-3baab447a5cd"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f4b005e-08ab-4f85-b1f7-ae1342356e7e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""178c9e1f-fd5e-439a-901a-fe63d8d31bab"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RightMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1550,6 +1607,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_MixingMicroGame_Grab = m_MixingMicroGame.FindAction("Grab", throwIfNotFound: true);
         m_MixingMicroGame_Spin = m_MixingMicroGame.FindAction("Spin", throwIfNotFound: true);
         m_MixingMicroGame_Crack = m_MixingMicroGame.FindAction("Crack", throwIfNotFound: true);
+        // BrushingTeethGame
+        m_BrushingTeethGame = asset.FindActionMap("BrushingTeethGame", throwIfNotFound: true);
+        m_BrushingTeethGame_LeftMouse = m_BrushingTeethGame.FindAction("LeftMouse", throwIfNotFound: true);
+        m_BrushingTeethGame_RightMouse = m_BrushingTeethGame.FindAction("RightMouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1840,6 +1901,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public MixingMicroGameActions @MixingMicroGame => new MixingMicroGameActions(this);
+
+    // BrushingTeethGame
+    private readonly InputActionMap m_BrushingTeethGame;
+    private IBrushingTeethGameActions m_BrushingTeethGameActionsCallbackInterface;
+    private readonly InputAction m_BrushingTeethGame_LeftMouse;
+    private readonly InputAction m_BrushingTeethGame_RightMouse;
+    public struct BrushingTeethGameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public BrushingTeethGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftMouse => m_Wrapper.m_BrushingTeethGame_LeftMouse;
+        public InputAction @RightMouse => m_Wrapper.m_BrushingTeethGame_RightMouse;
+        public InputActionMap Get() { return m_Wrapper.m_BrushingTeethGame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BrushingTeethGameActions set) { return set.Get(); }
+        public void SetCallbacks(IBrushingTeethGameActions instance)
+        {
+            if (m_Wrapper.m_BrushingTeethGameActionsCallbackInterface != null)
+            {
+                @LeftMouse.started -= m_Wrapper.m_BrushingTeethGameActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.performed -= m_Wrapper.m_BrushingTeethGameActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.canceled -= m_Wrapper.m_BrushingTeethGameActionsCallbackInterface.OnLeftMouse;
+                @RightMouse.started -= m_Wrapper.m_BrushingTeethGameActionsCallbackInterface.OnRightMouse;
+                @RightMouse.performed -= m_Wrapper.m_BrushingTeethGameActionsCallbackInterface.OnRightMouse;
+                @RightMouse.canceled -= m_Wrapper.m_BrushingTeethGameActionsCallbackInterface.OnRightMouse;
+            }
+            m_Wrapper.m_BrushingTeethGameActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LeftMouse.started += instance.OnLeftMouse;
+                @LeftMouse.performed += instance.OnLeftMouse;
+                @LeftMouse.canceled += instance.OnLeftMouse;
+                @RightMouse.started += instance.OnRightMouse;
+                @RightMouse.performed += instance.OnRightMouse;
+                @RightMouse.canceled += instance.OnRightMouse;
+            }
+        }
+    }
+    public BrushingTeethGameActions @BrushingTeethGame => new BrushingTeethGameActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -1887,5 +1989,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnGrab(InputAction.CallbackContext context);
         void OnSpin(InputAction.CallbackContext context);
         void OnCrack(InputAction.CallbackContext context);
+    }
+    public interface IBrushingTeethGameActions
+    {
+        void OnLeftMouse(InputAction.CallbackContext context);
+        void OnRightMouse(InputAction.CallbackContext context);
     }
 }
