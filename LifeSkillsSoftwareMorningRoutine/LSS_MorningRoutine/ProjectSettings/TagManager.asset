@@ -11,6 +11,7 @@ TagManager:
   - BowlBottom
   - Egg
   - Yolk
+  - Note
   layers:
   - Default
   - TransparentFX
