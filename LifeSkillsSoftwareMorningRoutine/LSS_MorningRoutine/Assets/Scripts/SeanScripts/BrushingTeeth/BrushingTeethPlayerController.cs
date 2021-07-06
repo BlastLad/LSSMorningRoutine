@@ -6,6 +6,10 @@ public class BrushingTeethPlayerController : MonoBehaviour
 {
 
     PlayerControls player;
+    [SerializeField]
+    LeftPlayerControl leftplayerControl;
+    [SerializeField]
+    RightPlayerControl rightplayerControl;
 
     private void Awake()
     {
@@ -31,11 +35,13 @@ public class BrushingTeethPlayerController : MonoBehaviour
 
     public void LeftClick()
     {
+        leftplayerControl.destroyNote(true);
         Debug.Log("LEFT CLICK FIRED");
     }
 
     public void RightClick()
     {
+        rightplayerControl.destroyNote(true);
         Debug.Log("RIGHT CLICK FIRED");
     }
 

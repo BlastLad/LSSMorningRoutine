@@ -5,11 +5,11 @@ using UnityEngine;
 public class MusicNote : MonoBehaviour
 {
 
-    Vector2 SpawnPos;
-    Vector2 RemovePos;
-    int BeatsShownInAdvance;
-    float songPosInBeats;
-    float beatOfThisNote;
+    public Vector2 SpawnPos;
+    public Vector2 RemovePos;
+    public int BeatsShownInAdvance;
+    public float songPosInBeats;
+    public float beatOfThisNote;
 
     private void Awake()
     {
@@ -23,9 +23,9 @@ public class MusicNote : MonoBehaviour
         
     }
 
-    public void SetUp(Vector2 removePos, int advanceNotes, float songPosBeats, float currentBeat)
+    public void SetUp(Vector2 spawnPos, Vector2 removePos, int advanceNotes, float songPosBeats, float currentBeat)
     {
-        SpawnPos = transform.position;
+        SpawnPos = spawnPos;
         RemovePos = removePos;
         BeatsShownInAdvance = advanceNotes;
         songPosInBeats = songPosBeats;
@@ -35,10 +35,12 @@ public class MusicNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        songPosInBeats = Conductor.instance.songPositionInBeats;
+
         transform.position = Vector2.Lerp(
        SpawnPos,
        RemovePos,
-       (BeatsShownInAdvance - (beatOfThisNote - songPosInBeats)) / BeatsShownInAdvance
-   );
+       (BeatsShownInAdvance - (beatOfThisNote - songPosInBeats)) / BeatsShownInAdvance);
+   
     }
 }

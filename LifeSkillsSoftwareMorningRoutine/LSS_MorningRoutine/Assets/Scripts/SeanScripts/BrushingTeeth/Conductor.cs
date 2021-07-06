@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Conductor : MonoBehaviour
 {
+    public static Conductor instance { get; private set; }
+
     //Song beats per minute
     //This is determined by the song you're trying to sync up to
     public float songBpm;
@@ -24,7 +26,9 @@ public class Conductor : MonoBehaviour
     public AudioSource musicSource;
 
     [SerializeField]
-    float[] notes;//The positions-in-beats of the notes in the song
+    NoteCore[] notes;//The positions-in-beats of the notes in the song
+
+    public NoteCore thing;
 
     //index of next note to spawn
     int index = 0;
@@ -40,6 +44,11 @@ public class Conductor : MonoBehaviour
     [SerializeField]
     Transform rightRemovePos;
 
+
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -65,11 +74,22 @@ public class Conductor : MonoBehaviour
         //determine how many beats since the song started
         songPositionInBeats = songPosition / secPerBeat;
 
-        if (index < notes.Length && notes[index] < songPositionInBeats + beatsShownInAdvance)
+        if (index < notes.Length && notes[index].beat < songPositionInBeats + beatsShownInAdvance)
         {
             GameObject note = Instantiate(notePrefab, transform.position, Quaternion.identity);
 
-            note.GetComponent<MusicNote>().SetUp(leftRemovePos.position, beatsShownInAdvance, songPositionInBeats, notes[index]);
+            Vector3 movePos;
+
+            if (notes[index].moveLeft)
+            {
+                movePos = leftRemovePos.position;
+            }
+            else
+            {
+                movePos = rightRemovePos.position;
+            }
+
+            note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
             //initialize the fields of the music note
 
             index++;

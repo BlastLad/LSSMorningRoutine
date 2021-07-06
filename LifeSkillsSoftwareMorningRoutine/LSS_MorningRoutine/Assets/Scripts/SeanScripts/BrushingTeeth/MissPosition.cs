@@ -5,6 +5,12 @@ using UnityEngine;
 public class MissPosition : MonoBehaviour
 {
     string musicString = "Note";
+    [SerializeField]
+    bool isLeft;
+    [SerializeField]
+    LeftPlayerControl leftControl;
+    [SerializeField]
+    RightPlayerControl rightControl;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +28,14 @@ public class MissPosition : MonoBehaviour
     {
         if (other.gameObject.CompareTag(musicString))
         {
-            Destroy(other.gameObject);
+            if (isLeft)
+            {
+                leftControl.destroyNote(false);
+            }
+            else
+            {
+                rightControl.destroyNote(false);
+            }
         }
     }
 }
