@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 226994192}
   - component: {fileID: 226994191}
   - component: {fileID: 226994190}
+  - component: {fileID: 226994193}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -151,9 +152,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 08d233e930028cf43b4a6c415e39e699, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.569
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -255,7 +256,165 @@ MonoBehaviour:
   songPositionInBeats: 0
   dspSongTime: 0
   musicSource: {fileID: 0}
-  notes: []
+  notes:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 27
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 33.75
+  - 34.5
+  - 35
+  - 35.75
+  - 36.5
+  - 37
+  - 37.75
+  - 38.5
+  - 39
+  - 39.75
+  - 40.5
+  - 41
+  - 41.75
+  - 42.5
+  - 43
+  - 43.75
+  - 44.5
+  - 45
+  - 45.75
+  - 46.5
+  - 47
+  - 49
+  - 49.75
+  - 50.5
+  - 51
+  - 51.75
+  - 52.5
+  - 53
+  - 53.75
+  - 54.5
+  - 55
+  - 55.75
+  - 56.5
+  - 57
+  - 57.75
+  - 58.5
+  - 59
+  - 59.75
+  - 60.5
+  - 61
+  - 61.75
+  - 62.5
+  - 63
+  - 65
+  - 65.5
+  - 66
+  - 66.5
+  - 67
+  - 67.5
+  - 68
+  - 68.5
+  - 69
+  - 69.5
+  - 70
+  - 70.5
+  - 71
+  - 71.5
+  - 72
+  - 72.5
+  - 73
+  - 74
+  - 75.5
+  - 76
+  - 76.25
+  - 76.75
+  - 77.5
+  - 78
+  - 81
+  - 81.5
+  - 82
+  - 82.5
+  - 83
+  - 83.5
+  - 84
+  - 84.5
+  - 85
+  - 85.5
+  - 86
+  - 86.5
+  - 87
+  - 87.5
+  - 88
+  - 88.5
+  - 89
+  - 90
+  - 91.5
+  - 92
+  - 92.25
+  - 92.75
+  - 97
+  - 99
+  - 101
+  - 103
+  - 105
+  - 107
+  - 109.5
+  - 110
+  - 110.5
+  - 111
+  - 111.5
+  - 111.75
+  - 112.75
+  - 113
+  - 115
+  - 117
+  - 119
+  - 124.5
+  - 125.25
+  - 126
+  - 128
+  - 130
+  - 132
+  - 134
+  - 136
+  - 138.5
+  - 139.5
+  - 140.5
+  - 141.5
+  - 142.5
+  - 143.75
+  - 144.25
+  - 145
+  - 147
+  - 149
+  - 151
+  - 153.25
+  - 154.25
   notePrefab: {fileID: 1749380473637270587, guid: 419c5dd5751bd5447bcae6e3d175911f, type: 3}
   leftRemovePos: {fileID: 2008892190}
   rightRemovePos: {fileID: 1976502114}
@@ -273,6 +432,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &226994193
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226994189}
+  m_Enabled: 0
 --- !u!1 &376098910
 GameObject:
   m_ObjectHideFlags: 0
