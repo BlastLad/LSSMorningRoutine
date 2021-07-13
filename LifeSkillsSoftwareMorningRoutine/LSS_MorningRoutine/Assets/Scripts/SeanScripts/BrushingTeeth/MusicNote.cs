@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MusicNote : MonoBehaviour
 {
-
     public Vector2 SpawnPos;
     public Vector2 RemovePos;
     public int BeatsShownInAdvance;

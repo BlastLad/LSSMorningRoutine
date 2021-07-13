@@ -10,4 +10,9 @@ public class NoteCore
     public float beat;
     public bool moveLeft;
     public bool isHold;
+
+    public void SetNoteName(string abc)
+    {
+        name = abc;
+    }
 }
