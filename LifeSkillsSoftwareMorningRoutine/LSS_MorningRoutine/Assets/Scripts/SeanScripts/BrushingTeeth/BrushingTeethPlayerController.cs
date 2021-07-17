@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BrushingTeethPlayerController : MonoBehaviour
 {
+    public static BrushingTeethPlayerController instance { get; private set; }
 
     PlayerControls player;
     [SerializeField]
@@ -11,8 +12,19 @@ public class BrushingTeethPlayerController : MonoBehaviour
     [SerializeField]
     RightPlayerControl rightplayerControl;
 
+
+    public bool leftHoldActive = false;
+    public bool rightHoldActive = false;
+
+    bool isLeftHolding = false;
+    bool isRightHolding = false;
+
+
+
     private void Awake()
     {
+        instance = this;
+
         player = new PlayerControls();
 
         player.BrushingTeethGame.LeftMouse.started += ctx => LeftClick();
@@ -33,25 +45,47 @@ public class BrushingTeethPlayerController : MonoBehaviour
         
     }
 
+    public bool GetLeftStatus()
+    {
+        return isLeftHolding;
+    }
+
+    public bool GetRightStatus()
+    {
+        return isRightHolding;
+    }
+
     public void LeftClick()
     {
+        isLeftHolding = true;
         leftplayerControl.destroyNote(true);
         Debug.Log("LEFT CLICK FIRED");
     }
 
     public void RightClick()
     {
+        isRightHolding = true;
         rightplayerControl.destroyNote(true);
         Debug.Log("RIGHT CLICK FIRED");
     }
 
     public void EndLeft()
     {
+        isLeftHolding = false;
+        if (leftHoldActive)
+        {
+            leftplayerControl.destroyNote(true, leftplayerControl.GetLeftHolds()[0].endNote);
+        }
         Debug.Log("LEFT CLICK ENDED");
     }
 
     public void EndRight()
     {
+        isRightHolding = false;
+        if (rightHoldActive)
+        {
+            rightplayerControl.destroyNote(true, rightplayerControl.GetRightHolds()[0].endNote);
+        }
         Debug.Log("RIGHT CLICK ENDED");
     }
 

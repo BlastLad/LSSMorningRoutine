@@ -30,11 +30,25 @@ public class MissPosition : MonoBehaviour
         {
             if (isLeft)
             {
-                leftControl.destroyNote(false);
+                if (other.gameObject.GetComponent<EndHold>() != null)
+                {
+                    leftControl.destroyNote(false, other.gameObject);
+                }
+                else
+                {
+                    leftControl.destroyNote(false);
+                }
             }
             else
             {
-                rightControl.destroyNote(false);
+                if (other.gameObject.GetComponent<EndHold>() != null)
+                {
+                    rightControl.destroyNote(false, other.gameObject);
+                }
+                else
+                {
+                    rightControl.destroyNote(false);
+                }
             }
         }
     }

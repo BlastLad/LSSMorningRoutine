@@ -89,11 +89,24 @@ public class Conductor : MonoBehaviour
                 movePos = rightRemovePos.position;
             }
 
-            note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
+
+            if (notes[index].isHold)
+            {
+                note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat, notes[index].holdNoteLength);
+            }
+            else
+            {
+                note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
+            }
             //initialize the fields of the music note
 
             index++;
         }
 
+    }
+
+    public GameObject SpawnHoldNoteEnd(GameObject prefab)
+    {
+        return Instantiate(prefab, transform.position, Quaternion.identity);
     }
 }

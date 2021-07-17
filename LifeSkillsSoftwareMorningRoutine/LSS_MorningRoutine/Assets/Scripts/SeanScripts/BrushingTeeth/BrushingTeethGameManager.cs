@@ -14,7 +14,12 @@ public class BrushingTeethGameManager : MonoBehaviour
 
     [SerializeField]
     Text scoretext;
-
+    [SerializeField]
+    GameObject stateText;
+    [SerializeField]
+    Transform stateTextSpawnPos;
+    [SerializeField]
+    Canvas canvasObj;
     private void Awake()
     {
         instance = this;
@@ -30,6 +35,13 @@ public class BrushingTeethGameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public void SpawnStateText(string text, int size)
+    {
+        GameObject spawnedText = Instantiate(stateText, stateTextSpawnPos.position, Quaternion.identity, canvasObj.transform);
+
+        spawnedText.GetComponent<StateTextCore>().SetStateText(text, size);
     }
 
     public void AddToScore(int value)
