@@ -814,6 +814,7 @@ MonoBehaviour:
   boy: 0
   madeBreakfast: 0
   isDressed: 0
+  brushedTeeth: 0
 --- !u!4 &384722557
 Transform:
   m_ObjectHideFlags: 0

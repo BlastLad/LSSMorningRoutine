@@ -50,4 +50,20 @@ public static class PlayerStats
             MadeBreakfast = value;
         }
     }
+
+    public static bool BrushedTeeth;
+
+    public static bool brushedTeeth
+    {
+        get
+        {
+            return BrushedTeeth;
+        }
+
+        set
+        {
+            BrushedTeeth = value;
+        }
+    }
+
 }

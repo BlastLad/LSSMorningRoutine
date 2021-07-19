@@ -11,6 +11,7 @@ public class BrushingTeethGameManager : MonoBehaviour
     public int points = 0;
     public float comboMod = 1;
     public int combo = 0;
+    int maxCombo = 0;
 
     [SerializeField]
     Text comboText;
@@ -32,6 +33,16 @@ public class BrushingTeethGameManager : MonoBehaviour
 
     Transform startPos;
     Transform endPos;
+
+    [SerializeField]
+    GameObject particleEffect;
+
+    [SerializeField]
+    GameObject endScreen;
+    [SerializeField]
+    Text endScreenScore;
+    [SerializeField]
+    Text endScreenMaxCombo;
 
     bool isMoving = false;
     float speed = 4f;
@@ -56,9 +67,11 @@ public class BrushingTeethGameManager : MonoBehaviour
 
             toothBrush.transform.Translate(direction.normalized * speed * Time.deltaTime);
 
-            Debug.Log(Vector3.Distance(toothBrush.transform.position, endPos.position) + endPos.name);
+            //Debug.Log(Vector3.Distance(toothBrush.transform.position, endPos.position) + endPos.name);
             if (Vector3.Distance(toothBrush.transform.position, endPos.position) < 0.2f)
             {
+                ///particleeffect on location
+                GameObject particle = Instantiate(particleEffect, endPos.position, Quaternion.identity, endPos);
                 isMoving = false;
             }
 
@@ -79,10 +92,12 @@ public class BrushingTeethGameManager : MonoBehaviour
             toothIndex = toothBrushTopPos.Count - 1;
             speed = 7f;
         }
+        if (!isMoving)
+        {
+            endPos = toothBrushTopPos[toothIndex];
 
-        endPos = toothBrushTopPos[toothIndex];
-
-        isMoving = true;
+            isMoving = true;
+        }
     }
 
     public void MoveRight()
@@ -100,9 +115,12 @@ public class BrushingTeethGameManager : MonoBehaviour
             speed = 7f;
         }
 
-        endPos = toothBrushBotPos[toothIndex];
+        if (!isMoving)
+        {
+            endPos = toothBrushBotPos[toothIndex];
 
-        isMoving = true;
+            isMoving = true;
+        }
     }
     
     public void SpawnStateText(string text, int size)
@@ -116,17 +134,26 @@ public class BrushingTeethGameManager : MonoBehaviour
     {
         combo++;
 
+        if (combo > maxCombo)
+        {
+            maxCombo = combo;
+        }
+
         comboText.text = "" + combo + " Beat";
-        
+        comboText.transform.parent.gameObject.SetActive(true);
+
+
         if (combo >= 30)
         {
+            comboText.fontSize = 35;
             comboMod = 3f;
         }        
-        else if (combo >= 20)
+        else if (combo >= 25)
         {
+            comboText.fontSize = 25;
             comboMod = 2f;
         }
-        else if (combo >= 10)
+        else if (combo >= 15)
         {
             comboMod = 1.5f;
         }
@@ -141,7 +168,25 @@ public class BrushingTeethGameManager : MonoBehaviour
         comboMod = 1;
 
         comboText.text = "" + combo + " Beat";
+        comboText.fontSize = 20;
+        comboText.transform.parent.gameObject.SetActive(false);
 
+    }
+
+
+    public void EnableEndScreen()
+    {
+        endScreen.SetActive(true);
+        endScreenScore.text = "" + points;
+        endScreenMaxCombo.text = "" + maxCombo;
+
+        
+    }
+
+    public void ReturnToMain()
+    {
+        PlayerStats.brushedTeeth = true;
+        SceneManager.LoadScene(0);
     }
 }
 

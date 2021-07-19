@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool boy = true;
     public bool madeBreakfast;
     public bool isDressed;
+    public bool brushedTeeth;
 
     private void Awake()
     {
@@ -21,13 +22,14 @@ public class GameManager : MonoBehaviour
         PlayerStats.isBoy = boy;
         madeBreakfast = PlayerStats.madeBreakfast;
         isDressed = PlayerStats.isDressed;
+        brushedTeeth = PlayerStats.brushedTeeth;
 
         bool[] stats = new bool[4];
 
         stats[0] = false;
         stats[1] = isDressed;
         stats[2] = madeBreakfast;
-        stats[3] = false;
+        stats[3] = brushedTeeth;
 
         for (int i = 0; i < checkedBoxes.Length; i++)
         {

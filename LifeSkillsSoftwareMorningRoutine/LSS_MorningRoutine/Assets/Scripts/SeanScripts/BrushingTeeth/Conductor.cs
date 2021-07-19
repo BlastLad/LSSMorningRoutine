@@ -44,6 +44,7 @@ public class Conductor : MonoBehaviour
     [SerializeField]
     Transform rightRemovePos;
 
+    bool songOver = false;
 
     private void Awake()
     {
@@ -102,7 +103,22 @@ public class Conductor : MonoBehaviour
 
             index++;
         }
+        else
+        {
+            if (index >= notes.Length && !songOver)
+            {
+                songOver = true;
+                StartCoroutine(enableEndScreen());
+            }
+            //song is over
+        }
 
+    }
+
+    private IEnumerator enableEndScreen()
+    {
+        yield return new WaitForSeconds(4f);//might need to change
+        BrushingTeethGameManager.instance.EnableEndScreen();
     }
 
     public GameObject SpawnHoldNoteEnd(GameObject prefab)

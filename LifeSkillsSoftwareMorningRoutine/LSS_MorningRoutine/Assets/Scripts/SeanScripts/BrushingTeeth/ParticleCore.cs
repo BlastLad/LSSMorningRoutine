@@ -13,9 +13,11 @@ public class ParticleCore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.localPosition.y < 14.8f)
+  
+        if (transform.localPosition.y < - 14.8f)
         {
-            Destroy(this.gameObject);
+            
+           Destroy(this.gameObject);
         }
     }
 }

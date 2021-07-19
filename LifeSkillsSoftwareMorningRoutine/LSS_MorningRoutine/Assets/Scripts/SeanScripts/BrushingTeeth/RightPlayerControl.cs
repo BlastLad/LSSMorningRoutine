@@ -123,9 +123,7 @@ public class RightPlayerControl : MonoBehaviour
 
                 BrushingTeethGameManager.instance.MoveRight();
 
-                GameObject particle = Instantiate(particleEffect, spawnPos.position, Quaternion.identity, canvas.transform);
-                particle.SetActive(false);
-                particle.SetActive(true);
+
 
                 Debug.Log("POINTS ADDED RIGHT");
             }
@@ -171,9 +169,7 @@ public class RightPlayerControl : MonoBehaviour
                     BrushingTeethGameManager.instance.SpawnStateText("Perfect", 52);
                 }
 
-                GameObject particle = Instantiate(particleEffect, spawnPos.position, Quaternion.identity, canvas.transform);
-                particle.SetActive(false);
-                particle.SetActive(true);
+
             }
             else//indicates a missed note
             {
