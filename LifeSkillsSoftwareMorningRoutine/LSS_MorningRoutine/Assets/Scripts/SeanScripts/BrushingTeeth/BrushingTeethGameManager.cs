@@ -13,6 +13,8 @@ public class BrushingTeethGameManager : MonoBehaviour
     public int combo = 0;
 
     [SerializeField]
+    Text comboText;
+    [SerializeField]
     Text scoretext;
     [SerializeField]
     GameObject stateText;
@@ -20,6 +22,20 @@ public class BrushingTeethGameManager : MonoBehaviour
     Transform stateTextSpawnPos;
     [SerializeField]
     Canvas canvasObj;
+
+    [SerializeField]
+    GameObject toothBrush;
+    [SerializeField]
+    List<Transform> toothBrushTopPos;
+    [SerializeField]
+    List<Transform> toothBrushBotPos;
+
+    Transform startPos;
+    Transform endPos;
+
+    bool isMoving = false;
+    float speed = 4f;
+    int toothIndex = 0;
     private void Awake()
     {
         instance = this;
@@ -34,7 +50,59 @@ public class BrushingTeethGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isMoving)
+        {
+            Vector3 direction = endPos.position - toothBrush.transform.position;
+
+            toothBrush.transform.Translate(direction.normalized * speed * Time.deltaTime);
+
+            Debug.Log(Vector3.Distance(toothBrush.transform.position, endPos.position) + endPos.name);
+            if (Vector3.Distance(toothBrush.transform.position, endPos.position) < 0.2f)
+            {
+                isMoving = false;
+            }
+
+        }
+    }
+
+    public void MoveLeft()
+    {
+        startPos = toothBrushTopPos[toothIndex];
+
+        if (toothIndex > 0)
+        {
+            toothIndex--;
+            speed = 4f;
+        }
+        else
+        {
+            toothIndex = toothBrushTopPos.Count - 1;
+            speed = 7f;
+        }
+
+        endPos = toothBrushTopPos[toothIndex];
+
+        isMoving = true;
+    }
+
+    public void MoveRight()
+    {
+        startPos = toothBrushBotPos[toothIndex];
+
+        if (toothIndex < toothBrushBotPos.Count - 1)
+        {
+            toothIndex++;
+            speed = 4f;
+        }
+        else
+        {
+            toothIndex = 0;
+            speed = 7f;
+        }
+
+        endPos = toothBrushBotPos[toothIndex];
+
+        isMoving = true;
     }
     
     public void SpawnStateText(string text, int size)
@@ -48,6 +116,7 @@ public class BrushingTeethGameManager : MonoBehaviour
     {
         combo++;
 
+        comboText.text = "" + combo + " Beat";
         
         if (combo >= 30)
         {
@@ -70,6 +139,9 @@ public class BrushingTeethGameManager : MonoBehaviour
     {
         combo = 0;
         comboMod = 1;
+
+        comboText.text = "" + combo + " Beat";
+
     }
 }
 

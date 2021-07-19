@@ -91,6 +91,7 @@ public class LeftPlayerControl : MonoBehaviour
 
             if (addPoints)
             {
+
                 float distance = Vector2.Distance(transform.position, note.transform.position);
 
                 if (distance > 1.19) {
@@ -114,7 +115,10 @@ public class LeftPlayerControl : MonoBehaviour
                     BrushingTeethGameManager.instance.SpawnStateText("Perfect", 52);
                 }
 
-               GameObject particle = Instantiate(particleEffect, spawnPos.position, Quaternion.identity, canvas.transform);
+                BrushingTeethGameManager.instance.MoveLeft();
+
+
+                GameObject particle = Instantiate(particleEffect, spawnPos.position, Quaternion.identity, canvas.transform);
                 particle.SetActive(false);
                 particle.SetActive(true);
             }
