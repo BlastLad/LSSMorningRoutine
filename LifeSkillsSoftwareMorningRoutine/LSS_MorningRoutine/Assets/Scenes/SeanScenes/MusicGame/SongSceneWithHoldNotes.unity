@@ -501,11 +501,6 @@ MonoBehaviour:
   musicSource: {fileID: 0}
   notes:
   - name: 
-    beat: 1
-    moveLeft: 1
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
     beat: 2
     moveLeft: 1
     isHold: 0
@@ -542,7 +537,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 9
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -552,37 +547,37 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 11
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 18
   - name: 
     beat: 12
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 13
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 14
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 15
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 16
-    moveLeft: 1
+    moveLeft: 0
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 17
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -592,7 +587,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 19
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -602,7 +597,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 21
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -612,7 +607,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 23
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -623,68 +618,33 @@ MonoBehaviour:
   - name: 
     beat: 25
     moveLeft: 1
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 27
-    moveLeft: 1
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 29
     moveLeft: 1
     isHold: 0
-    holdNoteLength: 0
-  - name: 28
-    beat: 0
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 30
-    moveLeft: 1
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 31
-    moveLeft: 1
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 32
-    moveLeft: 1
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 25
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 27
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 29
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 1
   - name: 
     beat: 30
     moveLeft: 0
     isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 1
   - name: 
     beat: 31
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 1
   - name: 
     beat: 32
     moveLeft: 0
     isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 1
   - name: 
     beat: 33
     moveLeft: 0
@@ -721,7 +681,7 @@ MonoBehaviour:
     isHold: 0
     holdNoteLength: 0
   - name: 
-    beat: 37.5
+    beat: 37.75
     moveLeft: 0
     isHold: 0
     holdNoteLength: 0
@@ -747,52 +707,52 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 41
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 41.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 42.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 43
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 43.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 44.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 45
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 45.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 46.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 47
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -802,17 +762,17 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 49.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 50.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 51
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -832,17 +792,17 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 53.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 54.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 55
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -857,7 +817,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 57
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -867,7 +827,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 58.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -877,7 +837,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 59.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -887,7 +847,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 61
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -897,7 +857,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 62.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -907,17 +867,17 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 65
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 65.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 66
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -937,17 +897,17 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 68
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 68.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 69
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -967,52 +927,52 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 71
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 71.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 72
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 72.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 73
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 1
   - name: 
     beat: 74
     moveLeft: 0
     isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 1.5
   - name: 
     beat: 75.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 76
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 76.25
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 76.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1023,7 +983,7 @@ MonoBehaviour:
   - name: 
     beat: 78
     moveLeft: 0
-    isHold: 1
+    isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 81
@@ -1032,7 +992,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 81.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1042,7 +1002,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 82.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1052,7 +1012,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 83.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1062,7 +1022,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 84.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1072,7 +1032,7 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 85.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1082,17 +1042,17 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 86.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 87
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 87.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
@@ -1138,128 +1098,118 @@ MonoBehaviour:
   - name: 
     beat: 97
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 99
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 101
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 103
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 105
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 107
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 109.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 100
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 100.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 101
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 101.5
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 101.75
-    moveLeft: 0
+    moveLeft: 1
     isHold: 0
     holdNoteLength: 0
   - name: 
     beat: 102.25
     moveLeft: 0
     isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 0.75
   - name: 
     beat: 113
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 115
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 117
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 119
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 124.25
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 1
   - name: 
     beat: 125.25
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 124.25
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
-  - name: 
-    beat: 125.25
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 1
   - name: 
     beat: 126
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 128
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 130
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 132
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 134
     moveLeft: 0
@@ -1269,7 +1219,7 @@ MonoBehaviour:
     beat: 136
     moveLeft: 0
     isHold: 0
-    holdNoteLength: 0
+    holdNoteLength: 2
   - name: 
     beat: 138.5
     moveLeft: 0
@@ -1297,39 +1247,39 @@ MonoBehaviour:
     holdNoteLength: 0
   - name: 
     beat: 141.25
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 0.75
   - name: 
     beat: 142
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 144
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 146
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 148
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 2
   - name: 
     beat: 153.25
     moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    isHold: 1
+    holdNoteLength: 1
   - name: 
     beat: 154.25
-    moveLeft: 0
-    isHold: 0
-    holdNoteLength: 0
+    moveLeft: 1
+    isHold: 1
+    holdNoteLength: 1
   thing:
     name: 
     beat: 0

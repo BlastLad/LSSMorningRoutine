@@ -73,7 +73,7 @@ public class Conductor : MonoBehaviour
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
 
         //determine how many beats since the song started
-        songPositionInBeats = songPosition / secPerBeat;
+        songPositionInBeats = songPosition / secPerBeat +1;
 
         if (index < notes.Length && notes[index].beat < songPositionInBeats + beatsShownInAdvance)
         {
