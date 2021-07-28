@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class GameManager : MonoBehaviour
     public bool madeBreakfast;
     public bool isDressed;
     public bool brushedTeeth;
+
+    [SerializeField]
+    Text PreReqText;
+    [SerializeField]
+    GameObject preReqgo;
 
     private void Awake()
     {
@@ -40,6 +46,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public GameObject[] GetCheckedObjects()
+    {
+        return checkedBoxes;
+    }
+
+    public void SetPreReqText(string text)
+    {
+        PreReqText.text = text;
+        preReqgo.SetActive(true);
     }
 
     // Update is called once per frame

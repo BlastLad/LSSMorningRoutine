@@ -26,6 +26,9 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
     GameObject hitImage;
     [SerializeField]
     GameObject crackImage;
+    [SerializeField]
+    GameObject grabImage;
+
 
     DragRigidbody currentEgg;
 
@@ -58,6 +61,7 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
     {
         crackImage.SetActive(true);
         hitImage.SetActive(false);
+        grabImage.SetActive(false);
     }
 
     void HandleInputBegin()
@@ -66,6 +70,13 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         {
             currentEgg.HandleInputBegin();
         }
+    }
+
+    public void enableHitImage()
+    {
+        hitImage.SetActive(true);
+        crackImage.SetActive(false);
+        grabImage.SetActive(false);
     }
 
     void HandleInputEnd()
@@ -149,7 +160,8 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         GameObject newEgg = Instantiate(eggPreFab, eggSpawnLocation.position, Quaternion.identity, transform);
         currentEgg = newEgg.GetComponent<DragRigidbody>();
         crackImage.SetActive(false);
-        hitImage.SetActive(true);
+        hitImage.SetActive(false);
+        grabImage.SetActive(true);
     }
 
     private void OnEnable()

@@ -46,12 +46,21 @@ public class Conductor : MonoBehaviour
 
     bool songOver = false;
 
+
+    bool isPlaying = false;
     private void Awake()
     {
         instance = this;
     }
     // Start is called before the first frame update
     void Start()
+    {
+
+
+        //Start the music
+    }
+
+    public void StartMusic()
     {
         //Load the AudioSource attached to the Conductor GameObject
         musicSource = GetComponent<AudioSource>();
@@ -62,55 +71,60 @@ public class Conductor : MonoBehaviour
         //Record the time when the music starts
         dspSongTime = (float)AudioSettings.dspTime;
 
-        //Start the music
+        isPlaying = true;
         musicSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //determine how many seconds since the song started
-        songPosition = (float)(AudioSettings.dspTime - dspSongTime);
-
-        //determine how many beats since the song started
-        songPositionInBeats = songPosition / secPerBeat +1;
-
-        if (index < notes.Length && notes[index].beat < songPositionInBeats + beatsShownInAdvance)
+        if (isPlaying)
         {
-            GameObject note = Instantiate(notePrefab, transform.position, Quaternion.identity);
+            //determine how many seconds since the song started
+            songPosition = (float)(AudioSettings.dspTime - dspSongTime);
 
-            Vector3 movePos;
+            //determine how many beats since the song started
+            songPositionInBeats = songPosition / secPerBeat + 1;
 
-            if (notes[index].moveLeft)
+            if (index < notes.Length && notes[index].beat < songPositionInBeats + beatsShownInAdvance)
             {
-                movePos = leftRemovePos.position;
+                GameObject note = Instantiate(notePrefab, transform.position, Quaternion.identity);
+
+                Debug.Log(notes[index].name + " " + notes[index].isHold);
+
+                Vector3 movePos;
+
+                if (notes[index].moveLeft)
+                {
+                    movePos = leftRemovePos.position;
+                }
+                else
+                {
+                    movePos = rightRemovePos.position;
+                }
+
+
+                if (notes[index].isHold)
+                {
+                    note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat, notes[index].holdNoteLength);
+                }
+                else
+                {
+                    note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
+                }
+                //initialize the fields of the music note
+
+                index++;
             }
             else
             {
-                movePos = rightRemovePos.position;
+                if (index >= notes.Length && !songOver)
+                {
+                    songOver = true;
+                    StartCoroutine(enableEndScreen());
+                }
+                //song is over
             }
-
-
-            if (notes[index].isHold)
-            {
-                note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat, notes[index].holdNoteLength);
-            }
-            else
-            {
-                note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
-            }
-            //initialize the fields of the music note
-
-            index++;
-        }
-        else
-        {
-            if (index >= notes.Length && !songOver)
-            {
-                songOver = true;
-                StartCoroutine(enableEndScreen());
-            }
-            //song is over
         }
 
     }

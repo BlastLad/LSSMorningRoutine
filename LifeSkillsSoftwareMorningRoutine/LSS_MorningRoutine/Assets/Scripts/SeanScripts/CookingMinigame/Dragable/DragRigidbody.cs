@@ -41,6 +41,7 @@ public class DragRigidbody : MonoBehaviour
 			{
 				dragDepth = CameraPlane.CameraToPointDepth(Camera.main, hit.point);
 				jointTrans = AttachJoint(hit.rigidbody, hit.point);
+				EggMicroGameController.instance.enableHitImage();
 			}
 		}
 	}

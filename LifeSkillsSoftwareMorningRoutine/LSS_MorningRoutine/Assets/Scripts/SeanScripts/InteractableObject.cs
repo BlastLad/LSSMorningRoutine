@@ -15,11 +15,24 @@ public class InteractableObject : MonoBehaviour
 
     [SerializeField]
     int sceneIndexToMoveTo;
+
+    [SerializeField]
+    public int preReq = -1;
+    [SerializeField]
+    string preReqText;
+
+    public bool canInteract = true;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (preReq != -1)
+        {
+            if (GameManager.instance.GetCheckedObjects()[preReq].activeSelf)
+            {
+                canInteract = true;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -53,6 +66,13 @@ public class InteractableObject : MonoBehaviour
 
     public void moveScene()
     {
-        SceneManager.LoadScene(sceneIndexToMoveTo);
+        if (canInteract)
+        {
+            SceneManager.LoadScene(sceneIndexToMoveTo);
+        }
+        else
+        {
+            GameManager.instance.SetPreReqText(preReqText);
+        }
     }
 }
