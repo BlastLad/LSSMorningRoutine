@@ -41768,6 +41768,9 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 7dc5cf02c1ee8574aa57e8d7febe4fd2, type: 2}
   insideMaterial: {fileID: 2100000, guid: 33a15ae8247e0974ba6389b6744e78fd, type: 2}
   sceneIndexToMoveTo: 1
+  preReq: -1
+  preReqText: 
+  canInteract: 1
 --- !u!1001 &5963156745580828358
 PrefabInstance:
   m_ObjectHideFlags: 0

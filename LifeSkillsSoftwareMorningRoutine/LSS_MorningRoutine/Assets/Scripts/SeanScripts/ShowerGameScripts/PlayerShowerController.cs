@@ -31,7 +31,7 @@ public class PlayerShowerController : MonoBehaviour
 
         playerControls.ShowerGame.SelectionTool.performed += ctx => SelectionTool();
         playerControls.ShowerGame.SoapTool.performed += ctx => SoapTool();
-        playerControls.ShowerGame.BodyWashTool.performed += ctx => BodyWashTool();
+        playerControls.ShowerGame.BodyWashTool.performed += ctx => ShampooTool();
         playerControls.ShowerGame.ShowerTool.performed += ctx => ShowerTool();
         playerControls.ShowerGame.ActivateTool.performed += ctx => ActivateTool();
         playerControls.ShowerGame.ActivateTool.canceled += ctx => CancelTool();
@@ -68,13 +68,13 @@ public class PlayerShowerController : MonoBehaviour
         }
     }
 
-    public void BodyWashTool()
+    public void ShampooTool()
     {
         if (!isToolinUse)
         {
             CurrentTool = 2;
             cursor.SetSprite(bodyWashMouse);
-            Debug.Log(CurrentTool + "BodyWash");
+            Debug.Log(CurrentTool + "Shampoo");
         }
     }
 
@@ -91,15 +91,40 @@ public class PlayerShowerController : MonoBehaviour
     public void ActivateTool()
     {
         isToolinUse = true;
-        if (CurrentTool == 0)
+        if (CurrentTool == 0)//Selection
         {
             ActivateSelectionTool();
+        }
+        else if(CurrentTool == 1)//Soap
+        {
+            ActivateSoapTool();
+        }
+        else if(CurrentTool == 2)//Shampoo
+        {
+            ActivateShampooTool();
+        }
+        else if (CurrentTool == 3)//Shower
+        {
+            ActivateShowerTool();
         }
     }
 
     public void CancelTool()
     {
-        isToolinUse = false;        
+        isToolinUse = false;     
+        
+        if (CurrentTool == 1)//Soap
+        {
+            CancelSoapTool();
+        }
+        else if (CurrentTool == 2)//Shampoo 
+        {
+            CancelShampooTool();
+        }
+        else if (CurrentTool == 3)//Shower
+        {
+            CancelShowerTool();
+        }
     }
 
     public void ActivateSelectionTool()
@@ -125,6 +150,35 @@ public class PlayerShowerController : MonoBehaviour
                 ChangeCam(rightCam);
             }
         }
+    }
+
+    public void ActivateSoapTool()
+    {
+        Debug.Log("SOAP TOOL NOW IN USE");
+    }
+
+    public void CancelSoapTool()
+    {
+        Debug.Log("SOAP TOOL NO LONGER IN USE");
+    }
+
+    public void ActivateShampooTool()
+    {
+        Debug.Log("SHAMPOO TOOL NOW IN USE");
+    }
+
+    public void CancelShampooTool()
+    {
+        Debug.Log("SHAMPOO TOOL NO LONGER IN USE");
+    }
+    public void ActivateShowerTool()
+    {
+        Debug.Log("SHOWER TOOL NOW IN USE");
+    }
+
+    public void CancelShowerTool()
+    {
+        Debug.Log("SHOWER TOOL NO LONGER IN USE");
     }
 
     public void ChangeCam(CinemachineVirtualCamera cam)

@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SeanScenes/SeanBaseScene.unity
+    path: Assets/Scenes/SeanScenes/MainScene/SeanBaseScene.unity
     guid: a74b1fe556dd86745b7b073d39407dcf
   - enabled: 1
-    path: Assets/Scenes/SeanScenes/DressUpScene4.unity
+    path: Assets/Scenes/SeanScenes/Dress/DressUpScene4.unity
     guid: bd76785387c2e5e4e80bec4870502594
   - enabled: 1
     path: Assets/Scenes/SeanScenes/KitchenBuildScene.unity
