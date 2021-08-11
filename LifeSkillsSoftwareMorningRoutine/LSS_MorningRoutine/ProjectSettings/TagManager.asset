@@ -12,6 +12,9 @@ TagManager:
   - Egg
   - Yolk
   - Note
+  - Head
+  - RightArm
+  - LeftArm
   layers:
   - Default
   - TransparentFX
@@ -48,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Main
+    uniqueID: 3757455835
     locked: 0

@@ -1550,6 +1550,172 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ShowerGame"",
+            ""id"": ""cbd337bb-6684-42f0-ad0a-6484753259a3"",
+            ""actions"": [
+                {
+                    ""name"": ""SelectionTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""2bfaeab2-77a7-4732-87d4-87f01f471054"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SoapTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee9947ee-7955-4682-8bf3-2d9f65b834cd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""BodyWashTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""70a06070-2e78-4962-907e-1d8081d9a38e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShowerTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6575265-999e-4ce6-8d2b-0587c3bc2397"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ActivateTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""abd99fbe-ba75-4f71-abab-feebfe3f3cc4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SecondaryActivation"",
+                    ""type"": ""Button"",
+                    ""id"": ""acc3c7d7-44dc-4096-ab17-9f45fb9ff2ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c46d88c4-f9da-4b6d-8e83-c44972792426"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SelectionTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a47ca35d-86a3-4abc-b4e8-68603bd48074"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SelectionTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""810c3620-9052-4810-9704-1c6e3bbbb46e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SoapTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""455d7e3a-5a0a-4feb-8df7-9a4b57b84f7c"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SoapTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12971b26-5b49-41f4-8127-dc1bebb7fd08"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""BodyWashTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc1af716-a0db-428f-b0c2-d1308334986d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""BodyWashTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43b3d1f6-f31f-4144-be82-bd8335379321"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ShowerTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7c29eb33-9044-4963-b50e-aafd3588b5d4"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ShowerTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b161c7fc-828e-467c-80a1-eafc0f454fb6"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ActivateTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c720e87-186e-4b21-b103-511808ded521"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SecondaryActivation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1611,6 +1777,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_BrushingTeethGame = asset.FindActionMap("BrushingTeethGame", throwIfNotFound: true);
         m_BrushingTeethGame_LeftMouse = m_BrushingTeethGame.FindAction("LeftMouse", throwIfNotFound: true);
         m_BrushingTeethGame_RightMouse = m_BrushingTeethGame.FindAction("RightMouse", throwIfNotFound: true);
+        // ShowerGame
+        m_ShowerGame = asset.FindActionMap("ShowerGame", throwIfNotFound: true);
+        m_ShowerGame_SelectionTool = m_ShowerGame.FindAction("SelectionTool", throwIfNotFound: true);
+        m_ShowerGame_SoapTool = m_ShowerGame.FindAction("SoapTool", throwIfNotFound: true);
+        m_ShowerGame_BodyWashTool = m_ShowerGame.FindAction("BodyWashTool", throwIfNotFound: true);
+        m_ShowerGame_ShowerTool = m_ShowerGame.FindAction("ShowerTool", throwIfNotFound: true);
+        m_ShowerGame_ActivateTool = m_ShowerGame.FindAction("ActivateTool", throwIfNotFound: true);
+        m_ShowerGame_SecondaryActivation = m_ShowerGame.FindAction("SecondaryActivation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1942,6 +2116,79 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public BrushingTeethGameActions @BrushingTeethGame => new BrushingTeethGameActions(this);
+
+    // ShowerGame
+    private readonly InputActionMap m_ShowerGame;
+    private IShowerGameActions m_ShowerGameActionsCallbackInterface;
+    private readonly InputAction m_ShowerGame_SelectionTool;
+    private readonly InputAction m_ShowerGame_SoapTool;
+    private readonly InputAction m_ShowerGame_BodyWashTool;
+    private readonly InputAction m_ShowerGame_ShowerTool;
+    private readonly InputAction m_ShowerGame_ActivateTool;
+    private readonly InputAction m_ShowerGame_SecondaryActivation;
+    public struct ShowerGameActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ShowerGameActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectionTool => m_Wrapper.m_ShowerGame_SelectionTool;
+        public InputAction @SoapTool => m_Wrapper.m_ShowerGame_SoapTool;
+        public InputAction @BodyWashTool => m_Wrapper.m_ShowerGame_BodyWashTool;
+        public InputAction @ShowerTool => m_Wrapper.m_ShowerGame_ShowerTool;
+        public InputAction @ActivateTool => m_Wrapper.m_ShowerGame_ActivateTool;
+        public InputAction @SecondaryActivation => m_Wrapper.m_ShowerGame_SecondaryActivation;
+        public InputActionMap Get() { return m_Wrapper.m_ShowerGame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ShowerGameActions set) { return set.Get(); }
+        public void SetCallbacks(IShowerGameActions instance)
+        {
+            if (m_Wrapper.m_ShowerGameActionsCallbackInterface != null)
+            {
+                @SelectionTool.started -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSelectionTool;
+                @SelectionTool.performed -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSelectionTool;
+                @SelectionTool.canceled -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSelectionTool;
+                @SoapTool.started -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSoapTool;
+                @SoapTool.performed -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSoapTool;
+                @SoapTool.canceled -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSoapTool;
+                @BodyWashTool.started -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnBodyWashTool;
+                @BodyWashTool.performed -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnBodyWashTool;
+                @BodyWashTool.canceled -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnBodyWashTool;
+                @ShowerTool.started -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnShowerTool;
+                @ShowerTool.performed -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnShowerTool;
+                @ShowerTool.canceled -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnShowerTool;
+                @ActivateTool.started -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnActivateTool;
+                @ActivateTool.performed -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnActivateTool;
+                @ActivateTool.canceled -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnActivateTool;
+                @SecondaryActivation.started -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSecondaryActivation;
+                @SecondaryActivation.performed -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSecondaryActivation;
+                @SecondaryActivation.canceled -= m_Wrapper.m_ShowerGameActionsCallbackInterface.OnSecondaryActivation;
+            }
+            m_Wrapper.m_ShowerGameActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SelectionTool.started += instance.OnSelectionTool;
+                @SelectionTool.performed += instance.OnSelectionTool;
+                @SelectionTool.canceled += instance.OnSelectionTool;
+                @SoapTool.started += instance.OnSoapTool;
+                @SoapTool.performed += instance.OnSoapTool;
+                @SoapTool.canceled += instance.OnSoapTool;
+                @BodyWashTool.started += instance.OnBodyWashTool;
+                @BodyWashTool.performed += instance.OnBodyWashTool;
+                @BodyWashTool.canceled += instance.OnBodyWashTool;
+                @ShowerTool.started += instance.OnShowerTool;
+                @ShowerTool.performed += instance.OnShowerTool;
+                @ShowerTool.canceled += instance.OnShowerTool;
+                @ActivateTool.started += instance.OnActivateTool;
+                @ActivateTool.performed += instance.OnActivateTool;
+                @ActivateTool.canceled += instance.OnActivateTool;
+                @SecondaryActivation.started += instance.OnSecondaryActivation;
+                @SecondaryActivation.performed += instance.OnSecondaryActivation;
+                @SecondaryActivation.canceled += instance.OnSecondaryActivation;
+            }
+        }
+    }
+    public ShowerGameActions @ShowerGame => new ShowerGameActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -1994,5 +2241,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnLeftMouse(InputAction.CallbackContext context);
         void OnRightMouse(InputAction.CallbackContext context);
+    }
+    public interface IShowerGameActions
+    {
+        void OnSelectionTool(InputAction.CallbackContext context);
+        void OnSoapTool(InputAction.CallbackContext context);
+        void OnBodyWashTool(InputAction.CallbackContext context);
+        void OnShowerTool(InputAction.CallbackContext context);
+        void OnActivateTool(InputAction.CallbackContext context);
+        void OnSecondaryActivation(InputAction.CallbackContext context);
     }
 }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeanScenes/KitchenBuildScene.unity
     guid: dd88589a60d927847b188a4e1d865f63
+  - enabled: 1
+    path: Assets/Scenes/SeanScenes/MusicGame/SongSceneWithHoldNotes.unity
+    guid: 88f839c55607ae2478a794a79b34ba87
   m_configObjects: {}
