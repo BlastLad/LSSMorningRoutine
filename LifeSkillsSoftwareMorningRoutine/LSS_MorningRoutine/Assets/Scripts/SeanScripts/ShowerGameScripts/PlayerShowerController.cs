@@ -17,6 +17,10 @@ public class PlayerShowerController : MonoBehaviour
 
     public CursorControl cursor;
 
+    private List<float> MouseTrackerX = new List<float>();
+    private List<float> MouseTrackerY = new List<float>();
+    public int counter = 0;
+
     [SerializeField]
     public Sprite selectionMouse;
     public Sprite soapMouse;
@@ -47,9 +51,50 @@ public class PlayerShowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (AudioManager.instance.isPlaying("Shower Ambience") == false)
-            AudioManager.instance.Play("Shower Ambience");
+        if (AudioManager.instance.GetSound("Shower Ambience") != null)
+        {
+            if (AudioManager.instance.isPlaying("Shower Ambience") == false)
+                AudioManager.instance.Play("Shower Ambience");
+        }
+
+        //Trying to play the scrub sound whenever the mouse changes direction.
+        /*if(isToolinUse == true)
+        {
+            if(CurrentTool == 1)
+            {
+                MouseTrackerX.Add(Input.mousePosition.x);
+                MouseTrackerY.Add(Input.mousePosition.y);
+                counter += counter;
+
+                if(counter > 1)
+                {
+                    if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 2] > 0){
+                        if (MouseTrackerX[counter] - MouseTrackerX[counter - 1] < 0)
+                            AudioManager.instance.Play("Scrub 1");
+                    }
+                    else if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 2] < 0){
+                        if (MouseTrackerX[counter] - MouseTrackerX[counter - 1] > 0)
+                            AudioManager.instance.Play("Scrub 2");
+                    }
+                    if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 2] > 0){
+                        if (MouseTrackerY[counter] - MouseTrackerY[counter - 1] < 0)
+                            AudioManager.instance.Play("Scrub 2");
+                    }
+                    else if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 2] < 0){
+                        if (MouseTrackerY[counter] - MouseTrackerY[counter - 1] > 0)
+                            AudioManager.instance.Play("Scrub 3");
+                    }
+                }
+            }
+        }
+
+        if (isToolinUse == false) {
+            counter = 0;
+            MouseTrackerX.Clear();
+            MouseTrackerY.Clear();
+        } */
     }
+
 
     public void SelectionTool()
     {
@@ -58,6 +103,7 @@ public class PlayerShowerController : MonoBehaviour
             CurrentTool = 0;
             cursor.SetSprite(selectionMouse);
             Debug.Log(CurrentTool + "Selection");
+            AudioManager.instance.Play("Inspector");
         }
     }
 
@@ -68,6 +114,7 @@ public class PlayerShowerController : MonoBehaviour
             CurrentTool = 1;
             cursor.SetSprite(soapMouse);
             Debug.Log(CurrentTool + "Soap");
+            AudioManager.instance.Play("Soap");
         }
     }
 
@@ -78,6 +125,7 @@ public class PlayerShowerController : MonoBehaviour
             CurrentTool = 2;
             cursor.SetSprite(bodyWashMouse);
             Debug.Log(CurrentTool + "Shampoo");
+            AudioManager.instance.Play("Shampoo");
         }
     }
 
@@ -88,6 +136,7 @@ public class PlayerShowerController : MonoBehaviour
             CurrentTool = 3;
             cursor.SetSprite(showerheadMouse);
             Debug.Log(CurrentTool + "Shower");
+            AudioManager.instance.Play("Shower Head");
         }
     }
 
@@ -97,23 +146,20 @@ public class PlayerShowerController : MonoBehaviour
         if (CurrentTool == 0)//Selection
         {
             ActivateSelectionTool();
-            AudioManager.instance.Play("Inspector");
         }
         else if(CurrentTool == 1)//Soap
         {
             ActivateSoapTool();
-            AudioManager.instance.Play("Soap");
+            Debug.Log(Mouse.current.position.ReadValue());
         }
         else if(CurrentTool == 2)//Shampoo
         {
             ActivateShampooTool();
-            AudioManager.instance.Play("Shampoo");
 
         }
         else if (CurrentTool == 3)//Shower
         {
             ActivateShowerTool();
-            AudioManager.instance.Play("Shower Head");
         }
     }
 
@@ -147,15 +193,18 @@ public class PlayerShowerController : MonoBehaviour
 
             if (hit.transform.gameObject.tag == "Head")
             {
-                ChangeCam(headCam);        
+                ChangeCam(headCam);
+                AudioManager.instance.Play("Zoom in");
             }
             else if (hit.transform.gameObject.tag == "LeftArm")
             {
                 ChangeCam(leftCam);
+                AudioManager.instance.Play("Zoom in");
             }
             else if (hit.transform.gameObject.tag == "RightArm")
             {
                 ChangeCam(rightCam);
+                AudioManager.instance.Play("Zoom in");
             }
         }
     }
@@ -201,6 +250,7 @@ public class PlayerShowerController : MonoBehaviour
         if (CurrentTool == 0)
         {//selction 
             ChangeCam(mainCam);
+            AudioManager.instance.Play("Zoom out");
         }
     }
 

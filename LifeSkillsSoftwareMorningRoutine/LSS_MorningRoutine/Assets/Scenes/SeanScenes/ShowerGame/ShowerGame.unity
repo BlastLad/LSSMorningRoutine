@@ -3176,35 +3176,49 @@ MonoBehaviour:
     TimesPlayed: 0
     source: {fileID: 0}
   - name: Shower Ambience
-    clip: {fileID: 8300000, guid: dc61a7ae61ecce24588c04f80d9f5e86, type: 3}
-    volume: 0.327
+    clip: {fileID: 8300000, guid: ecd2f7949d26c0049bc8405296cbed86, type: 3}
+    volume: 0.215
     pitch: 1
     loop: 1
     TimesPlayed: 0
     source: {fileID: 0}
   - name: Shower Head
-    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
-    volume: 0.524
+    clip: {fileID: 8300000, guid: f0d413689f4fda04c948ef9b561a4c3d, type: 3}
+    volume: 0.144
     pitch: 1
     loop: 0
     TimesPlayed: 0
     source: {fileID: 0}
   - name: Inspector
-    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    clip: {fileID: 8300000, guid: 8f8dd4ddfbafd724abbd6c4c29bd4773, type: 3}
     volume: 0.502
     pitch: 1
     loop: 0
     TimesPlayed: 0
     source: {fileID: 0}
   - name: Soap
-    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    clip: {fileID: 8300000, guid: e6b65a6883c988243985b8094cb76d60, type: 3}
     volume: 0.491
     pitch: 1
     loop: 0
     TimesPlayed: 0
     source: {fileID: 0}
   - name: Shampoo
-    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    clip: {fileID: 8300000, guid: 243f5e4abb7fdaa4ea352b49d7709522, type: 3}
+    volume: 0.484
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Zoom in
+    clip: {fileID: 8300000, guid: 1351d3a8e4d1ebb4ca05c08c1648341f, type: 3}
+    volume: 0.484
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Zoom out
+    clip: {fileID: 8300000, guid: dd1127401bdd2be40b170a98b1112e4f, type: 3}
     volume: 0.484
     pitch: 1
     loop: 0
