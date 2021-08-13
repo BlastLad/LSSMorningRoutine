@@ -40,12 +40,15 @@ public class PlayerShowerController : MonoBehaviour
     void Start()
     {
         SelectionTool();
+
+        AudioManager.instance.Play("Shower Ambience");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (AudioManager.instance.isPlaying("Shower Ambience") == false)
+            AudioManager.instance.Play("Shower Ambience");
     }
 
     public void SelectionTool()
@@ -94,18 +97,23 @@ public class PlayerShowerController : MonoBehaviour
         if (CurrentTool == 0)//Selection
         {
             ActivateSelectionTool();
+            AudioManager.instance.Play("Inspector");
         }
         else if(CurrentTool == 1)//Soap
         {
             ActivateSoapTool();
+            AudioManager.instance.Play("Soap");
         }
         else if(CurrentTool == 2)//Shampoo
         {
             ActivateShampooTool();
+            AudioManager.instance.Play("Shampoo");
+
         }
         else if (CurrentTool == 3)//Shower
         {
             ActivateShowerTool();
+            AudioManager.instance.Play("Shower Head");
         }
     }
 

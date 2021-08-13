@@ -3096,6 +3096,134 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.90181124, z: 1}
   m_Center: {x: 0, y: -0.33575124, z: 0}
+--- !u!1 &1343768641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343768643}
+  - component: {fileID: 1343768642}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1343768642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343768641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b882cc9ad9006548a8e1a627c4fc4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - name: Pop 1
+    clip: {fileID: 8300000, guid: 5f4f75ad3ff742947ad8c607487b600a, type: 3}
+    volume: 0.48
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Pop 2
+    clip: {fileID: 8300000, guid: cfcce8fd474e087439628123b39dc0e9, type: 3}
+    volume: 0.532
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Pop 3
+    clip: {fileID: 8300000, guid: b021a30bef9cea74f9f22598d09a1851, type: 3}
+    volume: 0.491
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 1
+    clip: {fileID: 8300000, guid: 24a91cacca3f24e409408b24e129b6af, type: 3}
+    volume: 0.502
+    pitch: 0
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 2
+    clip: {fileID: 8300000, guid: 941172f4fa0b20045bfd3ae409ea49a3, type: 3}
+    volume: 0.543
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 3
+    clip: {fileID: 8300000, guid: 0f98176d09761874dac60cbbe3960fb0, type: 3}
+    volume: 0.543
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Sparkle
+    clip: {fileID: 8300000, guid: 6f0d77357bc6d9a4caad2a0570e5e51f, type: 3}
+    volume: 0.506
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Shower Ambience
+    clip: {fileID: 8300000, guid: dc61a7ae61ecce24588c04f80d9f5e86, type: 3}
+    volume: 0.327
+    pitch: 1
+    loop: 1
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Shower Head
+    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    volume: 0.524
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Inspector
+    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    volume: 0.502
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Soap
+    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    volume: 0.491
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Shampoo
+    clip: {fileID: 8300000, guid: b9adaac8354b6e7438628aff93931632, type: 3}
+    volume: 0.484
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+--- !u!4 &1343768643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343768641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1437749703
 PrefabInstance:
   m_ObjectHideFlags: 0
