@@ -25317,6 +25317,7 @@ MonoBehaviour:
   leftCam: {fileID: 392846231}
   rightCam: {fileID: 328124225}
   cursor: {fileID: 2067396751}
+  counter: 0
   selectionMouse: {fileID: 21300000, guid: 11ead79bd9452304aaf6d384f08b4581, type: 3}
   soapMouse: {fileID: 21300000, guid: cce698431a56aea4496dcc391f2409d0, type: 3}
   bodyWashMouse: {fileID: 21300000, guid: 51302b351213d1443ba5d602196fb555, type: 3}

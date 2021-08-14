@@ -58,12 +58,12 @@ public class PlayerShowerController : MonoBehaviour
         }
 
         //Trying to play the scrub sound whenever the mouse changes direction.
-        /*if(isToolinUse == true)
+        if(isToolinUse == true)
         {
             if(CurrentTool == 1)
             {
-                MouseTrackerX.Add(Input.mousePosition.x);
-                MouseTrackerY.Add(Input.mousePosition.y);
+                MouseTrackerX.Add(Mouse.current.position.ReadValue().x);
+                MouseTrackerY.Add(Mouse.current.position.ReadValue().y);
                 counter += counter;
 
                 if(counter > 1)
@@ -92,7 +92,7 @@ public class PlayerShowerController : MonoBehaviour
             counter = 0;
             MouseTrackerX.Clear();
             MouseTrackerY.Clear();
-        } */
+        } 
     }
 
 
