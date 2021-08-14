@@ -64,25 +64,24 @@ public class PlayerShowerController : MonoBehaviour
             {
                 MouseTrackerX.Add(Mouse.current.position.ReadValue().x);
                 MouseTrackerY.Add(Mouse.current.position.ReadValue().y);
-                counter += counter;
-
-                if(counter > 1)
+                counter++;
+                if(counter > 10)
                 {
-                    if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 2] > 0){
-                        if (MouseTrackerX[counter] - MouseTrackerX[counter - 1] < 0)
-                            AudioManager.instance.Play("Scrub 1");
+                    if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] > 0){
+                        if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 5] < 0)
+                            AudioManager.instance.Play("Scrub 1 in");
                     }
-                    else if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 2] < 0){
-                        if (MouseTrackerX[counter] - MouseTrackerX[counter - 1] > 0)
-                            AudioManager.instance.Play("Scrub 2");
+                    if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] < 0){
+                        if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 5] > 0)
+                            AudioManager.instance.Play("Scrub 1 out");
                     }
-                    if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 2] > 0){
-                        if (MouseTrackerY[counter] - MouseTrackerY[counter - 1] < 0)
-                            AudioManager.instance.Play("Scrub 2");
+                    if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] > 0){
+                        if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 5] < 0)
+                            AudioManager.instance.Play("Scrub 3 in");
                     }
-                    else if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 2] < 0){
-                        if (MouseTrackerY[counter] - MouseTrackerY[counter - 1] > 0)
-                            AudioManager.instance.Play("Scrub 3");
+                    if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] < 0){
+                        if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 5] > 0)
+                            AudioManager.instance.Play("Scrub 3 out");
                     }
                 }
             }

@@ -3150,7 +3150,7 @@ MonoBehaviour:
   - name: Scrub 1
     clip: {fileID: 8300000, guid: 24a91cacca3f24e409408b24e129b6af, type: 3}
     volume: 0.502
-    pitch: 0
+    pitch: 1
     loop: 0
     TimesPlayed: 0
     source: {fileID: 0}
@@ -3220,6 +3220,34 @@ MonoBehaviour:
   - name: Zoom out
     clip: {fileID: 8300000, guid: dd1127401bdd2be40b170a98b1112e4f, type: 3}
     volume: 0.484
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 1 in
+    clip: {fileID: 8300000, guid: 955883f39597b9f47a4d68e4fe0f4e80, type: 3}
+    volume: 0.249
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 1 out
+    clip: {fileID: 8300000, guid: f80333c113984b3498a7cc177acea44b, type: 3}
+    volume: 0.286
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 3 in
+    clip: {fileID: 8300000, guid: a95d00d628dc6d4449a513fb485292f9, type: 3}
+    volume: 0.293
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scrub 3 out
+    clip: {fileID: 8300000, guid: 5ced170dac2519a4a83738d76d4fd8cb, type: 3}
+    volume: 0.335
     pitch: 1
     loop: 0
     TimesPlayed: 0
