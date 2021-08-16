@@ -14,6 +14,17 @@ public class IngredientBowlData : MonoBehaviour
     [SerializeField]
     public GameObject unfilledCheckBox;
 
+    [SerializeField]
+    public GameObject eggs;
+    [SerializeField]
+    public GameObject blueBerry;
+    [SerializeField]
+    public GameObject toast;
+    [SerializeField]
+    public GameObject Oranges;
+    [SerializeField]
+    public GameObject potato;
+
     public MeshRenderer tempRenderer;
 
     // Partcile Effect
@@ -41,18 +52,22 @@ public class IngredientBowlData : MonoBehaviour
         else if (ingredientID == 1)
         {
             name.text = "Eggs";
+            eggs.SetActive(true);
         }
         else if (ingredientID == 2)
         {
             name.text = "BlueBerries";
+            blueBerry.SetActive(true);
         }
         else if (ingredientID == 3)
         {
             name.text = "Oranges";
+            Oranges.SetActive(true);
         }
         else if (ingredientID == 4)
         {
             name.text = "Toast";
+            toast.SetActive(true);
         }
         else if (ingredientID == 5)
         {

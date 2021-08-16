@@ -52,7 +52,13 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
 
         eggControls.MixingMicroGame.Grab.started += ctx => HandleInputBegin();
         eggControls.MixingMicroGame.Grab.canceled += ctx => HandleInputEnd();
-        eggControls.MixingMicroGame.Crack.started += ctx => CrackEgg();
+        eggControls.MixingMicroGame.Crack.started += ctx =>
+        {
+            if (ctx.started != null)
+            {
+                CrackEgg();
+            }
+        };
 
         eggText.text = "" + requiredEggs;
     }

@@ -61,6 +61,24 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
     [SerializeField]
     GameObject mixTutorial;
 
+    [SerializeField]
+    GameObject[] interiorBlueBerries;
+    int Blueberryindex = 0;
+    [SerializeField]
+    GameObject interiorPancakemix;
+    [SerializeField]
+    GameObject[] interiorEggs;
+    int eggsIndex = 0;
+    [SerializeField]
+    GameObject[] interiorOranges;
+    int orangeIndex = 0;
+    [SerializeField]
+    GameObject[] interiorToast;
+    int toastindex = 0;
+    [SerializeField]
+    GameObject[] InteriorPotato;
+    int potatoIndex = 0;
+
     private void Awake()
     {
         if (instance == null)
@@ -200,7 +218,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
         {
             if (recipeComponent == currentIngredient.GetIngredientID())
             {
-                ingredientMarkedForDeletion = currentIngredient.GetIngredientID();
+                ingredientMarkedForDeletion = currentIngredient.GetIngredientID();                
                 correctIngredients++;
             }
 
@@ -211,7 +229,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
         if (ingredientMarkedForDeletion != -1)
         {
             requiredIngredients.Remove(ingredientMarkedForDeletion);
-
+            AddInterior(ingredientMarkedForDeletion);
             if (!requiredIngredients.Contains(currentIngredient.GetIngredientID()))
             {
                 Debug.Log("WHATEVES" + currentIngredient.GetIngredientID() + requiredIngredients.Contains(currentIngredient.GetIngredientID()));
@@ -231,6 +249,40 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
         if (ingredientsAdded > allowedIngredients || requiredIngredients.Count == 0)
         {
             CheckForMix();
+        }
+    }
+
+    public void AddInterior(int ingredientIDNum)
+    {
+
+        if (ingredientIDNum == 0)
+        {
+            interiorPancakemix.SetActive(true);
+        }
+        else if (ingredientIDNum == 1)
+        {
+            interiorEggs[eggsIndex].SetActive(true);
+            eggsIndex++;
+        }
+        else if (ingredientIDNum == 2)
+        {
+            interiorBlueBerries[Blueberryindex].SetActive(true);
+            Blueberryindex++;
+        }
+        else if (ingredientIDNum == 3)
+        {
+            interiorOranges[orangeIndex].SetActive(true);
+            orangeIndex++;
+        }
+        else if (ingredientIDNum == 4)
+        {
+            interiorToast[toastindex].SetActive(true);
+            toastindex++;
+        }
+        else if (ingredientIDNum == 5)
+        {
+            InteriorPotato[potatoIndex].SetActive(true);
+            potatoIndex++;
         }
     }
 

@@ -15,6 +15,10 @@ public class Egg : MonoBehaviour
     bool isCracked = false;
     [SerializeField]
     GameObject yolk;
+    [SerializeField]
+    GameObject baseEgg;
+    [SerializeField]
+    GameObject crackedEgg;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +71,8 @@ public class Egg : MonoBehaviour
                 {
                     Debug.Log("DING DING DINg");
                     isCracked = true;
+                    baseEgg.SetActive(false);
+                    crackedEgg.SetActive(true);
                     EggMicroGameController.instance.EnableCrackImage();
                 }
             }
