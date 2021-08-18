@@ -197,7 +197,7 @@ public class KnifeSkills : MonoBehaviour
             }
             else
             {
-                if (nextP.name == "Bread")
+                if (nextP.name == "Bread" || nextP.name == "Potato")
                 {
                     foodObject.GetComponent<FoodObjectData>().orangeObject.SetActive(false);
                     foodObject.GetComponent<FoodObjectData>().breadObject.SetActive(true);
