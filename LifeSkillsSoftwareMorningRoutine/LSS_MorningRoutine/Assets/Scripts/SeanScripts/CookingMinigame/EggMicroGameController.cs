@@ -40,6 +40,9 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
     [SerializeField]
     GameObject eggTutorial;
 
+    [SerializeField]
+    Text speedText;
+
     private void Awake()
     {
         if (instance == null)
@@ -61,6 +64,11 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         };
 
         eggText.text = "" + requiredEggs;
+    }
+
+    public void SetSpeedText(string text)
+    {
+        speedText.text = text;
     }
 
     public void EnableCrackImage()

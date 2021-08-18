@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Egg : MonoBehaviour
 {
 
@@ -52,12 +53,12 @@ public class Egg : MonoBehaviour
         {
             if (GetComponent<Rigidbody>().velocity.magnitude >= eggBreakMagnitude)
             {
+               EggMicroGameController.instance.SetSpeedText("Too Fast");
                 SpawnNewEgg();
             }
             else if (GetComponent<Rigidbody>().velocity.magnitude < eggCrackMagnitude)
             {
-                
-                Debug.Log("To Slow");
+                EggMicroGameController.instance.SetSpeedText("Too Slow");
                 GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
             }
@@ -65,11 +66,12 @@ public class Egg : MonoBehaviour
             {
                 if (isCracked)
                 {
+                    EggMicroGameController.instance.SetSpeedText("");
                     SpawnNewEgg();
                 }
                 else
                 {
-                    Debug.Log("DING DING DINg");
+                    EggMicroGameController.instance.SetSpeedText("");
                     isCracked = true;
                     baseEgg.SetActive(false);
                     crackedEgg.SetActive(true);

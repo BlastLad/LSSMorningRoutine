@@ -72,6 +72,7 @@ public class IngredientBowlData : MonoBehaviour
         else if (ingredientID == 5)
         {
            name.text = "Potatoes";
+            potato.SetActive(true);
         }
 
         tempRenderer.material = tempMat;

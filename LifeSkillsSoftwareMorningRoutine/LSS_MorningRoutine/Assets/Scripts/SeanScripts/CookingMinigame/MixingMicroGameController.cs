@@ -79,6 +79,8 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
     GameObject[] InteriorPotato;
     int potatoIndex = 0;
 
+
+    bool sentBool = true;
     private void Awake()
     {
         if (instance == null)
@@ -296,15 +298,20 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
 
         Debug.Log("The ingredients were added " + addedCorrectly);
 
-        if (shouldMix)
+        int formNum = ingredientsAdded - correctIngredients;
+
+        if (formNum < 0)
         {
-            BeginMix();
+            formNum = 0;
         }
-        else
+
+        if (sentBool)
         {
-            CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + (ingredientsAdded - correctIngredients);
+            sentBool = false;
+            CookingMinigameManager.instance.fillableField[CookingMinigameManager.instance.index].text = "" + formNum;
             CookingMinigameManager.instance.GetNextMicrogame();//need victory screen
         }
+        
     }
 
 

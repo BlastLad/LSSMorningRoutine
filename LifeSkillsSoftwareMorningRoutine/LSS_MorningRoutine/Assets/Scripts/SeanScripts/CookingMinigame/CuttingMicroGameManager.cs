@@ -21,6 +21,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     GameObject[] requiredGameObjects;//things necessary for the cutting micro game
 
     GameObject[] objectsToCut;
+    public GameObject inGameTutorial;
     public int currentCutIndex = 0;
 
     public bool isCounting = false;
@@ -105,7 +106,9 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     }
 
     public void DeactivateGame()//what ends the microgame
-    {        
+    {
+
+        inGameTutorial.SetActive(false);
 
         foreach (GameObject preReq in requiredGameObjects)
         {

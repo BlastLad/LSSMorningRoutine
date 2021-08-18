@@ -69,8 +69,11 @@ public class PlayerMixingController : MonoBehaviour
 
 
         //put things for dropping items here
-        selectedObject.GetComponent<IngredientBowlData>().ResetPosition();
-        selectedObject = null;
+        if (selectedObject != null)
+        {
+            selectedObject.GetComponent<IngredientBowlData>().ResetPosition();
+            selectedObject = null;
+        }
     }
 
     // Update is called once per frame
