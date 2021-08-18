@@ -13,7 +13,7 @@ public class DressMiniGameManager : MonoBehaviour
     [SerializeField]
     ClothingCatalogData[] DressSections;
     [SerializeField]
-    public int desiredOutfitNum = 1;//0 Beach, 1 Work, 2 Casual, 3 School
+    public int desiredOutfitNum = 1;//0 Beach, 1 Work, 2 storm, 3 School
 
     bool isBoy;
     [SerializeField]
@@ -32,6 +32,16 @@ public class DressMiniGameManager : MonoBehaviour
     [SerializeField]
     Text outFitText;
     public Sound Fail;
+
+    [SerializeField]
+    GameObject postReport;
+    [SerializeField]
+    Text correctText;
+    [SerializeField]
+    Text postOutfitText;
+    [SerializeField]
+    GameObject[] objsToDisable;
+    string outFitname;
     private void Awake()
     {
         instance = this;
@@ -52,11 +62,11 @@ public class DressMiniGameManager : MonoBehaviour
 
     public string DetermineOutFit()
     {
-        string outFitname = "null";
+        outFitname = "null";
 
         if (desiredOutfitNum == 0)
         {
-            outFitname = "Beach";
+            outFitname = "The Beach";
         }
         else if (desiredOutfitNum == 1)
         {
@@ -64,7 +74,7 @@ public class DressMiniGameManager : MonoBehaviour
         }
         else if (desiredOutfitNum == 2)
         {
-            outFitname = "Storm";
+            outFitname = "A Storm";
         }
         else if (desiredOutfitNum == 3)
         {
@@ -177,11 +187,29 @@ public class DressMiniGameManager : MonoBehaviour
         {
             for (int i = 0; i < outfitData.Length; i++)
             {
-                Debug.Log(outfitData[i] + "hallo");
-                if (outfitData[i] != desiredOutfitNum)//can only be work for all objects
+                if (i == 0)//head 
                 {
-                    successfulOutfit = false;
-                    AudioManager.instance.Play("Fail");
+                    if (outfitData[i] == 0 || outfitData[i] == 2)//cant be umbrella or beach hat
+                    {
+                        successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
+                    }
+                }
+                else if (i == 1)//body
+                {
+                    if (outfitData[i] != 1)//can only be work body
+                    {
+                        successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
+                    }
+                }
+                else if (i == 2)//can only be work bottoms
+                {
+                    if (outfitData[i] != 1)
+                    {
+                        successfulOutfit = false;
+                        AudioManager.instance.Play("Fail");
+                    }
                 }
             }
         }
@@ -237,7 +265,7 @@ public class DressMiniGameManager : MonoBehaviour
                 }
                 else if (i == 2)
                 {
-                    if (outfitData[2] != 2 || outfitData[2] != 3)// can be rain bottoms or school bottoms
+                    if (outfitData[2] == 0 || outfitData[2] == 1)// can be rain bottoms or school bottoms
                     {
                         successfulOutfit = false;
                     }
@@ -250,7 +278,7 @@ public class DressMiniGameManager : MonoBehaviour
             {
                 if (i == 0)
                 {
-                    if (outfitData[0] != 3 || outfitData[0] != 1)//can only be normal school or nothing/ glasses
+                    if (outfitData[0] == 2 || outfitData[0] == 0)//can only be normal school or nothing/ glasses
                     {
                         successfulOutfit = false;
                         AudioManager.instance.Play("Fail");
@@ -279,34 +307,52 @@ public class DressMiniGameManager : MonoBehaviour
         {
             Debug.Log("YOU DRESSED CORRECTLY");
 
-            if(desiredOutfitNum == 0)
+            if (desiredOutfitNum == 0)
+            {
                 AudioManager.instance.Play("BeachWin");
-
+            }
             else if (desiredOutfitNum == 1)
+            {
                 AudioManager.instance.Play("WorkWin");
-
+            }
             else if (desiredOutfitNum == 2)
+            {
                 AudioManager.instance.Play("RainWin");
-
-            else AudioManager.instance.Play("SchoolWin");
+            }
+            else 
+            {
+                AudioManager.instance.Play("SchoolWin");
+            }
+            PostOutfitReport("Correct");
             PlayerStats.isDressed = true;
 
         }
         else
         {
-            Debug.Log("YOU DID NOT DRESS CORRECTLY");
+            PostOutfitReport("Incorrect");
             PlayerStats.isDressed = false;
 
         }
 
-        StartCoroutine(ReturnToMain());
 
     }
 
-
-    private IEnumerator ReturnToMain()
+    public void PostOutfitReport(string report)
     {
-        yield return new WaitForSeconds(1.6f);
+        foreach (GameObject obj in objsToDisable)
+        {
+            obj.SetActive(false);
+        }
+
+
+        postReport.SetActive(true);
+        postOutfitText.text = outFitname;
+        correctText.text = report;
+        
+    }
+
+    public void ReturnToMain()
+    {
         SceneManager.LoadScene(0);
 
     }

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SeanScenes/Dress/DressUpScene4.unity
     guid: bd76785387c2e5e4e80bec4870502594
   - enabled: 1
-    path: Assets/Scenes/SeanScenes/KitchenBuildScene.unity
+    path: Assets/Scenes/SeanScenes/Kitchen/KitchenBuildScene.unity
     guid: dd88589a60d927847b188a4e1d865f63
   - enabled: 1
     path: Assets/Scenes/SeanScenes/MusicGame/SongSceneWithHoldNotes.unity
