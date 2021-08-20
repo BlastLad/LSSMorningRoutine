@@ -90,7 +90,7 @@ public class Conductor : MonoBehaviour
             {
                 GameObject note = Instantiate(notePrefab, transform.position, Quaternion.identity);
 
-                Debug.Log(notes[index].name + " " + notes[index].isHold);
+                //Debug.Log(notes[index].name + " " + notes[index].isHold);
 
                 Vector3 movePos;
 

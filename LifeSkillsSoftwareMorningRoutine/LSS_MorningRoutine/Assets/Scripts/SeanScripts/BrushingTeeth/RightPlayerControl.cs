@@ -6,6 +6,7 @@ public class RightPlayerControl : MonoBehaviour
 {
     [SerializeField]
     List<MusicNote> rightNotes = new List<MusicNote>();
+    [SerializeField]
     List<MusicNote> rightHolds = new List<MusicNote>();
 
 
@@ -66,7 +67,12 @@ public class RightPlayerControl : MonoBehaviour
 
         if (rightNotes.Count > 0)
         {
-
+            if (rightNotes[0] == null)
+            {
+                Debug.LogWarning("SAFTEY CHECK");
+                rightNotes.RemoveAt(0);
+                return;
+            }
             MusicNote note = rightNotes[0];
 
             if (note.getisHold())
@@ -83,13 +89,13 @@ public class RightPlayerControl : MonoBehaviour
                 }
                 else
                 {
+                    note.speed = 0;
                     holdMissed = false;
                     BrushingTeethPlayerController.instance.rightHoldActive = true;
                     note.gameObject.GetComponent<LineRenderer>().startColor = Color.blue;
                     note.gameObject.GetComponent<LineRenderer>().endColor = Color.blue;
                 }
 
-                note.speed = 0;
 
                 return;
                 //removefrom thing put into a holdnote arraylist
@@ -125,7 +131,7 @@ public class RightPlayerControl : MonoBehaviour
 
 
 
-                Debug.Log("POINTS ADDED RIGHT");
+                //Debug.Log("POINTS ADDED RIGHT");
             }
             else//indicates a missed note
             {
@@ -142,9 +148,10 @@ public class RightPlayerControl : MonoBehaviour
     {
         if (rightHolds.Count > 0)
         {
+      
             MusicNote note = rightHolds[0];
 
-            if (addPoints && !holdMissed)
+            if (addPoints && !holdMissed && endHold != null)
             {
                 float distance = Vector2.Distance(transform.position, endHold.transform.position);
 
@@ -180,7 +187,14 @@ public class RightPlayerControl : MonoBehaviour
             holdMissed = true;
             rightHolds.RemoveAt(0);
             Destroy(note.gameObject);
-            Destroy(endHold.gameObject);
+            if (rightNotes.Count > 0)
+            {
+                rightNotes.RemoveAt(0);//end note
+            }
+            if (endHold != null)
+            {
+                Destroy(endHold.gameObject);
+            }
 
         }
     }

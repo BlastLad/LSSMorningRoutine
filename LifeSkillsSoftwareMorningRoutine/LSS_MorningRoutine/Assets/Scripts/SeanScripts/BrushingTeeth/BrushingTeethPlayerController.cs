@@ -59,14 +59,14 @@ public class BrushingTeethPlayerController : MonoBehaviour
     {
         isLeftHolding = true;
         leftplayerControl.destroyNote(true);
-        Debug.Log("LEFT CLICK FIRED");
+        //Debug.Log("LEFT CLICK FIRED");
     }
 
     public void RightClick()
     {
         isRightHolding = true;
         rightplayerControl.destroyNote(true);
-        Debug.Log("RIGHT CLICK FIRED");
+        //Debug.Log("RIGHT CLICK FIRED");
     }
 
     public void EndLeft()
@@ -74,9 +74,10 @@ public class BrushingTeethPlayerController : MonoBehaviour
         isLeftHolding = false;
         if (leftHoldActive)
         {
+            Debug.Log("LEFT HOLD ENDED" + leftplayerControl.GetLeftHolds().Count);
             leftplayerControl.destroyNote(true, leftplayerControl.GetLeftHolds()[0].endNote);
         }
-        Debug.Log("LEFT CLICK ENDED");
+        //Debug.Log("LEFT CLICK ENDED");
     }
 
     public void EndRight()
@@ -86,7 +87,7 @@ public class BrushingTeethPlayerController : MonoBehaviour
         {
             rightplayerControl.destroyNote(true, rightplayerControl.GetRightHolds()[0].endNote);
         }
-        Debug.Log("RIGHT CLICK ENDED");
+        //Debug.Log("RIGHT CLICK ENDED");
     }
 
 

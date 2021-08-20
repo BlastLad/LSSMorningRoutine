@@ -55,3 +55,6 @@ TagManager:
   - name: Main
     uniqueID: 3757455835
     locked: 0
+  - name: Musicgame
+    uniqueID: 825200713
+    locked: 0

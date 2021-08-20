@@ -30,6 +30,7 @@ public class MissPosBeginMoving : MonoBehaviour
             }
             else if (other.GetComponent<EndHold>() != null)
             {
+                Debug.Log("SUMMONED");
                 other.GetComponent<EndHold>().GetAttachedGO().SetEndMovingToHit(false);
             }
         }

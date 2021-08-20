@@ -62,15 +62,16 @@ public class MusicNote : MonoBehaviour
         beatOfThisNote = currentBeat;
     }
 
-    public void SetUp(Vector2 spawnPos, Vector2 removePos, int advanceNotes, float songPosBeats, float currentBeat, float endHold)
+    public void SetUp(Vector2 spawnPos, Vector2 removePos, int advanceNotes, float songPosBeats, float currentBeat, float lengthofHold)
     {
         SpawnPos = spawnPos;
         RemovePos = removePos;
         BeatsShownInAdvance = advanceNotes;
         songPosInBeats = songPosBeats;
         beatOfThisNote = currentBeat;
-        holdNoteLength = endHold - currentBeat;
+        holdNoteLength = lengthofHold;
         holdNoteEndBeat = currentBeat + holdNoteLength;
+        Debug.Log("Current Beat" + currentBeat + "Length" + holdNoteLength + " end beat" + holdNoteEndBeat);
         isHold = true;
 
         SpawnLineRenderer();
@@ -118,9 +119,9 @@ public class MusicNote : MonoBehaviour
             
             //
 
-            if ((int)songPosInBeats ==  holdNoteEndBeat - BeatsShownInAdvance && holdSpawned == false)
+            if (songPosInBeats >=  holdNoteEndBeat - BeatsShownInAdvance && holdSpawned == false)
             {
-                Debug.Log("REACHED");
+                Debug.Log("REACHED" + holdNoteEndBeat);
                 endNote = Conductor.instance.SpawnHoldNoteEnd(holdNoteEndPrefab);
                 endNote.GetComponent<EndHold>().SetParentHold(this);
                 holdSpawned = true;

@@ -60,11 +60,18 @@ public class LeftPlayerControl : MonoBehaviour
     {
         if (leftNotes.Count > 0)
         {
+            if (leftNotes[0] == null)
+            {
+                Debug.LogWarning("SAFTEY CHECK");
+                leftNotes.RemoveAt(0);
+                return;
+            }
             MusicNote note = leftNotes[0];
 
             if (note.getisHold())
             {                
-                Debug.Log("HOLD NOTE");
+                //check if hold is active
+                Debug.Log("HOLD NOTE" + leftNotes[0].name);
                 leftHolds.Add(leftNotes[0]);
                 leftNotes.RemoveAt(0);      
                 
@@ -137,7 +144,7 @@ public class LeftPlayerControl : MonoBehaviour
         if (leftHolds.Count > 0)
         {
             MusicNote note = leftHolds[0];
-
+            Debug.Log("IS IT A HOLD NOTE" + leftHolds[0].name);
           
             if (addPoints && !holdMissed && endHold != null)
             {
@@ -175,8 +182,13 @@ public class LeftPlayerControl : MonoBehaviour
             holdMissed = true;
             leftHolds.RemoveAt(0);
             Destroy(note.gameObject);
+            if (leftNotes.Count > 0)
+            {
+                leftNotes.RemoveAt(0);//end note
+            }
             if (endHold != null)
             {
+          
                 Destroy(endHold.gameObject);
             }
 
