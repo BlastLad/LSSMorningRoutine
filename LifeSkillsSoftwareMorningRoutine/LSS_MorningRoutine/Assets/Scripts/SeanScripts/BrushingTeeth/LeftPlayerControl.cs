@@ -77,6 +77,7 @@ public class LeftPlayerControl : MonoBehaviour
                 
                 if (!addPoints)// if you missed the beat
                 {
+                    note.speed = 0;
                     holdMissed = true;
                     note.gameObject.GetComponent<LineRenderer>().startColor = Color.gray;
                     note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;

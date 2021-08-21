@@ -44,6 +44,12 @@ public class Conductor : MonoBehaviour
     [SerializeField]
     Transform rightRemovePos;
 
+    [SerializeField]
+    Transform LeftNoteSpawnPos;
+
+    [SerializeField]
+    Transform rightNoteSpawnPos;
+
     bool songOver = false;
 
 
@@ -88,29 +94,45 @@ public class Conductor : MonoBehaviour
 
             if (index < notes.Length && notes[index].beat < songPositionInBeats + beatsShownInAdvance)
             {
-                GameObject note = Instantiate(notePrefab, transform.position, Quaternion.identity);
+                GameObject note; //Instantiates at the center needs to spawn at left and right and then move
 
                 //Debug.Log(notes[index].name + " " + notes[index].isHold);
 
                 Vector3 movePos;
 
-                if (notes[index].moveLeft)
+                if (notes[index].moveLeft)//moveLeft means IT IS MOVING NEGATIVELY we need to change that to it is MOVING TO THE LEFT MOUSE BUTTON POS AND NOW POSITIVELY
                 {
-                    movePos = leftRemovePos.position;
+                    note = Instantiate(notePrefab, LeftNoteSpawnPos.transform.position, Quaternion.identity);
+                    movePos = leftRemovePos.position;  //The move position should now be either AT center or near it (Still left leaning)
                 }
                 else
                 {
-                    movePos = rightRemovePos.position;
+                    note = Instantiate(notePrefab, rightNoteSpawnPos.transform.position, Quaternion.identity);
+                    movePos = rightRemovePos.position; // Same as above (Still right leaning)
                 }
 
 
                 if (notes[index].isHold)
                 {
-                    note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat, notes[index].holdNoteLength);
+                    if (movePos == leftRemovePos.position)
+                    {
+                        note.GetComponent<MusicNote>().SetUp(LeftNoteSpawnPos.transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat, notes[index].holdNoteLength);
+                    }
+                    else
+                    {
+                        note.GetComponent<MusicNote>().SetUp(rightNoteSpawnPos.transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat, notes[index].holdNoteLength);//spawn pos needs to be left or right
+                    }
                 }
                 else
                 {
-                    note.GetComponent<MusicNote>().SetUp(transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
+                    if (movePos == leftRemovePos.position)
+                    {
+                        note.GetComponent<MusicNote>().SetUp(LeftNoteSpawnPos.transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);// spawn pos needs to be left or right
+                    }
+                    else
+                    {
+                        note.GetComponent<MusicNote>().SetUp(rightNoteSpawnPos.transform.position, movePos, beatsShownInAdvance, songPositionInBeats, notes[index].beat);
+                    }
                 }
                 //initialize the fields of the music note
 
@@ -137,6 +159,11 @@ public class Conductor : MonoBehaviour
 
     public GameObject SpawnHoldNoteEnd(GameObject prefab)
     {
-        return Instantiate(prefab, transform.position, Quaternion.identity);
+        return Instantiate(prefab, transform.position, Quaternion.identity);//needs left and right spawn pos
+    }
+
+    public GameObject SpawnHoldNoteEnd(GameObject prefab, Vector3 spawningPos)
+    {
+        return Instantiate(prefab, spawningPos, Quaternion.identity);//needs left and right spawn pos
     }
 }

@@ -109,7 +109,7 @@ public class MusicNote : MonoBehaviour
         }
         else
         {
-            transform.position += (Vector3)(RemovePos.normalized * speed * Time.deltaTime);
+            transform.position -= (Vector3)(RemovePos.normalized * speed * Time.deltaTime);
         }
 
         if (isHold)
@@ -122,7 +122,7 @@ public class MusicNote : MonoBehaviour
             if (songPosInBeats >=  holdNoteEndBeat - BeatsShownInAdvance && holdSpawned == false)
             {
                 Debug.Log("REACHED" + holdNoteEndBeat);
-                endNote = Conductor.instance.SpawnHoldNoteEnd(holdNoteEndPrefab);
+                endNote = Conductor.instance.SpawnHoldNoteEnd(holdNoteEndPrefab, SpawnPos);
                 endNote.GetComponent<EndHold>().SetParentHold(this);
                 holdSpawned = true;
             }
@@ -134,7 +134,7 @@ public class MusicNote : MonoBehaviour
                 }
                 else
                 {
-                    endNote.transform.position += (Vector3)(RemovePos.normalized * 8 * Time.deltaTime);
+                    endNote.transform.position -= (Vector3)(RemovePos.normalized * 8 * Time.deltaTime);
                 }
                 lineRenderer.SetPosition(0, transform.position);
                 lineRenderer.SetPosition(1, endNote.transform.position);
@@ -142,7 +142,7 @@ public class MusicNote : MonoBehaviour
             else
             {
                 lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, Conductor.instance.transform.position);
+                lineRenderer.SetPosition(1, SpawnPos);
             }
         }
    

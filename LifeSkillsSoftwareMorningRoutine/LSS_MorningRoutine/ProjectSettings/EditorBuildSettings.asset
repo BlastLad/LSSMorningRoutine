@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SeanScenes/Kitchen/KitchenBuildScene.unity
     guid: dd88589a60d927847b188a4e1d865f63
   - enabled: 1
-    path: Assets/Scenes/SeanScenes/MusicGame/SongSceneWithHoldNotes.unity
-    guid: 88f839c55607ae2478a794a79b34ba87
+    path: Assets/Scenes/SeanScenes/MusicGame/InverseMusicScene.unity
+    guid: e1e2174febc3b4746ab32957c11ec792
   - enabled: 1
     path: Assets/Scenes/SeanScenes/ShowerGame/ShowerGame.unity
     guid: c836c59cb61a8324d866b3e4530f8f4f
