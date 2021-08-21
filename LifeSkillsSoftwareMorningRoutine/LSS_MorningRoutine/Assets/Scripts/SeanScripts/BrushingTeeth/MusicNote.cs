@@ -82,8 +82,9 @@ public class MusicNote : MonoBehaviour
         gameObject.AddComponent<LineRenderer>();
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.material = defaultMat;
+        lineRenderer.sortingOrder = 3;
         lineRenderer.startColor = Color.white;
-        lineRenderer.endColor = Color.blue;
+        lineRenderer.endColor = Color.white;
 
         lineRenderer.useWorldSpace = true;
 

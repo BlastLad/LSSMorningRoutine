@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 30
+    FieldOfView: 30.7
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -1131,14 +1131,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328124224}
-  m_LocalRotation: {x: 0.23182066, y: 0.6185315, z: -0.19799352, w: 0.7242075}
-  m_LocalPosition: {x: 15.54, y: 2.16, z: -7.2}
+  m_LocalRotation: {x: 0.23868631, y: 0.66762143, z: -0.24035846, w: 0.66297686}
+  m_LocalPosition: {x: 15.289, y: 2.55, z: -7.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1544392202}
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 35.5, y: 81, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.6, y: 90.4, z: 0}
 --- !u!1 &384722555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,7 +2338,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17430
+  m_Name: pb_Mesh34108
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

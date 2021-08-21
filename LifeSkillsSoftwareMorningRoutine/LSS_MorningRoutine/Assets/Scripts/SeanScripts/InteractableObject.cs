@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class InteractableObject : MonoBehaviour
 {
     string playerString = "Player";
@@ -12,6 +13,9 @@ public class InteractableObject : MonoBehaviour
     [SerializeField]
     Material insideMaterial;
 
+    [SerializeField]
+    Outline outlineObj;
+
 
     [SerializeField]
     int sceneIndexToMoveTo;
@@ -21,7 +25,11 @@ public class InteractableObject : MonoBehaviour
     [SerializeField]
     string preReqText;
 
+    [SerializeField]
+    GameObject spaceButton;
+
     public bool canInteract = true;
+    public bool isExit = false;
     
     // Start is called before the first frame update
     void Start()
@@ -46,8 +54,17 @@ public class InteractableObject : MonoBehaviour
     {
         if (other.gameObject.CompareTag(playerString))
         {
+            outlineObj.enabled = true;
             mesh.material = insideMaterial;
-            PlayerCore.instance.GetComponent<PlayerMovement>().SetCurrentInteractable(this);
+            if (!isExit)
+            {
+                PlayerCore.instance.GetComponent<PlayerMovement>().SetCurrentInteractable(this);
+            }
+            else
+            {
+                PlayerCore.instance.GetComponent<PlayerMovement>().SetInteractableExit(this, true);
+            }
+            spaceButton.SetActive(true);
 
         }
     }
@@ -58,7 +75,16 @@ public class InteractableObject : MonoBehaviour
         if (other.gameObject.CompareTag(playerString))
         {
             mesh.material = defaultMaterial;
-            PlayerCore.instance.GetComponent<PlayerMovement>().SetCurrentInteractable(null);
+            outlineObj.enabled = false;
+            if (!isExit)
+            {
+                PlayerCore.instance.GetComponent<PlayerMovement>().SetCurrentInteractable(null);
+            }
+            else
+            {
+                PlayerCore.instance.GetComponent<PlayerMovement>().SetInteractableExit(null, false);
+            }
+            spaceButton.SetActive(false);
         }
     }
 
@@ -74,5 +100,19 @@ public class InteractableObject : MonoBehaviour
         {
             GameManager.instance.SetPreReqText(preReqText);
         }
+    }
+
+
+    public void enableEndScreen()
+    {
+        if (GameManager.instance.isDressed && GameManager.instance.brushedTeeth && GameManager.instance.madeBreakfast && GameManager.instance.isShowered)
+        {
+            GameManager.instance.ShowResults();
+        }
+        else
+        {
+            GameManager.instance.SetPreReqText("You still have some more tasks to do before you leave!");
+        }
+      
     }
 }
