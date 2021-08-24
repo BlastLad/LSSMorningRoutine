@@ -36,6 +36,11 @@ namespace PaintIn3D
 			cachedImage = GetComponent<Image>();
 		}
 
+		public float GetFillAmount()
+		{
+			return cachedImage.fillAmount * 100;
+		}
+
 		protected virtual void Update()
 		{
 			var finalCounters = counters.Count > 0 ? counters : null;

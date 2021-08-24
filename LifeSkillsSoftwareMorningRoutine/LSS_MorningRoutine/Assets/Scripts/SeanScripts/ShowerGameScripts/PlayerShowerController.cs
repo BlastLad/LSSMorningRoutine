@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
 using PaintIn3D;
+using UnityEngine.UI;
 public class PlayerShowerController : MonoBehaviour
 {
     PlayerControls playerControls;// Start is called before the first frame update
@@ -38,6 +39,15 @@ public class PlayerShowerController : MonoBehaviour
     [SerializeField]
     Color shampooColor;
 
+    [SerializeField]
+    GameObject FadeAwayObj;
+
+    [SerializeField]
+    GameObject showerParticles;
+
+    string shampooReminderText = "Try using the Shampoo on your hair, not the bar of Soap!";
+    string soapReminderText = "Try using the Soap bar on your body, not the Shampoo!";
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -71,7 +81,7 @@ public class PlayerShowerController : MonoBehaviour
         //Trying to play the scrub sound whenever the mouse changes direction.
         if(isToolinUse == true)
         {
-            if(CurrentTool == 1)
+            if(CurrentTool == 1 && PaintTool.active)
             {
                 MouseTrackerX.Add(Mouse.current.position.ReadValue().x);
                 MouseTrackerY.Add(Mouse.current.position.ReadValue().y);
@@ -96,7 +106,10 @@ public class PlayerShowerController : MonoBehaviour
                     }
                 }
             }
+
+            
         }
+
 
         if (isToolinUse == false) {
             counter = 0;
@@ -105,6 +118,13 @@ public class PlayerShowerController : MonoBehaviour
         } 
     }
 
+    private void FixedUpdate()
+    {
+        if (CurrentTool == 0 && currentCam == mainCam)
+        {
+            ShowerGameManager.instance.SelectionToolOutline();
+        }
+    }
 
     public void SelectionTool()
     {
@@ -122,6 +142,10 @@ public class PlayerShowerController : MonoBehaviour
         if (!isToolinUse)
         { 
             CurrentTool = 1;
+            if (currentCam == mainCam)
+            {
+                ShowerGameManager.instance.ResetOutlines();
+            }
             cursor.SetSprite(soapMouse);
             Debug.Log(CurrentTool + "Soap");
             AudioManager.instance.Play("Soap");
@@ -133,6 +157,10 @@ public class PlayerShowerController : MonoBehaviour
         if (!isToolinUse)
         {
             CurrentTool = 2;
+            if (currentCam == mainCam)
+            {
+                ShowerGameManager.instance.ResetOutlines();
+            }
             cursor.SetSprite(bodyWashMouse);
             Debug.Log(CurrentTool + "Shampoo");
             AudioManager.instance.Play("Shampoo");
@@ -144,6 +172,10 @@ public class PlayerShowerController : MonoBehaviour
         if (!isToolinUse)
         {
             CurrentTool = 3;
+            if (currentCam == mainCam)
+            {
+                ShowerGameManager.instance.ResetOutlines();
+            }
             cursor.SetSprite(showerheadMouse);
             Debug.Log(CurrentTool + "Shower");
             AudioManager.instance.Play("Shower Head");
@@ -226,11 +258,16 @@ public class PlayerShowerController : MonoBehaviour
 
     public void ActivateSoapTool()
     {
-        if (currentCam != mainCam)
+        if (currentCam == leftCam || currentCam == rightCam)
         {
             PaintTool.SetActive(true);
             PaintTool.GetComponent<P3dPaintSphere>().Color = soapColor;
             Debug.Log("SOAP TOOL NOW IN USE");
+        }
+        else if (currentCam == headCam)//warning message saying to use shampoo and not soap on your head
+        {
+            FadeAwayObj.SetActive(true);
+            FadeAwayObj.GetComponent<FadeAway>().SetText(shampooReminderText);
         }
     }
 
@@ -242,11 +279,16 @@ public class PlayerShowerController : MonoBehaviour
 
     public void ActivateShampooTool()
     {
-        if (currentCam != mainCam)
+        if (currentCam == headCam)
         {
             PaintTool.SetActive(true);
             PaintTool.GetComponent<P3dPaintSphere>().Color = shampooColor;
             Debug.Log("SHAMPOO TOOL NOW IN USE");
+        }
+        else if (currentCam == leftCam || currentCam == rightCam)//warning message saying to use soap and not shampoo on your body
+        {
+            FadeAwayObj.SetActive(true);
+            FadeAwayObj.GetComponent<FadeAway>().SetText(soapReminderText);
         }
     }
 
@@ -257,11 +299,13 @@ public class PlayerShowerController : MonoBehaviour
     }
     public void ActivateShowerTool()
     {
+        showerParticles.SetActive(true);
         Debug.Log("SHOWER TOOL NOW IN USE");
     }
 
     public void CancelShowerTool()
     {
+        showerParticles.SetActive(false);
         Debug.Log("SHOWER TOOL NO LONGER IN USE");
     }
 
@@ -270,6 +314,26 @@ public class PlayerShowerController : MonoBehaviour
         currentCam.Priority = 8;
         currentCam = cam;
         currentCam.Priority = 11;
+        if (currentCam == mainCam)
+        {
+            ShowerGameManager.instance.SetEvaluation(-1);//none
+        }
+        else if (currentCam == rightCam)
+        {
+            ShowerGameManager.instance.SetEvaluation(2);//right
+            ShowerGameManager.instance.ResetOutlines();
+        }
+        else if (currentCam == headCam)
+        {
+            ShowerGameManager.instance.SetEvaluation(0);//head
+            ShowerGameManager.instance.ResetOutlines();
+
+        }
+        else
+        {
+            ShowerGameManager.instance.SetEvaluation(1);//left
+            ShowerGameManager.instance.ResetOutlines();
+        }
     }
 
     public void SecondActivation()

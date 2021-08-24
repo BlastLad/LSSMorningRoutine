@@ -20,6 +20,11 @@ public class FadeAway : MonoBehaviour
         
     }
 
+    public void SetText(string setter)
+    {
+        text.text = setter;
+    }
+
     private void OnEnable()
     {
         if (!isFading)
