@@ -45,8 +45,15 @@ public class PlayerShowerController : MonoBehaviour
     [SerializeField]
     GameObject showerParticles;
 
+    [SerializeField]
+    GameObject zoomOutGo;
+    [SerializeField]
+    Text leftMbText;
+
     string shampooReminderText = "Try using the Shampoo on your hair, not the bar of Soap!";
     string soapReminderText = "Try using the Soap bar on your body, not the Shampoo!";
+    string leftMbSelectionText = "Zoom In";
+    string leftMBOtherText = "Use Tool";
 
     private void Awake()
     {
@@ -132,6 +139,8 @@ public class PlayerShowerController : MonoBehaviour
         {
             CurrentTool = 0;
             cursor.SetSprite(selectionMouse);
+            zoomOutGo.SetActive(true);
+            leftMbText.text = leftMbSelectionText;
             Debug.Log(CurrentTool + "Selection");
             AudioManager.instance.Play("Inspector");
         }
@@ -146,6 +155,8 @@ public class PlayerShowerController : MonoBehaviour
             {
                 ShowerGameManager.instance.ResetOutlines();
             }
+            zoomOutGo.SetActive(false);
+            leftMbText.text = leftMBOtherText;
             cursor.SetSprite(soapMouse);
             Debug.Log(CurrentTool + "Soap");
             AudioManager.instance.Play("Soap");
@@ -161,6 +172,8 @@ public class PlayerShowerController : MonoBehaviour
             {
                 ShowerGameManager.instance.ResetOutlines();
             }
+            zoomOutGo.SetActive(false);
+            leftMbText.text = leftMBOtherText;
             cursor.SetSprite(bodyWashMouse);
             Debug.Log(CurrentTool + "Shampoo");
             AudioManager.instance.Play("Shampoo");
@@ -176,6 +189,8 @@ public class PlayerShowerController : MonoBehaviour
             {
                 ShowerGameManager.instance.ResetOutlines();
             }
+            zoomOutGo.SetActive(false);
+            leftMbText.text = leftMBOtherText;
             cursor.SetSprite(showerheadMouse);
             Debug.Log(CurrentTool + "Shower");
             AudioManager.instance.Play("Shower Head");
@@ -317,21 +332,34 @@ public class PlayerShowerController : MonoBehaviour
         if (currentCam == mainCam)
         {
             ShowerGameManager.instance.SetEvaluation(-1);//none
+            cursor.mainSprite.SetActive(true);
+            cursor.cursor = cursor.mainSprite.GetComponent<SpriteRenderer>();
+            cursor.rightSprite.SetActive(false);
+            cursor.headSprite.SetActive(false);
+            cursor.leftSprite.SetActive(false);
         }
         else if (currentCam == rightCam)
         {
             ShowerGameManager.instance.SetEvaluation(2);//right
             ShowerGameManager.instance.ResetOutlines();
+            cursor.mainSprite.SetActive(false);
+            cursor.rightSprite.SetActive(true);
+            cursor.cursor = cursor.rightSprite.GetComponent<SpriteRenderer>();
         }
         else if (currentCam == headCam)
         {
             ShowerGameManager.instance.SetEvaluation(0);//head
             ShowerGameManager.instance.ResetOutlines();
-
+            cursor.mainSprite.SetActive(false);
+            cursor.headSprite.SetActive(true);
+            cursor.cursor = cursor.headSprite.GetComponent<SpriteRenderer>();
         }
         else
         {
             ShowerGameManager.instance.SetEvaluation(1);//left
+            cursor.cursor = cursor.leftSprite.GetComponent<SpriteRenderer>();
+            cursor.mainSprite.SetActive(false);
+            cursor.leftSprite.SetActive(true);
             ShowerGameManager.instance.ResetOutlines();
         }
     }

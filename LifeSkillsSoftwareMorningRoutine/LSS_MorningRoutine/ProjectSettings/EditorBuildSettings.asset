@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SeanScenes/MainScene/SeanBaseScene.unity
-    guid: a74b1fe556dd86745b7b073d39407dcf
+    path: Assets/Scenes/SeanScenes/Title/Title.unity
+    guid: 83a69f1c35353e64d841e7fcf6b98dc4
   - enabled: 1
     path: Assets/Scenes/SeanScenes/Dress/DressUpScene4.unity
     guid: bd76785387c2e5e4e80bec4870502594
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeanScenes/ShowerGame/ShowerGame.unity
     guid: c836c59cb61a8324d866b3e4530f8f4f
+  - enabled: 1
+    path: Assets/Scenes/SeanScenes/MainScene/SeanBaseScene.unity
+    guid: a74b1fe556dd86745b7b073d39407dcf
   m_configObjects: {}

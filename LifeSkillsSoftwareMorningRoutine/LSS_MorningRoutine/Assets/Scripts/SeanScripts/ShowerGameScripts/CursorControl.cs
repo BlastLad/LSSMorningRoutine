@@ -11,6 +11,11 @@ public class CursorControl : MonoBehaviour
     public RectTransform pos;
     [SerializeField]
     private LayerMask layermask;
+
+    public GameObject mainSprite;
+    public GameObject leftSprite;
+    public GameObject headSprite;
+    public GameObject rightSprite;
     // Start is called before the first frame update
     void Start()
     {

@@ -353,7 +353,7 @@ public class DressMiniGameManager : MonoBehaviour
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
 
     }
 }

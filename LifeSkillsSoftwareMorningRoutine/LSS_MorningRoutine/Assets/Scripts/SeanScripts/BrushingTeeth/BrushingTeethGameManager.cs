@@ -186,7 +186,7 @@ public class BrushingTeethGameManager : MonoBehaviour
     public void ReturnToMain()
     {
         PlayerStats.brushedTeeth = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 }
 

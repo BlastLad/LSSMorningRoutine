@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using PaintIn3D;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShowerGameManager : MonoBehaviour
 {
@@ -20,6 +22,15 @@ public class ShowerGameManager : MonoBehaviour
     P3dChannelCounterFill leftArmFill;
     [SerializeField]
     P3dChannelCounterFill rightArmFill;
+    [SerializeField]
+    Text explanationText;
+
+    string selectionString = "Select a section";
+    string latherString = "Wash up with the Soap Bar";
+    string rinseString = "Rinse off with the Shower Head";
+    string shampooString = "Wash your hair with the Shampoo";
+    string completeString = "All clean here! Try another section";
+
 
     int currentSection = -1;
 
@@ -49,7 +60,19 @@ public class ShowerGameManager : MonoBehaviour
 
     [SerializeField]
     List<P3dPaintableTexture> charTextures;
- 
+
+    [SerializeField]
+    GameObject endScreen;
+    [SerializeField]
+    GameObject explanationGO;
+    [SerializeField]
+    GameObject toolWheel;
+    [SerializeField]
+    PlayerShowerController playerShower;
+    [SerializeField]
+    GameObject toolControls;
+    [SerializeField]
+    GameObject cursor;
 
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
@@ -88,7 +111,25 @@ public class ShowerGameManager : MonoBehaviour
 
     public void EnableEndScreen()
     {
+        endScreen.SetActive(true);
+        toolWheel.SetActive(false);
+        explanationGO.SetActive(false);
+        playerShower.enabled = false;
         Debug.Log("CONGRATS YOU WON");
+    }
+
+    public void StartGame()
+    {
+        playerShower.enabled = true;
+        explanationGO.SetActive(true);
+        toolControls.SetActive(true);
+        cursor.SetActive(true);
+    }
+
+    public void ReturnToMain()
+    {
+        PlayerStats.isShowered = true;
+        SceneManager.LoadScene(5);
     }
 
     public void setMouse(Texture2D image)
@@ -162,6 +203,57 @@ public class ShowerGameManager : MonoBehaviour
         {
             charCollider.gameObject.GetComponent<P3dPaintable>().enabled = true;
         }
+
+
+        if (currentSection == -1)
+        {
+            explanationText.text = selectionString;
+        }
+        else if (currentSection == 1) 
+        {
+            if (leftArmReadyToRinse && !leftArmClean)
+            {
+                explanationText.text = rinseString;
+            }
+            else if (leftArmClean)
+            {
+                explanationText.text = completeString;
+            }
+            else
+            {
+                explanationText.text = latherString;
+            }
+        }
+        else if (currentSection == 2)
+        {
+            if (rightArmReadyToRinse && !rightArmClean)
+            {
+                explanationText.text = rinseString;
+            }
+            else if (rightArmClean)
+            {
+                explanationText.text = completeString;
+            }
+            else
+            {
+                explanationText.text = latherString;
+            }
+        }
+        else if (currentSection == 0)
+        {
+            if (headReadyToRinse && !headClean)
+            {
+                explanationText.text = rinseString;
+            }
+            else if (headClean)
+            {
+                explanationText.text = completeString;
+            }
+            else
+            {
+                explanationText.text = shampooString;
+            }            
+        }
     }
 
     public void EvaluateHead()
@@ -169,12 +261,14 @@ public class ShowerGameManager : MonoBehaviour
         if (headFill.GetFillAmount() >= headThreshold && !headReadyToRinse)
         {
             headReadyToRinse = true;
+            explanationText.text = rinseString;
             Debug.Log("HEAD READY TO RINSE");
         }
 
         if (headReadyToRinse && !headClean && headFill.GetFillAmount() <= headCleanValue)
         {
             headClean = true;
+            explanationText.text = completeString;
             charTextures[0].Clear();
             Debug.Log("HEAD IS NOW CLEAN");
         }
@@ -185,12 +279,14 @@ public class ShowerGameManager : MonoBehaviour
         if (leftArmFill.GetFillAmount() >= leftArmThreshold && !leftArmReadyToRinse)
         {
             leftArmReadyToRinse = true;
+            explanationText.text = rinseString;
             Debug.Log("LEFT ARM READY TO RINSE");
         }
 
         if (leftArmReadyToRinse && !leftArmClean && leftArmFill.GetFillAmount() <= leftArmCleanValue)
         {
             leftArmClean = true;
+            explanationText.text = completeString;
             charTextures[1].Clear();
             Debug.Log("LEFT ARM IS NOW CLEAN");
         }
@@ -201,12 +297,14 @@ public class ShowerGameManager : MonoBehaviour
         if (rightArmFill.GetFillAmount() >= rightArmThreshold && !rightArmReadyToRinse)
         {
             rightArmReadyToRinse = true;
+            explanationText.text = rinseString;
             Debug.Log("RIGHT ARM TO RINSE");
         }
 
         if (rightArmReadyToRinse && !rightArmClean && rightArmFill.GetFillAmount() <= rightArmCleanValue)
         {
             rightArmClean = true;
+            explanationText.text = completeString;
             charTextures[2].Clear();
             Debug.Log("righT ARM IS NOW CLEAN");
         }

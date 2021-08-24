@@ -85,7 +85,7 @@ public class CookingMinigameManager : MonoBehaviour
     public void ReturnToMain()
     {
         PlayerStats.madeBreakfast = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
     // Start is called before the first frame update
     void Start()
