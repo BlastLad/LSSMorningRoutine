@@ -1,17 +1,9 @@
 fileFormatVersion: 2
-guid: 8529f8dff86566f4bb920cc03d985341
+guid: b2ef226f6eaf69e46b6f2d8163ab7cf1
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: -9055350102093762472
-    second: casual head|Idle
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lss_color_sheet
-    second: {fileID: 2100000, guid: 424ea2b6396fad541a68bf46cfbc2542, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
