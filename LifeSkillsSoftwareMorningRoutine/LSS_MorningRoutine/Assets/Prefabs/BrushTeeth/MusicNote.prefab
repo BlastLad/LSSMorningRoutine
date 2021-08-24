@@ -55,7 +55,7 @@ MonoBehaviour:
   holdNoteEndBeat: 0
   holdNoteEndPrefab: {fileID: 5189077903896122946, guid: 982a00dabc12f0f4489f82cf6466bd45, type: 3}
   endNote: {fileID: 0}
-  defaultMat: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  defaultMat: {fileID: 2100000, guid: 18624a6f23eeaf5418c2ce3a7e2d8e3d, type: 2}
   speed: 8
 --- !u!61 &-8640749470954198827
 BoxCollider2D:

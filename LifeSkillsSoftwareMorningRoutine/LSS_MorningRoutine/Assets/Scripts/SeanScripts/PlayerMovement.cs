@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private bool canMove = true;
 
+    bool atExit = false;
+
 
     InteractableObject currentInteractable;
     // Start is called before the first frame update
@@ -117,12 +119,22 @@ public class PlayerMovement : MonoBehaviour
         currentInteractable = value;
     }
 
+    public void SetInteractableExit(InteractableObject value, bool exit)
+    {
+        currentInteractable = value;
+        atExit = exit;
+    }
+
     public void InteractFunction()
     {
 
-        if (currentInteractable != null)
+        if (currentInteractable != null && !atExit)
         {
             currentInteractable.moveScene();
+        }
+        else if (currentInteractable != null && atExit)
+        {
+            currentInteractable.enableEndScreen();
         }
 
         Debug.Log("Interact Function Called");

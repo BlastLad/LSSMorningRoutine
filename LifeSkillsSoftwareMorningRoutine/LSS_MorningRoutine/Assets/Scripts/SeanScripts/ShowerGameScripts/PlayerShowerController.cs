@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using PaintIn3D;
 public class PlayerShowerController : MonoBehaviour
 {
     PlayerControls playerControls;// Start is called before the first frame update
@@ -26,6 +27,16 @@ public class PlayerShowerController : MonoBehaviour
     public Sprite soapMouse;
     public Sprite bodyWashMouse;
     public Sprite showerheadMouse;
+
+    [SerializeField]
+    GameObject[] selectionToolColliders;
+
+    [SerializeField]
+    GameObject PaintTool;
+    [SerializeField]
+    Color soapColor;
+    [SerializeField]
+    Color shampooColor;
 
     private void Awake()
     {
@@ -190,6 +201,11 @@ public class PlayerShowerController : MonoBehaviour
         {
             Debug.Log("hit" + hit.transform.name);
 
+            foreach (GameObject camCollider in selectionToolColliders)
+            {
+                camCollider.SetActive(false);
+            }
+
             if (hit.transform.gameObject.tag == "Head")
             {
                 ChangeCam(headCam);
@@ -210,21 +226,33 @@ public class PlayerShowerController : MonoBehaviour
 
     public void ActivateSoapTool()
     {
-        Debug.Log("SOAP TOOL NOW IN USE");
+        if (currentCam != mainCam)
+        {
+            PaintTool.SetActive(true);
+            PaintTool.GetComponent<P3dPaintSphere>().Color = soapColor;
+            Debug.Log("SOAP TOOL NOW IN USE");
+        }
     }
 
     public void CancelSoapTool()
     {
+        PaintTool.SetActive(false);
         Debug.Log("SOAP TOOL NO LONGER IN USE");
     }
 
     public void ActivateShampooTool()
     {
-        Debug.Log("SHAMPOO TOOL NOW IN USE");
+        if (currentCam != mainCam)
+        {
+            PaintTool.SetActive(true);
+            PaintTool.GetComponent<P3dPaintSphere>().Color = shampooColor;
+            Debug.Log("SHAMPOO TOOL NOW IN USE");
+        }
     }
 
     public void CancelShampooTool()
     {
+        PaintTool.SetActive(false);
         Debug.Log("SHAMPOO TOOL NO LONGER IN USE");
     }
     public void ActivateShowerTool()
@@ -246,9 +274,13 @@ public class PlayerShowerController : MonoBehaviour
 
     public void SecondActivation()
     {
-        if (CurrentTool == 0)
-        {//selction 
+        if (CurrentTool == 0 && currentCam != mainCam)
+        {//selction       
             ChangeCam(mainCam);
+            foreach (GameObject camCollider in selectionToolColliders)
+            {
+                camCollider.SetActive(true);
+            }
             AudioManager.instance.Play("Zoom out");
         }
     }

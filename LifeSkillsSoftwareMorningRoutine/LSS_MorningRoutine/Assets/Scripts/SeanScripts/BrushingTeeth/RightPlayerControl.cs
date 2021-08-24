@@ -17,6 +17,8 @@ public class RightPlayerControl : MonoBehaviour
     [SerializeField]
     Canvas canvas;
 
+    [SerializeField]
+    Material missedMaterial;
 
     int previousBeat = 0;
     bool holdMissed = true;
@@ -85,8 +87,9 @@ public class RightPlayerControl : MonoBehaviour
                 {
                     note.speed = 0;
                     holdMissed = true;
-                    note.gameObject.GetComponent<LineRenderer>().startColor = Color.gray;
-                    note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;
+                    note.gameObject.GetComponent<LineRenderer>().material = missedMaterial;
+                    //note.gameObject.GetComponent<LineRenderer>().startColor = Color.gray;
+                    //note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;
                 }
                 else
                 {

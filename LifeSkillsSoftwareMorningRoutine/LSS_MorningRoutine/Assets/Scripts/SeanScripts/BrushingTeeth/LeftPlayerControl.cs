@@ -17,6 +17,9 @@ public class LeftPlayerControl : MonoBehaviour
     [SerializeField]
     Canvas canvas;
 
+    [SerializeField]
+    Material missedMaterial;
+
     int previousBeat = 0;
     bool holdMissed = true;
     // Start is called before the first frame update
@@ -79,15 +82,15 @@ public class LeftPlayerControl : MonoBehaviour
                 {
                     note.speed = 0;
                     holdMissed = true;
-                    note.gameObject.GetComponent<LineRenderer>().startColor = Color.gray;
-                    note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;
+                    note.gameObject.GetComponent<LineRenderer>().material = missedMaterial;
+                    //note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;
                 }
                 else
                 {
                     note.speed = 0;
                     holdMissed = false;
                     BrushingTeethPlayerController.instance.leftHoldActive = true;
-                    note.gameObject.GetComponent<LineRenderer>().startColor = Color.blue;
+                    note.gameObject.GetComponent<LineRenderer>().startColor = new Color(0, 0, .8f, .8f);
                     note.gameObject.GetComponent<LineRenderer>().endColor = Color.blue;
                 }
 

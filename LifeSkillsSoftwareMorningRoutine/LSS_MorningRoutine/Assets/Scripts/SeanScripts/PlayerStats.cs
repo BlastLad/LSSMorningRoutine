@@ -66,4 +66,19 @@ public static class PlayerStats
         }
     }
 
+    public static bool IsShowered;
+
+    public static bool isShowered
+    {
+        get
+        {
+            return IsShowered;
+        }
+
+        set
+        {
+            IsShowered = value;
+        }
+    }
+
 }

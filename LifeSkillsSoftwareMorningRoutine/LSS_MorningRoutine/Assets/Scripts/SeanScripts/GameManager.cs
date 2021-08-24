@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,11 +17,21 @@ public class GameManager : MonoBehaviour
     public bool madeBreakfast;
     public bool isDressed;
     public bool brushedTeeth;
+    public bool isShowered;
 
     [SerializeField]
     Text PreReqText;
     [SerializeField]
     GameObject preReqgo;
+
+    [SerializeField]
+    GameObject endScreen;
+
+    [SerializeField]
+    PlayerMovement player;
+
+    [SerializeField]
+    CinemachineVirtualCamera inputCam;
 
     private void Awake()
     {
@@ -29,13 +40,15 @@ public class GameManager : MonoBehaviour
         madeBreakfast = PlayerStats.madeBreakfast;
         isDressed = PlayerStats.isDressed;
         brushedTeeth = PlayerStats.brushedTeeth;
+        isShowered = PlayerStats.isShowered;
 
-        bool[] stats = new bool[4];
+        bool[] stats = new bool[5];
 
         stats[0] = false;
         stats[1] = isDressed;
         stats[2] = madeBreakfast;
         stats[3] = brushedTeeth;
+        stats[4] = isShowered;
 
         for (int i = 0; i < checkedBoxes.Length; i++)
         {
@@ -63,5 +76,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ShowResults()
+    {
+        endScreen.SetActive(true);
+        player.enabled = false;
+        inputCam.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+
     }
 }
