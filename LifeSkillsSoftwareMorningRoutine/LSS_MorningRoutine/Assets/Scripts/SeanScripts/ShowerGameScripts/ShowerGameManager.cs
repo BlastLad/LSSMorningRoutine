@@ -60,6 +60,10 @@ public class ShowerGameManager : MonoBehaviour
 
     [SerializeField]
     List<P3dPaintableTexture> charTextures;
+    [SerializeField]
+    List<P3dChannelCounterFill> charFill;//0 head 1 left 2 right
+    [SerializeField]
+    List<P3dChannelCounterText> charText;//0 head 1 left 2 right
 
     [SerializeField]
     GameObject endScreen;
@@ -81,7 +85,7 @@ public class ShowerGameManager : MonoBehaviour
     {
         instance = this;
         isBoy = PlayerStats.isBoy;
-        if (isBoy)
+        if (!isBoy)
         {
             SetBoy();
         }
@@ -141,12 +145,29 @@ public class ShowerGameManager : MonoBehaviour
     public void SetBoy()
     {
         boyObj.SetActive(true);
+        CharDataShowerGame boyData = boyObj.GetComponent<CharDataShowerGame>();
+        charCollider = boyData.charCollider;
+        for (int i = 0; i < boyData.charTextures.Count; i++)
+        {
+            charTextures.Add(boyData.charTextures[i]);
+            charFill[i].Counters[0] = boyData.charTextures[i].GetComponent<P3dChannelCounter>();
+            charText[i].Counters[0] = boyData.charTextures[i].GetComponent<P3dChannelCounter>();
+        }
     }
 
 
     public void SetGirl()
     {
         girlObj.SetActive(true);
+        CharDataShowerGame girlData = girlObj.GetComponent<CharDataShowerGame>();
+        charCollider = girlData.charCollider;
+        for (int i = 0; i < girlData.charTextures.Count; i++)
+        {
+            Debug.Log(i);
+            charTextures.Add(girlData.charTextures[i]);
+            charFill[i].Counters[0] = girlData.charTextures[i].GetComponent<P3dChannelCounter>();
+            charText[i].Counters[0] = girlData.charTextures[i].GetComponent<P3dChannelCounter>();
+        }
     }
 
 

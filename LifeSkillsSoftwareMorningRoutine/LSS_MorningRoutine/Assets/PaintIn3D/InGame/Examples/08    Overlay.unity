@@ -1320,6 +1320,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
+--- !u!1001 &3937917488221787133
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.40896764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9125489
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -228.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023212, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937917486847023213, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
+      propertyPath: m_Name
+      value: BoyPaintable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6c0115384a0f7d47bd2d0c6a8f828ba, type: 3}
 --- !u!23 &3939076022777559682
 MeshRenderer:
   m_ObjectHideFlags: 0
