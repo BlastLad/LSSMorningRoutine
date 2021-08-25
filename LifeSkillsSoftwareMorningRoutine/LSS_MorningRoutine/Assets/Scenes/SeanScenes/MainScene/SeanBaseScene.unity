@@ -5255,7 +5255,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61152
+  m_Name: pb_Mesh-82676
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5431,24 +5431,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.3365545, y: 4.0396466, z: 10.293771}
   m_Center: {x: -0.09085516, y: 1.5198231, z: 0.3082903}
---- !u!114 &990039529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990039527}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0.9647059, b: 0.14509805, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &998018068
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,7 +5686,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61128
+  m_Name: pb_Mesh-82652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6188,7 +6170,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61164
+  m_Name: pb_Mesh-82688
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6619,7 +6601,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61140
+  m_Name: pb_Mesh-82664
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7142,6 +7124,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 84b903accf57d2146bfa566dc09343ec, type: 3}
   m_PrefabInstance: {fileID: 1362255548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1362255550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1211102406638329457, guid: 84b903accf57d2146bfa566dc09343ec, type: 3}
+  m_PrefabInstance: {fileID: 1362255548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1362255551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362255550}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.9647059, b: 0.14509805, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1368441583
 GameObject:
   m_ObjectHideFlags: 0
@@ -10164,7 +10169,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61116
+  m_Name: pb_Mesh-82640
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10384,7 +10389,7 @@ MonoBehaviour:
   mesh: {fileID: 255710126}
   defaultMaterial: {fileID: 2100000, guid: 7dc5cf02c1ee8574aa57e8d7febe4fd2, type: 2}
   insideMaterial: {fileID: 2100000, guid: 33a15ae8247e0974ba6389b6744e78fd, type: 2}
-  outlineObj: {fileID: 990039529}
+  outlineObj: {fileID: 1362255551}
   statsIndex: 4
   sceneIndexToMoveTo: 4
   preReq: -1

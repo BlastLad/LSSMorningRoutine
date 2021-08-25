@@ -163,18 +163,22 @@ public class PlayerMovement : MonoBehaviour
         inputVector.x = context.ReadValue<Vector2>().x;
         inputVector.z = context.ReadValue<Vector2>().y;
 
-        Vector3 cameraLocationForward = cameraLocation.forward;
-        Vector3 cameraLocationRight = cameraLocation.right;
+        if (cameraLocation != null)
+        {
 
-        cameraLocationForward.y = 0;
-        cameraLocationRight.y = 0;
+            Vector3 cameraLocationForward = cameraLocation.forward;
+            Vector3 cameraLocationRight = cameraLocation.right;
 
-        cameraLocationForward = cameraLocationForward.normalized;
-        cameraLocationRight = cameraLocationRight.normalized;
+            cameraLocationForward.y = 0;
+            cameraLocationRight.y = 0;
+
+            cameraLocationForward = cameraLocationForward.normalized;
+            cameraLocationRight = cameraLocationRight.normalized;
 
 
-        //Direction = new Vector3(inputVector.x, 0, inputVector.z);
-        Direction = (cameraLocationForward * inputVector.z + cameraLocationRight * inputVector.x);
+            //Direction = new Vector3(inputVector.x, 0, inputVector.z);
+            Direction = (cameraLocationForward * inputVector.z + cameraLocationRight * inputVector.x);
+        }
        // transform.rotation = Rotation;
     }
 

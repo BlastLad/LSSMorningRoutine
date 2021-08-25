@@ -37,8 +37,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
+
         instance = this;
-        PlayerStats.isBoy = boy;
+        boy = PlayerStats.isBoy;
         madeBreakfast = PlayerStats.madeBreakfast;
         isDressed = PlayerStats.isDressed;
         brushedTeeth = PlayerStats.brushedTeeth;
