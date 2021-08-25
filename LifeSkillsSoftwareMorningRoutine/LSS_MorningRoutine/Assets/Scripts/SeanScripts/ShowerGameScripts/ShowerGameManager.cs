@@ -85,7 +85,9 @@ public class ShowerGameManager : MonoBehaviour
     {
         instance = this;
         isBoy = PlayerStats.isBoy;
-        if (!isBoy)
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        if (isBoy)
         {
             SetBoy();
         }
@@ -119,6 +121,8 @@ public class ShowerGameManager : MonoBehaviour
         toolWheel.SetActive(false);
         explanationGO.SetActive(false);
         playerShower.enabled = false;
+        Cursor.visible = true;
+        AudioManager.instance.Play("Sparkle");
         Debug.Log("CONGRATS YOU WON");
     }
 
@@ -128,6 +132,7 @@ public class ShowerGameManager : MonoBehaviour
         explanationGO.SetActive(true);
         toolControls.SetActive(true);
         cursor.SetActive(true);
+        Cursor.visible = false;
     }
 
     public void ReturnToMain()
@@ -239,6 +244,7 @@ public class ShowerGameManager : MonoBehaviour
             else if (leftArmClean)
             {
                 explanationText.text = completeString;
+                AudioManager.instance.Play("Sparkle");
             }
             else
             {
@@ -254,6 +260,7 @@ public class ShowerGameManager : MonoBehaviour
             else if (rightArmClean)
             {
                 explanationText.text = completeString;
+                AudioManager.instance.Play("Sparkle");
             }
             else
             {
@@ -269,6 +276,7 @@ public class ShowerGameManager : MonoBehaviour
             else if (headClean)
             {
                 explanationText.text = completeString;
+                AudioManager.instance.Play("Sparkle");
             }
             else
             {
@@ -290,6 +298,7 @@ public class ShowerGameManager : MonoBehaviour
         {
             headClean = true;
             explanationText.text = completeString;
+            AudioManager.instance.Play("Sparkle");
             charTextures[0].Clear();
             Debug.Log("HEAD IS NOW CLEAN");
         }
@@ -308,6 +317,7 @@ public class ShowerGameManager : MonoBehaviour
         {
             leftArmClean = true;
             explanationText.text = completeString;
+            AudioManager.instance.Play("Sparkle");
             charTextures[1].Clear();
             Debug.Log("LEFT ARM IS NOW CLEAN");
         }
@@ -326,6 +336,7 @@ public class ShowerGameManager : MonoBehaviour
         {
             rightArmClean = true;
             explanationText.text = completeString;
+            AudioManager.instance.Play("Sparkle");
             charTextures[2].Clear();
             Debug.Log("righT ARM IS NOW CLEAN");
         }

@@ -16,6 +16,9 @@ public class InteractableObject : MonoBehaviour
     [SerializeField]
     Outline outlineObj;
 
+    [SerializeField]
+    int statsIndex;// 1 dress 2 breakfast 3 teeth 4 shower 
+
 
     [SerializeField]
     int sceneIndexToMoveTo;
@@ -52,7 +55,7 @@ public class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(playerString))
+        if (other.gameObject.CompareTag(playerString) && !GameManager.instance.getStatAtIndex(statsIndex))
         {
             outlineObj.enabled = true;
             mesh.material = insideMaterial;
@@ -94,6 +97,9 @@ public class InteractableObject : MonoBehaviour
     {
         if (canInteract)
         {
+            PlayerStats.playerXCoord = PlayerCore.instance.transform.position.x;
+            PlayerStats.playerZCoord = PlayerCore.instance.transform.position.z;
+            PlayerStats.playerYCoord = PlayerCore.instance.transform.position.y;
             SceneManager.LoadScene(sceneIndexToMoveTo);
         }
         else

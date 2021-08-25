@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     CinemachineVirtualCamera inputCam;
 
+    bool[] stats = new bool[5];
+
     private void Awake()
     {
         instance = this;
@@ -42,7 +44,7 @@ public class GameManager : MonoBehaviour
         brushedTeeth = PlayerStats.brushedTeeth;
         isShowered = PlayerStats.isShowered;
 
-        bool[] stats = new bool[5];
+       
 
         stats[0] = false;
         stats[1] = isDressed;
@@ -61,6 +63,10 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public bool getStatAtIndex(int index)
+    {
+        return stats[index];
+    }
     public GameObject[] GetCheckedObjects()
     {
         return checkedBoxes;

@@ -37,7 +37,8 @@ public class CookingMinigameManager : MonoBehaviour
 
         recipeSelection.SetActive(true);
         selectionText.SetActive(true);
-
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
        
     }
 

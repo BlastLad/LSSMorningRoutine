@@ -24,6 +24,11 @@ public class PlayerCore : MonoBehaviour
         {
             instance = this;
         }
+
+      if (PlayerStats.playerXCoord != 0)
+        {
+            transform.position = new Vector3(PlayerStats.playerXCoord, PlayerStats.playerYCoord, PlayerStats.playerZCoord);
+        }
             
     }
     // Start is called before the first frame update

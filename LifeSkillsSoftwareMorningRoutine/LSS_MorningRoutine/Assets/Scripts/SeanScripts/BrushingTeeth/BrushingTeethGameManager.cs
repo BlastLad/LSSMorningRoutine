@@ -50,6 +50,8 @@ public class BrushingTeethGameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Start is called before the first frame update

@@ -81,4 +81,49 @@ public static class PlayerStats
         }
     }
 
+    public static float PlayerXCoord;
+
+    public static float playerXCoord
+    {
+        get
+        {
+            return PlayerXCoord;
+        }
+
+        set
+        {
+            PlayerXCoord = value;
+        }
+    }
+
+    public static float PlayerZCoord;
+
+    public static float playerZCoord
+    {
+        get
+        {
+            return PlayerZCoord;
+        }
+
+        set
+        {
+            PlayerZCoord = value;
+        }
+    }
+
+    public static float PlayerYCoord;
+
+    public static float playerYCoord
+    {
+        get
+        {
+            return PlayerYCoord;
+        }
+
+        set
+        {
+            PlayerYCoord = value;
+        }
+    }
+
 }

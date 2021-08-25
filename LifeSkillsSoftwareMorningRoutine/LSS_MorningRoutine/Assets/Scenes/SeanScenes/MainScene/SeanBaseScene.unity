@@ -612,6 +612,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 7dc5cf02c1ee8574aa57e8d7febe4fd2, type: 2}
   insideMaterial: {fileID: 2100000, guid: 33a15ae8247e0974ba6389b6744e78fd, type: 2}
   outlineObj: {fileID: 136236641}
+  statsIndex: 2
   sceneIndexToMoveTo: 2
   preReq: -1
   preReqText: 
@@ -2835,6 +2836,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 7dc5cf02c1ee8574aa57e8d7febe4fd2, type: 2}
   insideMaterial: {fileID: 2100000, guid: 33a15ae8247e0974ba6389b6744e78fd, type: 2}
   outlineObj: {fileID: 591823799}
+  statsIndex: 0
   sceneIndexToMoveTo: 0
   preReq: -1
   preReqText: 
@@ -2895,7 +2897,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44256
+  m_Name: pb_Mesh49966
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4365,11 +4367,12 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 7dc5cf02c1ee8574aa57e8d7febe4fd2, type: 2}
   insideMaterial: {fileID: 2100000, guid: 33a15ae8247e0974ba6389b6744e78fd, type: 2}
   outlineObj: {fileID: 752672471}
+  statsIndex: 3
   sceneIndexToMoveTo: 3
   preReq: -1
   preReqText: 
   spaceButton: {fileID: 1387580659}
-  canInteract: 0
+  canInteract: 1
   isExit: 0
 --- !u!114 &752672471
 MonoBehaviour:
@@ -4921,7 +4924,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44328
+  m_Name: pb_Mesh50042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5252,7 +5255,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125388
+  m_Name: pb_Mesh-61152
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5701,7 +5704,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125364
+  m_Name: pb_Mesh-61128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6185,7 +6188,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125400
+  m_Name: pb_Mesh-61164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6616,7 +6619,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125376
+  m_Name: pb_Mesh-61140
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10161,7 +10164,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-125352
+  m_Name: pb_Mesh-61116
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10382,11 +10385,12 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 7dc5cf02c1ee8574aa57e8d7febe4fd2, type: 2}
   insideMaterial: {fileID: 2100000, guid: 33a15ae8247e0974ba6389b6744e78fd, type: 2}
   outlineObj: {fileID: 990039529}
+  statsIndex: 4
   sceneIndexToMoveTo: 4
   preReq: -1
   preReqText: 
   spaceButton: {fileID: 1387580659}
-  canInteract: 0
+  canInteract: 1
   isExit: 0
 --- !u!1 &2041203148
 GameObject:
@@ -10736,6 +10740,10 @@ PrefabInstance:
     - target: {fileID: 5963156745026662159, guid: 0d88479e1d7e5c84eb2cb19f0eae1614, type: 3}
       propertyPath: preReqText
       value: You should shower and dry yourself before dressing for the day!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963156745026662159, guid: 0d88479e1d7e5c84eb2cb19f0eae1614, type: 3}
+      propertyPath: statsIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5963156745026662159, guid: 0d88479e1d7e5c84eb2cb19f0eae1614, type: 3}
       propertyPath: canInteract

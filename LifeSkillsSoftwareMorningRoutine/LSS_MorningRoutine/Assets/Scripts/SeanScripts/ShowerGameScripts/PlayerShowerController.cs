@@ -49,6 +49,8 @@ public class PlayerShowerController : MonoBehaviour
     GameObject zoomOutGo;
     [SerializeField]
     Text leftMbText;
+    [SerializeField]
+    Collider tubCollider;
 
     string shampooReminderText = "Try using the Shampoo on your hair, not the bar of Soap!";
     string soapReminderText = "Try using the Soap bar on your body, not the Shampoo!";
@@ -248,23 +250,33 @@ public class PlayerShowerController : MonoBehaviour
         {
             Debug.Log("hit" + hit.transform.name);
 
-            foreach (GameObject camCollider in selectionToolColliders)
-            {
-                camCollider.SetActive(false);
-            }
-
             if (hit.transform.gameObject.tag == "Head")
             {
+
+                foreach (GameObject camCollider in selectionToolColliders)
+                {
+                    camCollider.SetActive(false);
+                }
                 ChangeCam(headCam);
                 AudioManager.instance.Play("Zoom in");
             }
             else if (hit.transform.gameObject.tag == "LeftArm")
             {
+
+                foreach (GameObject camCollider in selectionToolColliders)
+                {
+                    camCollider.SetActive(false);
+                }
                 ChangeCam(leftCam);
                 AudioManager.instance.Play("Zoom in");
             }
             else if (hit.transform.gameObject.tag == "RightArm")
             {
+
+                foreach (GameObject camCollider in selectionToolColliders)
+                {
+                    camCollider.SetActive(false);
+                }
                 ChangeCam(rightCam);
                 AudioManager.instance.Play("Zoom in");
             }
@@ -329,6 +341,7 @@ public class PlayerShowerController : MonoBehaviour
         currentCam.Priority = 8;
         currentCam = cam;
         currentCam.Priority = 11;
+        tubCollider.enabled = false;
         if (currentCam == mainCam)
         {
             ShowerGameManager.instance.SetEvaluation(-1);//none
@@ -337,6 +350,7 @@ public class PlayerShowerController : MonoBehaviour
             cursor.rightSprite.SetActive(false);
             cursor.headSprite.SetActive(false);
             cursor.leftSprite.SetActive(false);
+            tubCollider.enabled = true;
         }
         else if (currentCam == rightCam)
         {

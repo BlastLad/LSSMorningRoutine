@@ -110,6 +110,8 @@ public class RightPlayerControl : MonoBehaviour
             {
                 float distance = Vector2.Distance(transform.position, note.transform.position);
 
+                AudioManager.instance.Play("Pop 1");
+
                 if (distance > 1.19)
                 {
                     BrushingTeethGameManager.instance.AddToScore(10);
@@ -158,6 +160,8 @@ public class RightPlayerControl : MonoBehaviour
             if (addPoints && !holdMissed && endHold != null)
             {
                 float distance = Vector2.Distance(transform.position, endHold.transform.position);
+
+                AudioManager.instance.Play("Pop 1");
 
                 if (distance > 1.19f)
                 {
