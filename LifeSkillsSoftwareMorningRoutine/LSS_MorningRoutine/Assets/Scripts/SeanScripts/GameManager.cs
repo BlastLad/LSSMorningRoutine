@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
@@ -93,5 +93,10 @@ public class GameManager : MonoBehaviour
         inputCam.enabled = false;
         Cursor.lockState = CursorLockMode.None;
 
+    }
+
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene(0);
     }
 }

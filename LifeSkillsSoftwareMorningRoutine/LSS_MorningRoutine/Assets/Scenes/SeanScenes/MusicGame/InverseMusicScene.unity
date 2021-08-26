@@ -1894,7 +1894,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2c35f47528ebcc34a9fa8c62d6d7bcd2, type: 3}
     m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
@@ -1949,7 +1949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.8}
   m_SizeDelta: {x: 500, y: 51.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646130984
@@ -1973,7 +1973,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2c35f47528ebcc34a9fa8c62d6d7bcd2, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -2404,7 +2404,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2c35f47528ebcc34a9fa8c62d6d7bcd2, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -2415,8 +2415,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: 1.8
-  m_Text: Always remember to brush your teeth twice a day
+    m_LineSpacing: 1.6
+  m_Text: Always remember to brush your teeth twice a day!
 --- !u!222 &869515329
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2522,52 +2522,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1831761499791057214, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1831761501731756030, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 226994191}
-    - target: {fileID: 1831761501731756030, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartMusic
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494789730200, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.a
-      value: 0.92156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494789730200, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.b
-      value: 0.08312566
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494789730200, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.g
-      value: 0.08312566
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494789730200, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.r
-      value: 0.09433961
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494852510536, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494852510536, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494852510583, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494852510583, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736406494852510583, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03d06f7c7a20cf84d8f5230f41f54c01, type: 3}
 --- !u!1 &938395456
@@ -2653,7 +2613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &959742377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3095,7 +3055,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2c35f47528ebcc34a9fa8c62d6d7bcd2, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
@@ -3829,7 +3789,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2c35f47528ebcc34a9fa8c62d6d7bcd2, type: 3}
     m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
