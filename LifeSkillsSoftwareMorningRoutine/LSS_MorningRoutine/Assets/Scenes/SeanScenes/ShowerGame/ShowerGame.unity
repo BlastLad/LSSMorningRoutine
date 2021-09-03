@@ -2846,7 +2846,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152346
+  m_Name: pb_Mesh175100
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3034,7 +3034,7 @@ PrefabInstance:
     - target: {fileID: 9039456975727314068, guid: dd26cf6bf1bb8b34fab23fb7dc09c02a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 6902899382462952634, guid: 177289cee67b7394cbcf52fb20ca9c76, type: 3}
+      objectReference: {fileID: 2100000, guid: 566555055406c8d4ea325fc6a6c75aa8, type: 2}
     - target: {fileID: 9039456975727314068, guid: dd26cf6bf1bb8b34fab23fb7dc09c02a, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -3427,7 +3427,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1185928164}
-  cooldown: -851.8326
+  cooldown: -886.6146
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -3555,7 +3555,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 0}
-  cooldown: -599.624
+  cooldown: -615.5833
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -4262,7 +4262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3594027898348064212, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98724765
+      value: 0.98768836
       objectReference: {fileID: 0}
     - target: {fileID: 3594027898348064212, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4270,7 +4270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3594027898348064212, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.15919203
+      value: -0.1564345
       objectReference: {fileID: 0}
     - target: {fileID: 3594027898348064212, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4282,7 +4282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3594027898348064212, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -18.32
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 3594027898348064212, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4292,69 +4292,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: girlPaintable
       objectReference: {fileID: 0}
+    - target: {fileID: 7043546407847884762, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98752403
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043546407847884762, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15746865
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043546407847884762, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 18.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
---- !u!1 &1382877318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7542686504146806712, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
-  m_PrefabInstance: {fileID: 1382877317}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1382877319 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3921003780372979388, guid: 6a73be720761fb847b36fa9be3fa7e9b, type: 3}
-  m_PrefabInstance: {fileID: 1382877317}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382877318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6329a951f597a0488f4e1158c8f8c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1382877320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382877318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c192c747e3eba458dd59e5bb7150d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paintableTexture: {fileID: 1382877319}
-  interval: 0
-  async: 1
-  downsampleSteps: 3
-  registeredPaintableTexture: {fileID: 1382877319}
-  cooldown: -122.56155
-  currentReader:
-    requested: 0
-    buffer: {fileID: 0}
-    originalSize: {x: 0, y: 0}
-    downsampledSize: {x: 0, y: 0}
-    downsampleSteps: 0
-    downsampleBoost: 0
-    tempTexture: {fileID: 0}
-  currentDirty: 1
-  maskMesh: {fileID: -5017437812508297076, guid: 8529f8dff86566f4bb920cc03d985341, type: 3}
-  maskTexture: {fileID: 0}
-  maskChannel: 3
-  total: 0
-  maskDirty: 0
-  maskReader:
-    requested: 0
-    buffer: {fileID: 0}
-    originalSize: {x: 0, y: 0}
-    downsampledSize: {x: 0, y: 0}
-    downsampleSteps: 0
-    downsampleBoost: 0
-    tempTexture: {fileID: 0}
-  threshold: 0.5
-  countR: 0
-  countG: 0
-  countB: 0
-  countA: 0
 --- !u!1 &1414409079
 GameObject:
   m_ObjectHideFlags: 0
@@ -5086,7 +5037,7 @@ PrefabInstance:
     - target: {fileID: 9039456975727314068, guid: dd26cf6bf1bb8b34fab23fb7dc09c02a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 6902899382462952634, guid: 177289cee67b7394cbcf52fb20ca9c76, type: 3}
+      objectReference: {fileID: 2100000, guid: 566555055406c8d4ea325fc6a6c75aa8, type: 2}
     - target: {fileID: 9039456975727314068, guid: dd26cf6bf1bb8b34fab23fb7dc09c02a, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -5186,7 +5137,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1701923922}
-  cooldown: -818.1562
+  cooldown: -852.93823
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -27156,7 +27107,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 0}
-  cooldown: -4.259193
+  cooldown: -17.52612
   currentReader:
     requested: 0
     buffer: {fileID: 0}

@@ -46,6 +46,10 @@ public class DressMiniGameManager : MonoBehaviour
     {
         instance = this;
         isBoy = PlayerStats.isBoy;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         if (isBoy)
         {
             SetBoy();
