@@ -103,6 +103,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
         }
 
         heatTutorial.SetActive(true);
+        AudioManager.instance.Play("Paper");
 
 
     }
@@ -111,6 +112,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
     {
 
         CookingMinigameManager.instance.GetCurrentRecipe().GetHeatMicroGameObject().SetActive(true);
+        AudioManager.instance.Play("Pop");
     }
 
     public void DeactivateGame()//What ends the microgame

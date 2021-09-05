@@ -33,13 +33,12 @@ public class CookingMinigameManager : MonoBehaviour
     public int index = -1;
     private void Awake()
     {
-            instance = this;
+        instance = this;
 
         recipeSelection.SetActive(true);
         selectionText.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-       
     }
 
 
@@ -48,6 +47,7 @@ public class CookingMinigameManager : MonoBehaviour
         currentRecipe = recipe;
         recipeSelection.SetActive(false);
         selectionText.SetActive(false);
+        AudioManager.instance.Play("Pop");
         GetNextMicrogame();
     }
 
@@ -91,7 +91,7 @@ public class CookingMinigameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.instance.Play("Paper");
     }
 
     // Update is called once per frame

@@ -118,12 +118,14 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         }
 
         eggTutorial.SetActive(true);
+        AudioManager.instance.Play("Paper");
 
     }
 
     public void StartFromButton()
     {
         SpawnNewEgg();
+        AudioManager.instance.Play("Pop");
     }
 
     public void DeactivateGame()

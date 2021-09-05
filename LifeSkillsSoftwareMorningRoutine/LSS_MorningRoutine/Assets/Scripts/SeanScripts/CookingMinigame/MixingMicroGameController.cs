@@ -344,6 +344,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
     public void ActivateGame()
     {
         mixTutorial.SetActive(true);
+        AudioManager.instance.Play("Paper");
 
         CookingMinigameManager.instance.SetCurrentCam(placeCam);
         foreach (GameObject preReq in requiredGameObjects)

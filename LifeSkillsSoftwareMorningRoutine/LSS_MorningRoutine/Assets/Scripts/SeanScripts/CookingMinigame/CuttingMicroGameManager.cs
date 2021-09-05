@@ -84,6 +84,7 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
     {
 
         cuttingTutorial.SetActive(true);
+        AudioManager.instance.Play("Paper");
 
         foreach (GameObject preReq in requiredGameObjects)
         {
@@ -103,6 +104,8 @@ public class CuttingMicroGameManager : MonoBehaviour, MicroGameInterface
         objectsToCut[0].SetActive(true);
 
         nextPointController.setFoodObject(objectsToCut[0]);
+
+        AudioManager.instance.Play("Pop");
     }
 
     public void DeactivateGame()//what ends the microgame
