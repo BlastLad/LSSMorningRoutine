@@ -76,6 +76,7 @@ public class EggMicroGameController : MonoBehaviour, MicroGameInterface
         crackImage.SetActive(true);
         hitImage.SetActive(false);
         grabImage.SetActive(false);
+        AudioManager.instance.Play("Dink");
     }
 
     void HandleInputBegin()
