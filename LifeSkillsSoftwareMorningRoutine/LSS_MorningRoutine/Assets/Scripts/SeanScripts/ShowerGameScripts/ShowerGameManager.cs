@@ -133,6 +133,7 @@ public class ShowerGameManager : MonoBehaviour
         toolControls.SetActive(true);
         cursor.SetActive(true);
         Cursor.visible = false;
+        AudioManager.instance.Play("Paper");
     }
 
     public void ReturnToMain()
@@ -234,12 +235,14 @@ public class ShowerGameManager : MonoBehaviour
         if (currentSection == -1)
         {
             explanationText.text = selectionString;
+            AudioManager.instance.Play("Paper");
         }
         else if (currentSection == 1) 
         {
             if (leftArmReadyToRinse && !leftArmClean)
             {
                 explanationText.text = rinseString;
+                AudioManager.instance.Play("Paper");
             }
             else if (leftArmClean)
             {
@@ -249,6 +252,7 @@ public class ShowerGameManager : MonoBehaviour
             else
             {
                 explanationText.text = latherString;
+                AudioManager.instance.Play("Paper");
             }
         }
         else if (currentSection == 2)
@@ -256,6 +260,7 @@ public class ShowerGameManager : MonoBehaviour
             if (rightArmReadyToRinse && !rightArmClean)
             {
                 explanationText.text = rinseString;
+                AudioManager.instance.Play("Paper");
             }
             else if (rightArmClean)
             {
@@ -265,6 +270,7 @@ public class ShowerGameManager : MonoBehaviour
             else
             {
                 explanationText.text = latherString;
+                AudioManager.instance.Play("Paper");
             }
         }
         else if (currentSection == 0)
@@ -272,6 +278,7 @@ public class ShowerGameManager : MonoBehaviour
             if (headReadyToRinse && !headClean)
             {
                 explanationText.text = rinseString;
+                AudioManager.instance.Play("Paper");
             }
             else if (headClean)
             {
@@ -281,6 +288,7 @@ public class ShowerGameManager : MonoBehaviour
             else
             {
                 explanationText.text = shampooString;
+                AudioManager.instance.Play("Paper");
             }            
         }
     }
@@ -291,6 +299,7 @@ public class ShowerGameManager : MonoBehaviour
         {
             headReadyToRinse = true;
             explanationText.text = rinseString;
+            AudioManager.instance.Play("Paper");
             Debug.Log("HEAD READY TO RINSE");
         }
 
@@ -310,6 +319,7 @@ public class ShowerGameManager : MonoBehaviour
         {
             leftArmReadyToRinse = true;
             explanationText.text = rinseString;
+            AudioManager.instance.Play("Paper");
             Debug.Log("LEFT ARM READY TO RINSE");
         }
 
@@ -330,6 +340,7 @@ public class ShowerGameManager : MonoBehaviour
             rightArmReadyToRinse = true;
             explanationText.text = rinseString;
             Debug.Log("RIGHT ARM TO RINSE");
+            AudioManager.instance.Play("Paper");
         }
 
         if (rightArmReadyToRinse && !rightArmClean && rightArmFill.GetFillAmount() <= rightArmCleanValue)

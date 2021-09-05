@@ -90,35 +90,94 @@ public class PlayerShowerController : MonoBehaviour
         //Trying to play the scrub sound whenever the mouse changes direction.
         if(isToolinUse == true)
         {
-            if(CurrentTool == 1 && PaintTool.active)
+            if (CurrentTool == 1 && PaintTool.active)
             {
                 MouseTrackerX.Add(Mouse.current.position.ReadValue().x);
                 MouseTrackerY.Add(Mouse.current.position.ReadValue().y);
                 counter++;
-                if(counter > 10)
+                if (!AudioManager.instance.isPlaying("Scrub 1"))
                 {
-                    if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] > 0){
-                        if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 5] < 0)
-                            AudioManager.instance.Play("Scrub 1 in");
-                    }
-                    if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] < 0){
-                        if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 5] > 0)
-                            AudioManager.instance.Play("Scrub 1 out");
-                    }
-                    if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] > 0){
-                        if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 5] < 0)
-                            AudioManager.instance.Play("Scrub 3 in");
-                    }
-                    if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] < 0){
-                        if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 5] > 0)
-                            AudioManager.instance.Play("Scrub 3 out");
+                    if (!AudioManager.instance.isPlaying("Scrub 2"))
+                    {
+                        if (!AudioManager.instance.isPlaying("Scrub 3"))
+                        {
+                            if (counter > 10)
+                            {
+                                if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] > 0)
+                                {
+                                    if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 5] < 0)
+                                        AudioManager.instance.Play("Scrub 1 in");
+                                }
+                                if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] < 0)
+                                {
+                                    if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 5] > 0)
+                                        AudioManager.instance.Play("Scrub 1 out");
+                                }
+                                if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] > 0)
+                                {
+                                    if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 5] < 0)
+                                        AudioManager.instance.Play("Scrub 3 in");
+                                }
+                                if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] < 0)
+                                {
+                                    if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 5] > 0)
+                                        AudioManager.instance.Play("Scrub 3 out");
+                                }
+                            }
+                        }
                     }
                 }
             }
 
-            
-        }
+            if (CurrentTool == 2 && PaintTool.active)
+            {
+                MouseTrackerX.Add(Mouse.current.position.ReadValue().x);
+                MouseTrackerY.Add(Mouse.current.position.ReadValue().y);
+                counter++;
+                if (!AudioManager.instance.isPlaying("Slime 1"))
+                {
+                    if (!AudioManager.instance.isPlaying("Slime 2"))
+                    {
+                        if (!AudioManager.instance.isPlaying("Slime 3"))
+                        {
+                            if (counter > 10)
+                            {
+                                if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] > 0)
+                                {
+                                    if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 3] < 0)
+                                        AudioManager.instance.Play("Slime 1");
+                                }
+                                if (MouseTrackerX[counter - 6] - MouseTrackerX[counter - 10] < 0)
+                                {
+                                    if (MouseTrackerX[counter - 1] - MouseTrackerX[counter - 3] > 0)
+                                        AudioManager.instance.Play("Slime 2");
+                                }
+                                if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] > 0)
+                                {
+                                    if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 3] < 0)
+                                        AudioManager.instance.Play("Slime 3");
+                                }
+                                if (MouseTrackerY[counter - 6] - MouseTrackerY[counter - 10] < 0)
+                                {
+                                    if (MouseTrackerY[counter - 1] - MouseTrackerY[counter - 3] > 0)
+                                        AudioManager.instance.Play("Slime 1");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
+            if (CurrentTool == 3 && isToolinUse)
+            {
+                if (!(AudioManager.instance.isPlaying("Rinse")))
+                {
+                    AudioManager.instance.PlaySoundInterval(0f, 9f, "Rinse");
+                }
+            }
+        }
+    
+            
 
         if (isToolinUse == false) {
             counter = 0;
@@ -237,6 +296,7 @@ public class PlayerShowerController : MonoBehaviour
         else if (CurrentTool == 3)//Shower
         {
             CancelShowerTool();
+            AudioManager.instance.PlaySoundInterval(14f, 16f, "Rinse");
         }
     }
 

@@ -2846,7 +2846,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh175100
+  m_Name: pb_Mesh190180
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3427,7 +3427,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1185928164}
-  cooldown: -897.9969
+  cooldown: -947.096
   currentReader:
     requested: 0
     buffer: {fileID: 0}
@@ -4105,7 +4105,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Pop 3
     clip: {fileID: 8300000, guid: b021a30bef9cea74f9f22598d09a1851, type: 3}
-    volume: 0.491
+    volume: 0.59
     pitch: 1
     loop: 0
     TimesPlayed: 0
@@ -4211,6 +4211,55 @@ MonoBehaviour:
   - name: Scrub 3 out
     clip: {fileID: 8300000, guid: 5ced170dac2519a4a83738d76d4fd8cb, type: 3}
     volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Paper
+    clip: {fileID: 8300000, guid: dc497d151cadc324997054fd8f75a9d3, type: 3}
+    volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Pop
+    clip: {fileID: 8300000, guid: b021a30bef9cea74f9f22598d09a1851, type: 3}
+    volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Scribble
+    clip: {fileID: 8300000, guid: c2c4eace8cee9fb4daf29eccca90c1be, type: 3}
+    volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Slime 1
+    clip: {fileID: 8300000, guid: 4b09597e83e48ea4dacc8e3b8f1f97ab, type: 3}
+    volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Slime 2
+    clip: {fileID: 8300000, guid: 7ef812da721f97e4db0906e983ac7e93, type: 3}
+    volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Slime 3
+    clip: {fileID: 8300000, guid: 03face5880440df4f92ebc0117de7a70, type: 3}
+    volume: 0.335
+    pitch: 1
+    loop: 0
+    TimesPlayed: 0
+    source: {fileID: 0}
+  - name: Rinse
+    clip: {fileID: 8300000, guid: 1b32caf1c4cd34c458e11f60f8bdb055, type: 3}
+    volume: 0.321
     pitch: 1
     loop: 0
     TimesPlayed: 0
@@ -5137,7 +5186,7 @@ MonoBehaviour:
   async: 1
   downsampleSteps: 3
   registeredPaintableTexture: {fileID: 1701923922}
-  cooldown: -864.3205
+  cooldown: -913.4196
   currentReader:
     requested: 0
     buffer: {fileID: 0}

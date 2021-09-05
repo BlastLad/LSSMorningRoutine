@@ -78,16 +78,7 @@ public class AudioManager : MonoBehaviour {
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
 
-        if (s.TimesPlayed == t)
-            return;
-        else if(s.TimesPlayed > t)
-        {
-            while (s.TimesPlayed > t) s.TimesPlayed--;
-        }
-        else if (s.TimesPlayed < t)
-        {
-            while (s.TimesPlayed < t) s.TimesPlayed++;
-        }    
+        s.TimesPlayed = t;
     }
 
     public Boolean isPlaying(string name)
