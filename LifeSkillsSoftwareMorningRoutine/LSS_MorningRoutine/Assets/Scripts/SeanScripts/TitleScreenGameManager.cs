@@ -24,7 +24,10 @@ public class TitleScreenGameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        PlayerStats.brushedTeeth = false;
+        PlayerStats.isDressed = false;
+        PlayerStats.isShowered = false;
+        PlayerStats.madeBreakfast = false;
     }
 
     // Update is called once per frame

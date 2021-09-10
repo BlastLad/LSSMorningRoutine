@@ -6,12 +6,12 @@ public class Respawner : MonoBehaviour
 {
     [SerializeField]
     GameObject playerGO;
-    Vector3 initialPos;
+    [SerializeField]
+    Transform SpawnPos;
     
     // Start is called before the first frame update
     void Start()
     {
-        initialPos = playerGO.transform.position;
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class Respawner : MonoBehaviour
     {
         if (playerGO.transform.position.y < -20)
         {
-            playerGO.transform.position = initialPos;
+            playerGO.transform.position = SpawnPos.transform.position;
             playerGO.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }

@@ -245,14 +245,14 @@ MonoBehaviour:
   Sounds:
   - name: Pop 1
     clip: {fileID: 8300000, guid: 5f4f75ad3ff742947ad8c607487b600a, type: 3}
-    volume: 0.02
+    volume: 0.01
     pitch: 1
     loop: 0
     TimesPlayed: 0
     source: {fileID: 0}
   - name: Pop 2
     clip: {fileID: 8300000, guid: cfcce8fd474e087439628123b39dc0e9, type: 3}
-    volume: 0.181
+    volume: 0.131
     pitch: 1
     loop: 0
     TimesPlayed: 0
@@ -455,7 +455,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 08d233e930028cf43b4a6c415e39e699, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.09
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
