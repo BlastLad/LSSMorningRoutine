@@ -88,6 +88,7 @@ public class RightPlayerControl : MonoBehaviour
                     note.speed = 0;
                     holdMissed = true;
                     note.gameObject.GetComponent<LineRenderer>().material = missedMaterial;
+                    note.gameObject.GetComponent<LineRenderer>().endColor = new Color(1, 1, 1, 0.2f);
                     //note.gameObject.GetComponent<LineRenderer>().startColor = Color.gray;
                     //note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;
                 }
@@ -96,8 +97,8 @@ public class RightPlayerControl : MonoBehaviour
                     note.speed = 0;
                     holdMissed = false;
                     BrushingTeethPlayerController.instance.rightHoldActive = true;
-                    note.gameObject.GetComponent<LineRenderer>().startColor = Color.blue;
-                    note.gameObject.GetComponent<LineRenderer>().endColor = Color.blue;
+                    note.gameObject.GetComponent<LineRenderer>().startColor = new Color(0.75f, 1, 1, 1);
+                    note.gameObject.GetComponent<LineRenderer>().endColor = new Color(0.75f, 1, 1, 1);
                 }
 
 

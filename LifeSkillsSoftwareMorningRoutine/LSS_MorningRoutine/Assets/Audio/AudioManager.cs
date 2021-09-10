@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour {
     {
         Sound s = Array.Find(Sounds, sound => sound.name == name);
         s.source.Play();
-
+        Debug.Log("Fired lol" + name);
 
     }
     public void PlaySoundInterval(float from, float to, string name)
@@ -52,7 +52,7 @@ public class AudioManager : MonoBehaviour {
         s.source.time = from;
         s.source.Play();
         s.source.SetScheduledEndTime(AudioSettings.dspTime + (s.clip.length - from));
-        Debug.Log("Fired lol" + s.source.isPlaying + " " + s.source.time);
+        Debug.Log("Fired lol" + s.source.isPlaying + " " + s.source.time + name);
         s.TimesPlayed++;
     }
 

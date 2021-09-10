@@ -83,15 +83,15 @@ public class LeftPlayerControl : MonoBehaviour
                     note.speed = 0;
                     holdMissed = true;
                     note.gameObject.GetComponent<LineRenderer>().material = missedMaterial;
-                    //note.gameObject.GetComponent<LineRenderer>().endColor = Color.gray;
+                    note.gameObject.GetComponent<LineRenderer>().endColor = new Color(1, 1, 1, 0.2f);
                 }
                 else
                 {
                     note.speed = 0;
                     holdMissed = false;
                     BrushingTeethPlayerController.instance.leftHoldActive = true;
-                    note.gameObject.GetComponent<LineRenderer>().startColor = new Color(0, 0, .8f, .8f);
-                    note.gameObject.GetComponent<LineRenderer>().endColor = Color.blue;
+                    note.gameObject.GetComponent<LineRenderer>().startColor = new Color(0.75f, 1, 1, 1);
+                    note.gameObject.GetComponent<LineRenderer>().endColor = new Color(0.75f, 1, 1, 1);
                 }
 
 

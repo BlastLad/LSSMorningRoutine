@@ -1716,6 +1716,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Title"",
+            ""id"": ""915d9412-d2bf-48bc-9be1-b1c6e8e3143c"",
+            ""actions"": [
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""cbdf2b24-44b6-4535-aae5-e9c3962ffebc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""20dcb025-4ce2-4e15-9f2a-f4c27a63ca59"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard;Controller"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1785,6 +1812,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_ShowerGame_ShowerTool = m_ShowerGame.FindAction("ShowerTool", throwIfNotFound: true);
         m_ShowerGame_ActivateTool = m_ShowerGame.FindAction("ActivateTool", throwIfNotFound: true);
         m_ShowerGame_SecondaryActivation = m_ShowerGame.FindAction("SecondaryActivation", throwIfNotFound: true);
+        // Title
+        m_Title = asset.FindActionMap("Title", throwIfNotFound: true);
+        m_Title_Select = m_Title.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -2189,6 +2219,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public ShowerGameActions @ShowerGame => new ShowerGameActions(this);
+
+    // Title
+    private readonly InputActionMap m_Title;
+    private ITitleActions m_TitleActionsCallbackInterface;
+    private readonly InputAction m_Title_Select;
+    public struct TitleActions
+    {
+        private @PlayerControls m_Wrapper;
+        public TitleActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Select => m_Wrapper.m_Title_Select;
+        public InputActionMap Get() { return m_Wrapper.m_Title; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TitleActions set) { return set.Get(); }
+        public void SetCallbacks(ITitleActions instance)
+        {
+            if (m_Wrapper.m_TitleActionsCallbackInterface != null)
+            {
+                @Select.started -= m_Wrapper.m_TitleActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_TitleActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_TitleActionsCallbackInterface.OnSelect;
+            }
+            m_Wrapper.m_TitleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+            }
+        }
+    }
+    public TitleActions @Title => new TitleActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -2250,5 +2313,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnShowerTool(InputAction.CallbackContext context);
         void OnActivateTool(InputAction.CallbackContext context);
         void OnSecondaryActivation(InputAction.CallbackContext context);
+    }
+    public interface ITitleActions
+    {
+        void OnSelect(InputAction.CallbackContext context);
     }
 }

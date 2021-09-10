@@ -12,6 +12,9 @@ public class ShowerGameManager : MonoBehaviour
 
     bool isBoy;
 
+    public GameObject[] Gcylinders;
+    public GameObject[] Bcylinders;
+
     [SerializeField]
     GameObject boyObj;
     [SerializeField]
@@ -159,6 +162,11 @@ public class ShowerGameManager : MonoBehaviour
             charFill[i].Counters[0] = boyData.charTextures[i].GetComponent<P3dChannelCounter>();
             charText[i].Counters[0] = boyData.charTextures[i].GetComponent<P3dChannelCounter>();
         }
+
+        foreach  (GameObject mat in Bcylinders)
+        {
+            mat.SetActive(true);
+        }
     }
 
 
@@ -173,6 +181,11 @@ public class ShowerGameManager : MonoBehaviour
             charTextures.Add(girlData.charTextures[i]);
             charFill[i].Counters[0] = girlData.charTextures[i].GetComponent<P3dChannelCounter>();
             charText[i].Counters[0] = girlData.charTextures[i].GetComponent<P3dChannelCounter>();
+        }
+
+        foreach (GameObject mat in Gcylinders)
+        {
+            mat.SetActive(true);
         }
     }
 

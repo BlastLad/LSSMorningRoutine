@@ -248,7 +248,7 @@ public class MixingMicroGameController : MonoBehaviour, MicroGameInterface
         }
 
 
-        if (ingredientsAdded > allowedIngredients || requiredIngredients.Count == 0)
+        if (requiredIngredients.Count == 0)
         {
             CheckForMix();
         }

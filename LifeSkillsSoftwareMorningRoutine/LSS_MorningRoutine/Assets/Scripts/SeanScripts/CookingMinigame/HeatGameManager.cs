@@ -61,7 +61,7 @@ public class HeatGameManager : MonoBehaviour, MicroGameInterface
     public void StartHeatUp()//The button press
     {
 
-        float waitVal = Random.Range(0, 0.7f);
+        float waitVal = Random.Range(0, 0.5f);
         fillSpeed = Random.Range(15f, 45f);
 
         StartCoroutine(RandomDelay(waitVal));

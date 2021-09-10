@@ -1703,6 +1703,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Title",
+            "id": "915d9412-d2bf-48bc-9be1-b1c6e8e3143c",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "cbdf2b24-44b6-4535-aae5-e9c3962ffebc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "20dcb025-4ce2-4e15-9f2a-f4c27a63ca59",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard;Controller",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
